@@ -1,0 +1,11 @@
+# Exige aprobación humana (Code Owner) antes de mergear.
+# Requiere activar "Require review from Code Owners" en branch protection (ver docs/ci.md).
+
+# Todo el repo: revisión humana por defecto
+*                     @averasteguibno
+
+# Núcleo del design system: cambios sensibles, revisión obligatoria del responsable de diseño
+/design/              @averasteguibno
+/docs/                @averasteguibno
+/AGENTS.md            @averasteguibno
+/specs/home.md        @averasteguibno

@@ -1,0 +1,554 @@
+/* =============================================
+   COSTOS Y BECAS — Redesigned with Home aesthetic
+   Uses tokens + reuses classes from styles.css
+   ============================================= */
+
+/* ===== 1. HERO (Home-style 2-col) ===== */
+.cost-hero {
+  padding: 191px 0 100px;
+  background: var(--white);
+}
+
+.cost-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+}
+
+.cost-breadcrumb {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.cost-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 88px;
+  line-height: 0.92;
+  font-weight: 700;
+}
+
+.cost-hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Reuses .hero-card from Home */
+.cost-hero-info .hero-card {
+  padding: 28px 34px;
+  border: 2px solid var(--black);
+  border-radius: var(--radius);
+}
+
+.cost-hero-info .hero-card p {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.cost-hero-info .button-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ===== 2. TRANSPARENCIA (Home prestige-style) ===== */
+.cost-transparency {
+  background: var(--white);
+}
+
+.transparency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.transparency-card {
+  padding: 40px 32px;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius);
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.transparency-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border-color: var(--orange);
+}
+
+.transparency-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--purple-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transparency-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--white);
+}
+
+.transparency-card h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.transparency-card p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+.transparency-card > a {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--orange);
+  margin-top: auto;
+  transition: color 200ms;
+}
+
+.transparency-card > a:hover {
+  color: var(--black);
+}
+
+/* ===== 3. PRICING (Orange bg like Home programs) ===== */
+.cost-pricing {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.cost-pricing .programs-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.period-toggle {
+  display: flex;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  padding: 4px;
+}
+
+.period-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.period-btn.active {
+  background: var(--white);
+  color: var(--black);
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pricing-card {
+  background: var(--white);
+  color: var(--black);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.pricing-card.featured {
+  background: var(--purple-1);
+  color: var(--white);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  padding: 6px 18px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 100px;
+}
+
+.pricing-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pricing-top h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.price-big {
+  font-family: var(--font-heading);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+}
+
+.price-period {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.pricing-top p {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 24px;
+}
+
+.pricing-card.featured .pricing-features {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+.pricing-features li {
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 24px;
+  position: relative;
+  opacity: 0.8;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.pricing-card.featured .pricing-features li::before {
+  color: var(--lilac-1);
+}
+
+.pricing-card .btn {
+  margin-top: auto;
+  text-align: center;
+}
+
+.btn-white {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--white);
+  color: var(--purple-1);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms;
+  text-align: center;
+}
+
+.btn-white:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+
+/* ===== 4. BECAS (Home "next-step" style) ===== */
+.cost-becas {
+  background: var(--white);
+}
+
+.cost-becas-layout {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.cost-becas .section-intro h2 {
+  font-size: 52px;
+  line-height: 1;
+}
+
+.cost-becas .long-arrow {
+  width: 120px;
+  height: 2px;
+  background: var(--black);
+  margin-top: 32px;
+  position: relative;
+}
+
+.cost-becas .long-arrow::after {
+  content: "›";
+  position: absolute;
+  right: -14px;
+  top: -12px;
+  font-size: 24px;
+}
+
+.becas-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.beca-card {
+  padding: 32px;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.beca-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--orange);
+}
+
+.beca-card.featured {
+  background: var(--purple-1);
+  color: var(--white);
+  border-color: var(--purple-1);
+}
+
+.beca-card.featured:hover {
+  border-color: var(--orange);
+  box-shadow: 0 16px 40px rgba(67, 47, 100, 0.25);
+}
+
+.beca-emoji {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.beca-card h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.beca-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.beca-card > a {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--orange);
+  margin-top: auto;
+}
+
+.beca-card.featured > a {
+  color: var(--lilac-1);
+}
+
+/* ===== 5. CONTACT (reuses .questions-card from Home) ===== */
+.cost-contact {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.cost-inline-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.cost-inline-form input {
+  flex: 1;
+  max-width: 340px;
+  padding: 14px 20px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 200ms;
+}
+
+.cost-inline-form input:focus {
+  border-color: var(--orange);
+}
+
+/* ===== 6. TOOLS CTA ===== */
+.cost-tools {
+  background: var(--white);
+}
+
+.tools-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+  background: var(--purple-1);
+  border-radius: var(--radius);
+  color: var(--white);
+}
+
+.tools-banner .section-intro {
+  max-width: 560px;
+}
+
+.tools-banner .tagline span {
+  background: var(--white);
+}
+
+.tools-banner h2 {
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.tools-banner .button-row {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.tools-banner .btn-dark {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.tools-banner .btn-dark:hover {
+  background: var(--white);
+  color: var(--purple-1);
+}
+
+.tools-banner .btn-light {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.tools-banner .btn-light:hover {
+  background: var(--white);
+  color: var(--purple-1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .cost-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cost-hero h1 {
+    font-size: 64px;
+  }
+
+  .transparency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cost-pricing .programs-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .cost-becas-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .tools-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cost-hero {
+    padding-top: 140px;
+    padding-bottom: 60px;
+  }
+
+  .cost-hero h1 {
+    font-size: 48px;
+  }
+
+  .price-big {
+    font-size: 40px;
+  }
+
+  .becas-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cost-inline-form {
+    flex-direction: column;
+  }
+
+  .cost-inline-form input {
+    max-width: 100%;
+  }
+
+  .tools-banner {
+    padding: 30px;
+  }
+
+  .tools-banner h2 {
+    font-size: 26px;
+  }
+}

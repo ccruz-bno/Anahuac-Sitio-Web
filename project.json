@@ -1,0 +1,23 @@
+{
+  "name": "sitio-web-anahuac-2026",
+  "description": "Sitio web institucional Universidad Anáhuac México — rediseño 2026.",
+  "platform": "hubspot",
+  "platforms_supported": ["hubspot", "wordpress", "astro"],
+  "figma": {
+    "uiKit": "https://www.figma.com/design/Xn92P26S9mq9xYsHyoPUjz/Dise%C3%B1o---UI-Kit?node-id=1-3",
+    "home": "https://www.figma.com/design/7pUOJfWkK75c7BBlZCHMft/Dise%C3%B1o---Sitio-Web?node-id=2002-1381",
+    "internalPages": [],
+    "relumeExport": "https://www.figma.com/design/vPttXphpZ4oROAFtZqv0so/Sitio-web-Anahuac-sitemap---wireframes--8-jun-2026-?node-id=1-17629&t=3Y74X8fURhPoiqfr-1",
+    "note": "Acceso a Figma vía Figma MCP (get_figma_data / download_figma_images)."
+  },
+  "fonts": [
+    { "family": "Zilla Slab", "weights": [500, 600, 700], "role": "heading" },
+    { "family": "Roboto", "weights": [400, 500, 600], "role": "body" }
+  ],
+  "canonicalReference": "specs/home.md",
+  "status": {
+    "figmaIngested": true,
+    "ingestedAt": "2026-06-08T19:16:00Z",
+    "note": "Ingesta completada: tokens, foundations, interactions, patterns, globals, page-recipe, inventory, home spec, sitemap. Componentes individuales pendientes de documentar contratos de fields."
+  }
+}

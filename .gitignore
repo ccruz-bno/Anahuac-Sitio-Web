@@ -1,0 +1,13 @@
+# Reference repos (backups)
+REF Repositorio Alan/
+REF Repositorio Arody/
+
+# Figma reference visuals
+Figma - REF Visuales/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/

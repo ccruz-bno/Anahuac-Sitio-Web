@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Universidad Anáhuac México</title>
+    <meta
+      name="description"
+      content="Forma tu futuro en Anáhuac México. Explora licenciaturas, admisiones, apoyos y vida universitaria."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo-link" href="#" aria-label="Universidad Anáhuac México">
+        <img src="assets/logo-anahuac.svg" alt="Anáhuac México" />
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#licenciaturas">Licenciaturas</a>
+        <a href="#admisiones">Admisiones</a>
+        <div class="nav-dropdown">
+          <button type="button" aria-expanded="false">
+            <span class="arrow-down"></span>
+            Costos y Apoyos
+          </button>
+          <div class="dropdown-panel" role="menu">
+            <a href="#costos" role="menuitem">Costos</a>
+            <a href="#apoyos" role="menuitem">Apoyos</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button type="button" aria-expanded="false">
+            <span class="arrow-down"></span>
+            Vida Universitaria
+          </button>
+          <div class="dropdown-panel" role="menu">
+            <a href="#experiencia" role="menuitem">Experiencia</a>
+            <a href="#eventos" role="menuitem">Eventos</a>
+          </div>
+        </div>
+      </nav>
+
+      <a class="btn btn-dark nav-contact" href="#contacto">Contacto</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <div class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-panel">
+        <a class="is-active" href="#licenciaturas">Licenciaturas</a>
+        <a href="#admisiones">Admisiones</a>
+        <button class="mobile-subnav" type="button" aria-expanded="true">
+          <span class="arrow-down"></span>
+          Costos y Apoyos
+        </button>
+        <div class="mobile-submenu">
+          <a href="#costos">Costos</a>
+          <a href="#apoyos">Apoyos</a>
+        </div>
+        <button class="mobile-subnav" type="button" aria-expanded="false">
+          <span class="arrow-down"></span>
+          Vida Universitaria
+        </button>
+        <a class="btn btn-dark mobile-contact" href="#contacto">Contacto</a>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero section-pad" id="inicio">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1 class="reveal" data-reveal>Forma tu futuro en Anáhuac México</h1>
+            <div class="hero-actions">
+              <div class="hero-card reveal" data-reveal>
+                <p>
+                  Descubre una educación que te prepara para generar un impacto real. Explora
+                  nuestras licenciaturas y encuentra tu camino.
+                </p>
+              </div>
+              <div class="button-row reveal" data-reveal>
+                <a class="btn btn-dark" href="#licenciaturas">Ver licenciaturas</a>
+                <a class="btn btn-light" href="#admisiones">Proceso de admisión</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-grid reveal" data-reveal>
+            <video class="hero-img img-a" autoplay muted loop playsinline data-offset="1.5">
+              <source src="assets/estudiante-tablet.mp4" type="video/mp4" />
+            </video>
+            <video class="hero-img img-b" autoplay muted loop playsinline>
+              <source src="assets/estudiantes-saltando.mp4" type="video/mp4" />
+            </video>
+            <video class="hero-img img-c" autoplay muted loop playsinline data-offset="3">
+              <source src="assets/estudiante-medicina.mp4" type="video/mp4" />
+            </video>
+            <video class="hero-img img-d" autoplay muted loop playsinline>
+              <source src="assets/jugadores-corriendo.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="prestige section-pad" id="prestigio">
+        <div class="container">
+          <div class="split-heading">
+            <div class="section-intro reveal" data-reveal>
+              <p class="tagline"><span></span>Prestigio Anáhuac</p>
+              <h2>Excelencia en cifras</h2>
+              <p>Datos que hablan de nuestro compromiso con la calidad educativa.</p>
+            </div>
+            <div class="video-card reveal" data-reveal data-yt-id="x3jzZcZOewk">
+              <img
+                src="https://img.youtube.com/vi/x3jzZcZOewk/hqdefault.jpg"
+                alt="Universidad Anáhuac México — Reproducir video"
+                loading="lazy"
+              />
+              <button class="video-play-btn" type="button" aria-label="Reproducir video">
+                <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card purple-1 reveal" data-reveal>
+              <strong data-count-to="70" data-count-suffix="%">0%</strong>
+              <span>Egresados con trabajo</span>
+            </article>
+            <article class="stat-card purple-2 reveal" data-reveal>
+              <strong data-count-to="65000" data-count-prefix="+">+0</strong>
+              <span>Egresados Anáhuac</span>
+            </article>
+            <article class="stat-card purple-3 reveal" data-reveal>
+              <strong data-count-to="290" data-count-prefix="+">+0</strong>
+              <span>Convenios internacionales activos</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="path section-pad" id="admisiones">
+        <div class="container">
+          <div class="section-intro wide reveal" data-reveal>
+            <h2>Comienza tu camino</h2>
+            <p>Accede rápidamente a la información que necesitas para decidir. Elige tu ruta y avanza.</p>
+          </div>
+          <div class="path-layout">
+            <img class="path-photo reveal" src="assets/camino.jpg" alt="Estudiantes consultando información en laptop" data-reveal />
+            <div class="path-cards reveal" data-reveal>
+              <article class="path-card" tabindex="0" data-img="assets/camino.jpg">
+                <div class="path-title">
+                  <img class="path-icon" src="assets/icons/icon-admision.svg" alt="" />
+                  <h3>Tu admisión</h3>
+                </div>
+                <div class="path-bottom">
+                  <p>Conoce cada paso del proceso de admisión.</p>
+                  <a href="#">Explorar ›</a>
+                </div>
+              </article>
+              <article class="path-card" tabindex="0" data-img="assets/hero-student.jpg">
+                <div class="path-title">
+                  <img class="path-icon" src="assets/icons/icon-cotiza.svg" alt="" />
+                  <h3>Cotiza tu licenciatura</h3>
+                </div>
+                <div class="path-bottom">
+                  <p>Calcula el costo total de tus estudios.</p>
+                  <a href="#">Cotizar ›</a>
+                </div>
+              </article>
+              <article class="path-card" tabindex="0" data-img="assets/hero-medicine.jpg">
+                <div class="path-title">
+                  <img class="path-icon" src="assets/icons/icon-apoyos.svg" alt="" />
+                  <h3>Apoyos educativos</h3>
+                </div>
+                <div class="path-bottom">
+                  <p>Conoce las opciones de apoyos financieros disponibles para ti.</p>
+                  <a href="#">Explorar ›</a>
+                </div>
+              </article>
+              <article class="path-card" tabindex="0" data-img="assets/hero-friends.jpg">
+                <div class="path-title">
+                  <img class="path-icon" src="assets/icons/icon-foraneo.svg" alt="" />
+                  <h3>Soy foráneo</h3>
+                </div>
+                <div class="path-bottom">
+                  <p>Conoce todo lo que la Universidad Anáhuac te ofrece para que te sientas en casa.</p>
+                  <a href="#">Conocer ›</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="programs section-pad" id="licenciaturas">
+        <div class="container">
+          <div class="programs-head">
+            <div class="section-intro on-orange reveal" data-reveal>
+              <p class="tagline"><span></span>Áreas académicas</p>
+              <h2>Explora nuestras licenciaturas</h2>
+              <p>Encuentra la carrera que conecta con tus intereses, habilidades y metas.</p>
+            </div>
+            <a class="btn btn-white-arrow reveal" href="#" data-reveal>Ver todas <span>›</span></a>
+          </div>
+          <div class="program-scroller reveal" data-reveal>
+            <article class="program-card">
+              <img src="assets/area-salud.jpg" alt="Ciencias de la Salud" />
+              <div><h3>Ciencias de la Salud</h3><p>5 programas</p><a href="#">Explorar ›</a></div>
+            </article>
+            <article class="program-card">
+              <img src="assets/area-ingenierias.jpg" alt="Ingenierías y Ciencias" />
+              <div><h3>Ingenierías y Ciencias</h3><p>11 programas</p><a href="#">Explorar ›</a></div>
+            </article>
+            <article class="program-card">
+              <img src="assets/area-negocios.jpg" alt="Negocios y Economía" />
+              <div><h3>Negocios y Economía</h3><p>11 programas</p><a href="#">Explorar ›</a></div>
+            </article>
+            <article class="program-card">
+              <img src="assets/area-derecho.jpg" alt="Ciencias Sociales y Derecho" />
+              <div><h3>Ciencias Sociales y Derecho</h3><p>8 programas</p><a href="#">Explorar ›</a></div>
+            </article>
+            <article class="program-card">
+              <img src="assets/area-comunicacion.jpg" alt="Comunicación, Arquitectura y Diseño" />
+              <div><h3>Comunicación, Arquitectura y Diseño</h3><p>7 programas</p><a href="#">Explorar ›</a></div>
+            </article>
+            <article class="program-card">
+              <img src="assets/area-artes.jpg" alt="Artes y Diseño" />
+              <div><h3>Artes y Diseño</h3><p>5 programas</p><a href="#">Explorar ›</a></div>
+            </article>
+            <article class="program-card">
+              <img src="assets/area-educacion.jpg" alt="Educación y Formación" />
+              <div><h3>Educación y Formación</h3><p>4 programas</p><a href="#">Explorar ›</a></div>
+            </article>
+          </div>
+          <div class="slider-ui">
+            <div class="dots"><span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="arrow-buttons"><button type="button">‹</button><button type="button">›</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience" id="experiencia">
+        <div class="container experience-layout">
+          <div class="experience-sticky">
+            <div class="section-intro reveal" data-reveal>
+              <p class="tagline"><span></span>Mucho más que solo una Universidad.</p>
+              <h2>Descubre por qué ser un León Anáhuac</h2>
+              <p>Conoce por qué vivirás una experiencia universitaria única con nosotros.</p>
+              <a class="btn btn-purple" href="#">Conoce la experiencia Anáhuac</a>
+            </div>
+          </div>
+          <div class="experience-slides">
+            <article class="experience-card reveal" data-reveal>
+              <div>
+                <h3>Un futuro con más posibilidades</h3>
+                <p>
+                  Desarrolla las habilidades, conocimientos y experiencia que necesitas para construir un
+                  perfil integral. Nuestro modelo educativo integra formación profesional, intelectual,
+                  humana, social y espiritual.
+                </p>
+              </div>
+              <video autoplay muted loop playsinline>
+                <source src="assets/estudiantes-humo.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="experience-card reveal" data-reveal>
+              <div>
+                <h3>Oportunidades internacionales</h3>
+                <p>
+                  Amplía tu experiencia con intercambios, convenios y opciones académicas que amplían tu
+                  perspectiva y enriquecen tu formación dentro y fuera del aula.
+                </p>
+              </div>
+              <img src="assets/exp-internacional.png" alt="Estudiantes en programa de intercambio internacional" />
+            </article>
+            <article class="experience-card reveal" data-reveal>
+              <div>
+                <h3>Una vida universitaria que te haga crecer</h3>
+                <p>
+                  Haz deporte, participa en actividades culturales, involúcrate en proyectos sociales y
+                  forma parte de una comunidad activa.
+                </p>
+              </div>
+              <video autoplay muted loop playsinline>
+                <source src="assets/jugadores-corriendo.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="experience-card reveal" data-reveal>
+              <div>
+                <h3>Espacios que impulsan tu experiencia</h3>
+                <p>
+                  Disfruta de espacios creados para tu desarrollo integral: deportes, salud, innovación
+                  y recursos únicos que encontrarás en la Universidad Anáhuac.
+                </p>
+              </div>
+              <img src="assets/exp-espacios.png" alt="Campus y espacios de la Universidad Anáhuac" />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stories section-pad">
+        <div class="container">
+          <div class="stories-head">
+            <div class="section-intro wide reveal" data-reveal>
+              <h2>Historias Anáhuac</h2>
+              <p>Leones Anáhuac que han transformado sus vidas con nosotros</p>
+            </div>
+            <div class="story-arrows reveal" data-reveal><button type="button">↑</button><button type="button">↓</button></div>
+          </div>
+          <div class="stories-viewport">
+            <div class="stories-track">
+              <!-- Row 1 -->
+              <div class="stories-row">
+                <img src="assets/historia-1.jpg" alt="María Gómez, egresada Anáhuac" />
+                <img src="assets/historia-2.jpg" alt="Estudiante en laboratorio" />
+                <blockquote class="quote orange">
+                  <p>"Anáhuac me dio más que una carrera, me dio una red de amigos y mentores que cambió mi trayectoria profesional"</p>
+                  <cite>María Gómez <span>Egresada, Ingeniería</span></cite>
+                </blockquote>
+              </div>
+              <!-- Row 2 -->
+              <div class="stories-row">
+                <blockquote class="quote purple">
+                  <p>"Los convenios internacionales me permitieron estudiar un semestre en Europa y eso fue decisivo para conseguir mi primer trabajo"</p>
+                  <cite>Carlos Mendoza <span>Egresado, Ingeniería en Sistemas</span></cite>
+                </blockquote>
+                <img src="assets/historia-3.jpg" alt="Egresado trabajando con equipo de cómputo" />
+                <img src="assets/historia-4.jpg" alt="Carlos Mendoza, egresado Anáhuac" />
+              </div>
+              <!-- Row 3 -->
+              <div class="stories-row">
+                <img src="assets/historia-2.jpg" alt="Estudiantes en campus" />
+                <blockquote class="quote orange">
+                  <p>"Gracias a las prácticas profesionales, conseguí trabajo antes de terminar la carrera"</p>
+                  <cite>Daniel Torres <span>Egresado, Administración</span></cite>
+                </blockquote>
+                <img src="assets/historia-1.jpg" alt="Egresada exitosa" />
+              </div>
+              <!-- Row 4 -->
+              <div class="stories-row">
+                <blockquote class="quote purple">
+                  <p>"La formación integral que recibí en Anáhuac me preparó para enfrentar cualquier reto profesional con confianza"</p>
+                  <cite>Ana Rodríguez <span>Egresada, Comunicación</span></cite>
+                </blockquote>
+                <img src="assets/historia-3.jpg" alt="Proyecto estudiantil" />
+                <img src="assets/historia-4.jpg" alt="Laboratorio de innovación" />
+              </div>
+              <!-- Row 5 -->
+              <div class="stories-row">
+                <img src="assets/historia-4.jpg" alt="Ceremonia de graduación" />
+                <img src="assets/historia-1.jpg" alt="Vida en campus" />
+                <blockquote class="quote orange">
+                  <p>"El programa de movilidad me cambió la vida. Estudié en España y volví con una visión completamente nueva"</p>
+                  <cite>Sofía Martínez <span>Egresada, Derecho</span></cite>
+                </blockquote>
+              </div>
+              <!-- Row 6 -->
+              <div class="stories-row">
+                <img src="assets/historia-2.jpg" alt="Espacios de estudio" />
+                <blockquote class="quote purple">
+                  <p>"Anáhuac no solo me dio conocimientos, me dio una comunidad para toda la vida"</p>
+                  <cite>Roberto Silva <span>Egresado, Ingeniería Industrial</span></cite>
+                </blockquote>
+                <img src="assets/historia-3.jpg" alt="Comunidad Anáhuac" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="next section-pad" id="costos">
+        <div class="container next-layout">
+          <div class="section-intro reveal" data-reveal>
+            <h2>El siguiente paso hacia tus sueños</h2>
+            <p>Avanza hacia tu futuro hoy mismo.</p>
+            <div class="long-arrow"></div>
+          </div>
+          <div class="next-cards reveal" data-reveal>
+            <article class="next-card featured"><img src="assets/seccion costos/Icono-1.svg" alt="" /><h3>Elige tu carrera ideal</h3><p>Explora nuestras ocho áreas académicas y encuentra el programa que te llama.</p><a href="#">Explorar ›</a></article>
+            <article class="next-card"><img src="assets/seccion costos/Icono-2.svg" alt="" /><h3>Calcula tu inversión</h3><p>Conoce el costo real y las becas disponibles para ti en minutos.</p><a href="#">Calcular ›</a></article>
+            <article class="next-card"><img src="assets/seccion costos/Icono-3.svg" alt="" /><h3>Visita el campus</h3><p>Experimenta Anáhuac en persona y resuelve tus últimas dudas con nuestro equipo.</p><a href="#">Agendar ›</a></article>
+            <article class="next-card"><img src="assets/seccion costos/FileDoneOutlined.svg" alt="" /><h3>Inicia tu admisión</h3><p>Completa tu solicitud y comienza el camino hacia tu futuro profesional.</p><a href="#">Solicitar ›</a></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="events section-pad" id="eventos">
+        <div class="container">
+          <div class="section-intro event-title reveal" data-reveal>
+            <p class="tagline"><span></span>Próximos eventos</p>
+            <h2>Sé parte de nuestras experiencias preuniversitarias</h2>
+            <p>Participa en experiencias diseñadas para conocer tu futuro en Anáhuac.</p>
+          </div>
+          <div class="featured-event reveal" data-reveal>
+            <img src="assets/evento.jpg" alt="Estudiantes caminando en campus" />
+            <div class="event-date large"><strong>15</strong><span>Mayo 2026</span></div>
+            <div class="event-info">
+              <span class="pill dark">Evento Masivo</span>
+              <h3>Vive Anáhuac</h3>
+              <p class="meta">Presencial <span></span> Campus Norte</p>
+              <p>Vive el mejor evento para preuniversitarios con talleres, conferencias, juegos, concursos, premios y mucho más.</p>
+              <a class="btn btn-orange" href="#">Regístrate aquí ›</a>
+            </div>
+          </div>
+          <div class="event-tags reveal" data-reveal role="tablist" aria-label="Filtrar próximos eventos">
+            <button class="active" type="button" data-filter="all" aria-pressed="true">Ver todos</button><button type="button" data-filter="sesiones-informativas" aria-pressed="false">Sesiones informativas</button><button type="button" data-filter="visitas-campus" aria-pressed="false">Visitas en Campus</button><button type="button" data-filter="brunch-informativo" aria-pressed="false">Brunch informativo</button><button type="button" data-filter="eventos-masivos" aria-pressed="false">Eventos masivos</button>
+          </div>
+          <div class="event-list reveal" data-reveal aria-live="polite">
+            <article data-tags="sesiones-informativas">
+              <div class="event-date"><strong>18</strong><span>Mayo 2026</span></div>
+              <div><h3>Movilidad Internacional <span class="pill dark">Sesión Informativa</span></h3><p class="meta">Virtual <span></span> Campus Norte</p><p>Explora nuestros convenios globales y estudia un semestre en universidades aliadas del mundo.</p></div>
+              <a class="btn btn-purple small" href="#">Conocer más</a>
+            </article>
+            <article data-tags="visitas-campus">
+              <div class="event-date"><strong>22</strong><span>Mayo 2026</span></div>
+              <div><h3>Día de puertas abiertas</h3><p class="meta">Virtual <span></span> Campus Sur</p><p>Vive un día como León Anáhuac con talleres, conferencias y competencias en vivo.</p></div>
+              <a class="btn btn-purple small" href="#">Agendar visita</a>
+            </article>
+            <article data-tags="eventos-masivos">
+              <div class="event-date"><strong>25</strong><span>Mayo 2026</span></div>
+              <div><h3>Encuentro con egresados</h3><p class="meta">Presencial <span></span> Bi-Campus</p><p>Escucha historias reales de quiénes estudiaron aquí y hoy generan impacto profesional.</p></div>
+              <a class="btn btn-purple small" href="#">Inscribirse</a>
+            </article>
+            <article data-tags="visitas-campus">
+              <div class="event-date"><strong>29</strong><span>Mayo 2026</span></div>
+              <div><h3>Taller vocacional Anáhuac</h3><p class="meta">Presencial <span></span> Campus Norte</p><p>Descubre tus intereses profesionales con actividades guiadas por orientadores universitarios.</p></div>
+              <a class="btn btn-purple small" href="#">Apartar lugar</a>
+            </article>
+            <article data-tags="brunch-informativo">
+              <div class="event-date"><strong>04</strong><span>Junio 2026</span></div>
+              <div><h3>Brunch para familias</h3><p class="meta">Presencial <span></span> Campus Sur</p><p>Conoce instalaciones, resuelve dudas de admisión y conversa con asesores académicos.</p></div>
+              <a class="btn btn-purple small" href="#">Reservar</a>
+            </article>
+            <article data-tags="sesiones-informativas">
+              <div class="event-date"><strong>11</strong><span>Junio 2026</span></div>
+              <div><h3>Clase muestra por área</h3><p class="meta">Virtual <span></span> Bi-Campus</p><p>Vive una sesión académica breve para acercarte a la experiencia real de tu licenciatura.</p></div>
+              <a class="btn btn-purple small" href="#">Ver horarios</a>
+            </article>
+          </div>
+          <div class="event-pagination reveal" data-reveal aria-label="Paginación de próximos eventos">
+            <div class="event-dots" aria-label="Páginas de eventos"></div>
+            <div class="event-arrows">
+              <button type="button" class="event-prev" aria-label="Ver eventos anteriores">‹</button>
+              <button type="button" class="event-next" aria-label="Ver siguientes eventos">›</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="questions section-pad" id="contacto">
+        <div class="container questions-card reveal" data-reveal>
+          <img src="assets/dudas.jpg" alt="Estudiante Anáhuac en aula" />
+          <div>
+            <h2>¿Tienes alguna duda de nuestra universidad?</h2>
+            <p>
+              Nuestro equipo de asesores preuniversitarios en la Universidad Anáhuac México está aquí
+              para guiarte en cada paso hacia tu futuro brillante. ¡Contáctanos hoy y comienza a trazar
+              el camino hacia tus sueños!
+            </p>
+            <div class="button-row centered">
+              <a class="btn btn-dark" href="#">Contactar</a>
+              <a class="btn btn-light" href="#">Agenda tu visita</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <svg class="social-sprite" aria-hidden="true" focusable="false">
+        <symbol id="icon-facebook" viewBox="0 0 24 24">
+          <path d="M15.1 8.3h3V4h-3.7c-4 0-6 2.4-6 6v2.4H5v4.4h3.4V24h4.7v-7.2h3.8l.7-4.4h-4.5v-2c0-1.3.5-2.1 2-2.1Z" />
+        </symbol>
+        <symbol id="icon-x" viewBox="0 0 24 24">
+          <path d="M18.9 2h3.3l-7.3 8.3L23.5 22h-6.7l-5.2-6.9L5.6 22H2.3l7.8-8.9L1.8 2h6.9l4.7 6.3L18.9 2Zm-1.2 18h1.8L7.7 3.9h-2L17.7 20Z" />
+        </symbol>
+        <symbol id="icon-instagram" viewBox="0 0 24 24">
+          <path d="M7.3 2h9.4A5.3 5.3 0 0 1 22 7.3v9.4a5.3 5.3 0 0 1-5.3 5.3H7.3A5.3 5.3 0 0 1 2 16.7V7.3A5.3 5.3 0 0 1 7.3 2Zm0 2.2a3.1 3.1 0 0 0-3.1 3.1v9.4a3.1 3.1 0 0 0 3.1 3.1h9.4a3.1 3.1 0 0 0 3.1-3.1V7.3a3.1 3.1 0 0 0-3.1-3.1H7.3ZM12 7.1A4.9 4.9 0 1 1 12 17a4.9 4.9 0 0 1 0-9.9Zm0 2.2a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5.2-2.8a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z" />
+        </symbol>
+        <symbol id="icon-youtube" viewBox="0 0 24 24">
+          <path d="M21.7 7.1a3 3 0 0 0-2.1-2.1C17.7 4.5 12 4.5 12 4.5s-5.7 0-7.6.5a3 3 0 0 0-2.1 2.1C1.8 9 1.8 12 1.8 12s0 3 .5 4.9A3 3 0 0 0 4.4 19c1.9.5 7.6.5 7.6.5s5.7 0 7.6-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.9.5-4.9s0-3-.5-4.9ZM10 15.2V8.8l5.6 3.2-5.6 3.2Z" />
+        </symbol>
+      </svg>
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <img src="assets/logo-anahuac.svg" alt="Anáhuac México" />
+          <form class="newsletter">
+            <h2>Mantente informado sobre las novedades del mes de nuestra Universidad</h2>
+            <p>Recibe noticias sobre admisiones, eventos preuniversitarios y vida universitaria en tu correo.</p>
+            <div><input type="email" placeholder="Email" aria-label="Email" /><button class="btn btn-dark" type="submit">Enviar</button></div>
+            <small>Al suscribirte aceptas nuestra política de privacidad</small>
+          </form>
+        </div>
+        <div class="footer-links">
+          <div><h3>Descubre</h3><a href="#">Por qué Anáhuac</a><a href="#">Vida universitaria</a><a href="#">Estudiantes foráneos</a><a href="#">Competencias académicas</a><a href="#">Ubicaciones</a></div>
+          <div><h3>Programas</h3><a href="#">Oferta académica</a><a href="#">Todas las licenciaturas</a><a href="#">Áreas académicas</a><a href="#">Solicita información</a><a href="#">Visita el campus</a></div>
+          <div><h3>Admisiones</h3><a href="#">Admisión general</a><a href="#">Admisión medicina</a><a href="#">Admisión internacional</a><a href="#">Fechas de examen</a><a href="#">Inicia tu proceso</a></div>
+          <div>
+            <h3>Campus Norte</h3>
+            <p>Av. Universidad Anáhuac 46, Col. Lomas Anáhuac. Huixquilucan, Estado de México.</p>
+            <a href="#">+52 (55) 5627 0210</a>
+            <div class="social-links" aria-label="Redes sociales Campus Norte">
+              <a href="#" aria-label="Facebook Campus Norte"><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="#" aria-label="X Campus Norte"><svg><use href="#icon-x"></use></svg></a>
+              <a href="#" aria-label="Instagram Campus Norte"><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="#" aria-label="YouTube Campus Norte"><svg><use href="#icon-youtube"></use></svg></a>
+            </div>
+          </div>
+          <div>
+            <h3>Campus Sur</h3>
+            <p>Av. de los Tanques 865, Col. Torres de Potrero. Álvaro Obregón, CDMX.</p>
+            <a href="#">+52 (55) 5628 8800</a>
+            <a href="#">Misión y valores</a>
+            <a href="#">Acreditaciones</a>
+            <a href="#">Noticias</a>
+            <div class="social-links" aria-label="Redes sociales Campus Sur">
+              <a href="#" aria-label="Facebook Campus Sur"><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="#" aria-label="X Campus Sur"><svg><use href="#icon-x"></use></svg></a>
+              <a href="#" aria-label="Instagram Campus Sur"><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="#" aria-label="YouTube Campus Sur"><svg><use href="#icon-youtube"></use></svg></a>
+            </div>
+          </div>
+          <div>
+            <h3>Contacto</h3>
+            <a href="#">Teléfono principal</a>
+            <a href="#">Correo de admisiones</a>
+            <a href="#">Síguenos en línea</a>
+            <a href="#">Ubicación</a>
+            <div class="social-links" aria-label="Redes sociales Anáhuac México">
+              <a href="#" aria-label="Facebook Anáhuac México"><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="#" aria-label="X Anáhuac México"><svg><use href="#icon-x"></use></svg></a>
+              <a href="#" aria-label="Instagram Anáhuac México"><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="#" aria-label="YouTube Anáhuac México"><svg><use href="#icon-youtube"></use></svg></a>
+            </div>
+          </div>
+        </div>
+        <p class="copyright">© 2026 Universidad Anáhuac México. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="script.js?v=20260605-video-counters"></script>
+  </body>
+</html>

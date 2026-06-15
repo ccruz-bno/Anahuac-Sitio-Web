@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Costos y Becas | Universidad Anáhuac México</title>
+    <meta name="description" content="Conoce las colegiaturas, becas, apoyos financieros y planes de pago de la Universidad Anáhuac México." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="costos.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo-link" href="index.html" aria-label="Universidad Anáhuac México">
+        <img src="assets/logo-anahuac.svg" alt="Anáhuac México" />
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="oferta-academica.html">Oferta Académica</a>
+        <a href="admisiones.html">Admisiones</a>
+        <div class="nav-dropdown">
+          <button type="button" aria-expanded="false">
+            <span class="arrow-down"></span>
+            Costos y Apoyos
+          </button>
+          <div class="dropdown-panel" role="menu">
+            <a href="costos-becas.html" role="menuitem" class="is-active">Costos y Becas</a>
+            <a href="#apoyos" role="menuitem">Apoyos</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button type="button" aria-expanded="false">
+            <span class="arrow-down"></span>
+            Vida Universitaria
+          </button>
+          <div class="dropdown-panel" role="menu">
+            <a href="index.html#experiencia" role="menuitem">Experiencia</a>
+            <a href="index.html#eventos" role="menuitem">Eventos</a>
+          </div>
+        </div>
+      </nav>
+      <a class="btn btn-dark nav-contact" href="#contacto">Contacto</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </header>
+    <div class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-panel">
+        <a href="oferta-academica.html">Oferta Académica</a>
+        <a href="admisiones.html">Admisiones</a>
+        <button class="mobile-subnav" type="button" aria-expanded="false"><span class="arrow-down"></span>Costos y Apoyos</button>
+        <div class="mobile-submenu" style="display:none"><a href="costos-becas.html" class="is-active">Costos y Becas</a><a href="#apoyos">Apoyos</a></div>
+        <button class="mobile-subnav" type="button" aria-expanded="false"><span class="arrow-down"></span>Vida Universitaria</button>
+        <a class="btn btn-dark mobile-contact" href="#contacto">Contacto</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- ===== 1. HERO (Home-style: big serif left + info card right) ===== -->
+      <section class="cost-hero section-pad" id="inicio">
+        <div class="container cost-hero-inner">
+          <div class="cost-hero-copy">
+            <p class="cost-breadcrumb reveal" data-reveal>Inversión</p>
+            <h1 class="reveal" data-reveal>Costos y becas</h1>
+          </div>
+          <div class="cost-hero-info reveal" data-reveal>
+            <div class="hero-card">
+              <p>Conoce nuestras opciones de financiamiento y apoyos para tu educación de calidad.</p>
+            </div>
+            <div class="button-row">
+              <a class="btn btn-dark" href="#colegiaturas">Calcular</a>
+              <a class="btn btn-light" href="#becas">Solicitar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 2. TRANSPARENCIA (Home prestige-style: tagline + stat cards) ===== -->
+      <section class="cost-transparency section-pad" id="transparencia">
+        <div class="container">
+          <div class="split-heading">
+            <div class="section-intro reveal" data-reveal>
+              <p class="tagline"><span></span>Transparencia</p>
+              <h2>Lo que necesitas saber</h2>
+              <p>Conoce los detalles de nuestro modelo de costos y apoyos.</p>
+            </div>
+          </div>
+          <div class="transparency-grid">
+            <article class="transparency-card reveal" data-reveal>
+              <div class="transparency-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <h3>Colegiaturas claras sin sorpresas</h3>
+              <p>Nuestros precios incluyen todos los servicios académicos y administrativos esenciales.</p>
+              <a href="#colegiaturas">Conocer más ›</a>
+            </article>
+            <article class="transparency-card reveal" data-reveal>
+              <div class="transparency-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h3>Becas y apoyos para todos</h3>
+              <p>Contamos con programas de becas por mérito, necesidad económica y talento especial.</p>
+              <a href="#becas">Ver opciones ›</a>
+            </article>
+            <article class="transparency-card reveal" data-reveal>
+              <div class="transparency-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>Asesoría financiera personalizada</h3>
+              <p>Nuestro equipo te ayuda a encontrar el plan de pago que se ajuste a tu situación.</p>
+              <a href="#contacto">Contactar ›</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 3. COLEGIATURAS (Orange section like "Programs" on Home) ===== -->
+      <section class="cost-pricing section-pad" id="colegiaturas">
+        <div class="container">
+          <div class="programs-head">
+            <div class="section-intro on-orange reveal" data-reveal>
+              <p class="tagline"><span></span>Programas</p>
+              <h2>Opciones de financiamiento</h2>
+              <p>Explora nuestras colegiaturas y apoyos económicos disponibles.</p>
+            </div>
+            <div class="period-toggle reveal" data-reveal>
+              <button class="period-btn active" data-period="semestral">Semestral</button>
+              <button class="period-btn" data-period="anual">Anual</button>
+            </div>
+          </div>
+          <div class="pricing-cards reveal" data-reveal>
+            <article class="pricing-card">
+              <div class="pricing-top">
+                <h3>Básico</h3>
+                <div class="pricing-price" data-sem="$85,000" data-anu="$155,000">
+                  <span class="price-big">$85,000</span>
+                  <span class="price-period">Por semestre</span>
+                </div>
+                <p>Ideal para estudiantes de tiempo completo.</p>
+              </div>
+              <ul class="pricing-features">
+                <li>Acceso a plataforma de aprendizaje</li>
+                <li>Laboratorios y espacios especializados</li>
+                <li>Biblioteca digital y física</li>
+                <li>Actividades culturales y deportivas</li>
+                <li>Acceso a bolsa de empleo</li>
+              </ul>
+              <a class="btn btn-dark" href="#contacto">Solicitar información</a>
+            </article>
+            <article class="pricing-card featured">
+              <div class="pricing-badge">Popular</div>
+              <div class="pricing-top">
+                <h3>Estándar</h3>
+                <div class="pricing-price" data-sem="$95,000" data-anu="$175,000">
+                  <span class="price-big">$95,000</span>
+                  <span class="price-period">Por semestre</span>
+                </div>
+                <p>Incluye servicios adicionales de apoyo.</p>
+              </div>
+              <ul class="pricing-features">
+                <li>Todo lo del plan Básico</li>
+                <li>Tutoría académica personalizada</li>
+                <li>Servicios de salud y bienestar</li>
+                <li>Asesoría psicológica y emocional</li>
+                <li>Intercambios académicos internacionales</li>
+                <li>Programas de movilidad estudiantil</li>
+              </ul>
+              <a class="btn btn-white" href="#contacto">Solicitar información</a>
+            </article>
+            <article class="pricing-card">
+              <div class="pricing-top">
+                <h3>Premium</h3>
+                <div class="pricing-price" data-sem="$110,000" data-anu="$200,000">
+                  <span class="price-big">$110,000</span>
+                  <span class="price-period">Por semestre</span>
+                </div>
+                <p>Acceso a todos los beneficios y programas.</p>
+              </div>
+              <ul class="pricing-features">
+                <li>Todo lo del plan Estándar</li>
+                <li>Asesoría de carrera profesional</li>
+                <li>Redes de egresados y mentores</li>
+                <li>Certificaciones internacionales</li>
+                <li>Convenios con universidades globales</li>
+                <li>Apoyo para estudios en el extranjero</li>
+              </ul>
+              <a class="btn btn-dark" href="#contacto">Solicitar información</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 4. BECAS (Home "next step" style: cards grid on purple) ===== -->
+      <section class="cost-becas section-pad" id="becas">
+        <div class="container cost-becas-layout">
+          <div class="section-intro reveal" data-reveal>
+            <h2>Apoyos que te impulsan</h2>
+            <p>Contamos con opciones para cada situación. Encuentra la tuya.</p>
+            <div class="long-arrow"></div>
+          </div>
+          <div class="becas-cards reveal" data-reveal>
+            <article class="beca-card featured">
+              <span class="beca-emoji">🏆</span>
+              <h3>Becas por mérito</h3>
+              <p>Reconocemos el desempeño académico excepcional con apoyo económico directo.</p>
+              <a href="#">Conocer ›</a>
+            </article>
+            <article class="beca-card">
+              <span class="beca-emoji">💛</span>
+              <h3>Apoyo por necesidad</h3>
+              <p>Evaluamos tu situación económica para ofrecerte opciones accesibles.</p>
+              <a href="#">Explorar ›</a>
+            </article>
+            <article class="beca-card">
+              <span class="beca-emoji">⭐</span>
+              <h3>Talento especial</h3>
+              <p>Apoyamos atletas, artistas y líderes con programas dedicados.</p>
+              <a href="#">Solicitar ›</a>
+            </article>
+            <article class="beca-card">
+              <span class="beca-emoji">📋</span>
+              <h3>Planes de pago</h3>
+              <p>Dividimos la inversión en cuotas mensuales sin intereses adicionales.</p>
+              <a href="#">Contactar ›</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 5. CONTACTO (Home "questions" style: image + card) ===== -->
+      <section class="cost-contact section-pad" id="contacto">
+        <div class="container questions-card reveal" data-reveal>
+          <img src="assets/hero-student.jpg" alt="Estudiante Anáhuac con laptop" />
+          <div>
+            <h2>Habla con nuestro equipo</h2>
+            <p>Recibe asesoría personalizada sobre costos, becas y opciones de financiamiento. Respetamos tu privacidad y nos pondremos en contacto en 24 horas.</p>
+            <form class="cost-inline-form">
+              <input type="email" placeholder="Tu correo" aria-label="Tu correo electrónico" required />
+              <button class="btn btn-dark" type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 6. CTA HERRAMIENTAS ===== -->
+      <section class="cost-tools section-pad">
+        <div class="container">
+          <div class="tools-banner reveal" data-reveal>
+            <div class="section-intro">
+              <p class="tagline"><span></span>Herramientas para tu decisión</p>
+              <h2>Calcula tu inversión, explora becas y solicita asesoría personalizada ahora.</h2>
+            </div>
+            <div class="button-row">
+              <a class="btn btn-dark" href="#colegiaturas">Calcular costos</a>
+              <a class="btn btn-light" href="#becas">Explorar becas</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <svg class="social-sprite" aria-hidden="true" focusable="false">
+        <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M15.1 8.3h3V4h-3.7c-4 0-6 2.4-6 6v2.4H5v4.4h3.4V24h4.7v-7.2h3.8l.7-4.4h-4.5v-2c0-1.3.5-2.1 2-2.1Z"/></symbol>
+        <symbol id="icon-x" viewBox="0 0 24 24"><path d="M18.9 2h3.3l-7.3 8.3L23.5 22h-6.7l-5.2-6.9L5.6 22H2.3l7.8-8.9L1.8 2h6.9l4.7 6.3L18.9 2Zm-1.2 18h1.8L7.7 3.9h-2L17.7 20Z"/></symbol>
+        <symbol id="icon-instagram" viewBox="0 0 24 24"><path d="M7.3 2h9.4A5.3 5.3 0 0 1 22 7.3v9.4a5.3 5.3 0 0 1-5.3 5.3H7.3A5.3 5.3 0 0 1 2 16.7V7.3A5.3 5.3 0 0 1 7.3 2Zm0 2.2a3.1 3.1 0 0 0-3.1 3.1v9.4a3.1 3.1 0 0 0 3.1 3.1h9.4a3.1 3.1 0 0 0 3.1-3.1V7.3a3.1 3.1 0 0 0-3.1-3.1H7.3ZM12 7.1A4.9 4.9 0 1 1 12 17a4.9 4.9 0 0 1 0-9.9Zm0 2.2a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5.2-2.8a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></symbol>
+        <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M21.7 7.1a3 3 0 0 0-2.1-2.1C17.7 4.5 12 4.5 12 4.5s-5.7 0-7.6.5a3 3 0 0 0-2.1 2.1C1.8 9 1.8 12 1.8 12s0 3 .5 4.9A3 3 0 0 0 4.4 19c1.9.5 7.6.5 7.6.5s5.7 0 7.6-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.9.5-4.9s0-3-.5-4.9ZM10 15.2V8.8l5.6 3.2-5.6 3.2Z"/></symbol>
+      </svg>
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <img src="assets/logo-anahuac.svg" alt="Anáhuac México" />
+          <form class="newsletter">
+            <h2>Mantente informado sobre las novedades del mes de nuestra Universidad</h2>
+            <p>Recibe noticias sobre admisiones, eventos preuniversitarios y vida universitaria en tu correo.</p>
+            <div><input type="email" placeholder="Tu correo electrónico" aria-label="Email" /><button class="btn btn-dark" type="submit">Suscribirme</button></div>
+            <small>Al suscribirte aceptas nuestra política de privacidad</small>
+          </form>
+        </div>
+        <div class="footer-links">
+          <div><h3>Descubre</h3><a href="#">Por qué Anáhuac</a><a href="#">Vida universitaria</a><a href="#">Estudiantes foráneos</a><a href="#">Competencias académicas</a><a href="#">Ubicaciones</a></div>
+          <div><h3>Programas</h3><a href="#">Oferta académica</a><a href="#">Todas las licenciaturas</a><a href="#">Áreas académicas</a><a href="#">Solicita información</a><a href="#">Visita el campus</a></div>
+          <div><h3>Admisiones</h3><a href="#">Admisión general</a><a href="#">Admisión medicina</a><a href="#">Admisión internacional</a><a href="#">Fechas de examen</a><a href="#">Inicia tu proceso</a></div>
+          <div><h3>Campus Norte</h3><p>Av. Universidad Anáhuac 46, Col. Lomas Anáhuac. Huixquilucan, Estado de México.</p><a href="#">+52 (55) 5627 0210</a>
+            <div class="social-links" aria-label="Redes sociales Campus Norte"><a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a><a href="#" aria-label="X"><svg><use href="#icon-x"></use></svg></a><a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a><a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a></div>
+          </div>
+          <div><h3>Campus Sur</h3><p>Av. de los Tanques 865, Col. Torres de Potrero. Álvaro Obregón, CDMX.</p><a href="#">+52 (55) 5628 8800</a><a href="#">Misión y valores</a><a href="#">Acreditaciones</a><a href="#">Noticias</a>
+            <div class="social-links" aria-label="Redes sociales Campus Sur"><a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a><a href="#" aria-label="X"><svg><use href="#icon-x"></use></svg></a><a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a><a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a></div>
+          </div>
+          <div><h3>Contacto</h3><a href="#">Teléfono principal</a><a href="#">Correo de admisiones</a><a href="#">Síguenos en línea</a><a href="#">Ubicación</a>
+            <div class="social-links" aria-label="Redes sociales Anáhuac México"><a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a><a href="#" aria-label="X"><svg><use href="#icon-x"></use></svg></a><a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a><a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a></div>
+          </div>
+        </div>
+        <p class="copyright">© 2026 Universidad Anáhuac México. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="costos.js"></script>
+  </body>
+</html>

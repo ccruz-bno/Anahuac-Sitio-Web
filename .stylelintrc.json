@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "color-no-hex": [true, {
+      "message": "No uses hex directo. Usa un token semántico de design/01-tokens.md (var(--…))."
+    }],
+    "declaration-property-value-disallowed-list": {
+      "/^(color|background|background-color|border-color|fill|stroke)$/": ["/#/", "/rgb/", "/hsl/"],
+      "font-family": ["/^(?!var\\()/"],
+      "font-size": ["/px$/", "/rem$/", "/em$/"]
+    },
+    "comment-no-empty": true
+  },
+  "ignoreFiles": [
+    "**/tokens.css",
+    "**/theme.json",
+    "node_modules/**"
+  ]
+}
