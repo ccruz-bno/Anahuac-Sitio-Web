@@ -331,7 +331,7 @@ if (eventList && eventDots && eventItems.length) {
   applyEventFilter("all");
 }
 
-/* ===== STORIES VERTICAL SLIDER (infinite) ===== */
+/* ===== STORIES VERTICAL SLIDER (responsive) ===== */
 (function () {
   const track = document.querySelector(".stories-track");
   const viewport = document.querySelector(".stories-viewport");
@@ -341,32 +341,51 @@ if (eventList && eventDots && eventItems.length) {
   if (!arrows.length) return;
 
   const gap = 20;
-  const visibleRows = 2;
   const origRows = Array.from(track.querySelectorAll(".stories-row"));
   const totalOriginal = origRows.length;
 
-  /* Clone first N rows at the end, last N at the start */
-  origRows.slice(0, visibleRows).forEach((r) => {
-    track.appendChild(r.cloneNode(true));
-  });
-  origRows.slice(-visibleRows).reverse().forEach((r) => {
-    track.insertBefore(r.cloneNode(true), track.firstChild);
-  });
+  function getVisibleRows() {
+    return window.innerWidth <= 640 ? 1 : 2;
+  }
 
-  const allRows = track.querySelectorAll(".stories-row");
-  /* Start at the first real row (after the prepended clones) */
+  let visibleRows = getVisibleRows();
   let current = visibleRows;
   let isTransitioning = false;
 
+  function buildClones() {
+    // Remove existing clones
+    track.querySelectorAll("[data-clone]").forEach((c) => c.remove());
+
+    // Clone first N at end, last N at start
+    origRows.slice(0, visibleRows).forEach((r) => {
+      const clone = r.cloneNode(true);
+      clone.setAttribute("data-clone", "true");
+      track.appendChild(clone);
+    });
+    origRows.slice(-visibleRows).reverse().forEach((r) => {
+      const clone = r.cloneNode(true);
+      clone.setAttribute("data-clone", "true");
+      track.insertBefore(clone, track.firstChild);
+    });
+  }
+
+  function getAllRows() {
+    return track.querySelectorAll(".stories-row");
+  }
+
   function getRowH() {
-    return allRows[0].offsetHeight;
+    return getAllRows()[0].offsetHeight;
+  }
+
+  function updateViewportHeight() {
+    const rowH = getRowH();
+    viewport.style.height = (visibleRows * rowH + (visibleRows - 1) * gap) + "px";
   }
 
   function jumpTo(index) {
     track.style.transition = "none";
     current = index;
     track.style.transform = `translateY(-${current * (getRowH() + gap)}px)`;
-    /* Force reflow so the browser registers the jump */
     void track.offsetHeight;
     track.style.transition = "transform 500ms cubic-bezier(0.4, 0, 0.2, 1)";
   }
@@ -380,20 +399,38 @@ if (eventList && eventDots && eventItems.length) {
 
   track.addEventListener("transitionend", () => {
     isTransitioning = false;
-    /* If we scrolled into the cloned region at the end, jump to real start */
     if (current >= totalOriginal + visibleRows) {
       jumpTo(visibleRows);
     }
-    /* If we scrolled into the cloned region at the start, jump to real end */
     if (current < visibleRows) {
       jumpTo(totalOriginal + current);
     }
   });
 
-  /* Initial position (no animation) */
-  jumpTo(visibleRows);
+  function init() {
+    visibleRows = getVisibleRows();
+    buildClones();
+    current = visibleRows;
+    jumpTo(visibleRows);
+    updateViewportHeight();
+  }
 
-  /* ↑ = prev, ↓ = next */
+  init();
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const newVisible = getVisibleRows();
+      if (newVisible !== visibleRows) {
+        init();
+      } else {
+        updateViewportHeight();
+        jumpTo(current);
+      }
+    }, 200);
+  });
+
   arrows[0].addEventListener("click", () => slideTo(current - 1));
   arrows[1].addEventListener("click", () => slideTo(current + 1));
 })();
@@ -422,3 +459,45 @@ document.querySelectorAll("[data-yt-id]").forEach((card) => {
     card.appendChild(iframe);
   });
 });
+
+/* ── Experience dots: fade out after 60% scroll ── */
+(() => {
+  const section = document.querySelector(".experience");
+  if (!section) return;
+
+  let ticking = false;
+
+  function updateDotsOpacity() {
+    // Only apply on desktop/LG (>1180px)
+    if (window.innerWidth <= 1180) {
+      section.style.removeProperty("--dots-opacity");
+      return;
+    }
+
+    const rect = section.getBoundingClientRect();
+    const sectionH = section.offsetHeight;
+    const scrolled = -rect.top; // how far we've scrolled into the section
+    const progress = Math.max(0, Math.min(1, scrolled / sectionH));
+
+    if (progress <= 0.6) {
+      section.style.setProperty("--dots-opacity", "0.78");
+    } else {
+      // Fade from 0.78 to 0 between 60% and 100%
+      const fadeProgress = (progress - 0.6) / 0.4;
+      const opacity = 0.78 * (1 - fadeProgress);
+      section.style.setProperty("--dots-opacity", String(Math.max(0, opacity).toFixed(3)));
+    }
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateDotsOpacity();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateDotsOpacity();
+})();
