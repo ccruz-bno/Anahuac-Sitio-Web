@@ -1,6 +1,11 @@
 const body = document.body;
 body.classList.add("ready");
 
+/* Sticky header gradient — show after 150px scroll */
+window.addEventListener("scroll", () => {
+  body.classList.toggle("scrolled", window.scrollY > 150);
+}, { passive: true });
+
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileLinks = document.querySelectorAll(".mobile-menu a");
@@ -24,6 +29,18 @@ mobileLinks.forEach((link) => {
 mobileSubnavs.forEach((button) => {
   button.addEventListener("click", () => {
     const expanded = button.getAttribute("aria-expanded") === "true";
+
+    /* Close all other submenus first */
+    mobileSubnavs.forEach((other) => {
+      if (other !== button) {
+        other.setAttribute("aria-expanded", "false");
+        const otherMenu = other.nextElementSibling;
+        if (otherMenu?.classList.contains("mobile-submenu")) {
+          otherMenu.style.display = "none";
+        }
+      }
+    });
+
     button.setAttribute("aria-expanded", String(!expanded));
     const submenu = button.nextElementSibling;
     if (submenu?.classList.contains("mobile-submenu")) {
@@ -370,34 +387,53 @@ if (eventList && eventDots && eventItems.length) {
   }
 
   function getAllRows() {
-    return track.querySelectorAll(".stories-row");
+    return Array.from(track.querySelectorAll(".stories-row"));
   }
 
-  function getRowH() {
-    return getAllRows()[0].offsetHeight;
+  function getOffsetY(index) {
+    const rows = getAllRows();
+    let offset = 0;
+    for (let i = 0; i < index; i++) {
+      offset += rows[i].offsetHeight + gap;
+    }
+    return offset;
+  }
+
+  function getVisibleHeight(index) {
+    const rows = getAllRows();
+    let h = 0;
+    for (let i = 0; i < visibleRows; i++) {
+      if (rows[index + i]) {
+        h += rows[index + i].offsetHeight;
+        if (i < visibleRows - 1) h += gap;
+      }
+    }
+    return h;
   }
 
   function updateViewportHeight() {
-    const rowH = getRowH();
-    viewport.style.height = (visibleRows * rowH + (visibleRows - 1) * gap) + "px";
+    viewport.style.height = getVisibleHeight(current) + "px";
   }
 
   function jumpTo(index) {
     track.style.transition = "none";
     current = index;
-    track.style.transform = `translateY(-${current * (getRowH() + gap)}px)`;
+    track.style.transform = `translateY(-${getOffsetY(current)}px)`;
     void track.offsetHeight;
     track.style.transition = "transform 500ms cubic-bezier(0.4, 0, 0.2, 1)";
+    updateViewportHeight();
   }
 
   function slideTo(index) {
     if (isTransitioning) return;
     isTransitioning = true;
     current = index;
-    track.style.transform = `translateY(-${current * (getRowH() + gap)}px)`;
+    track.style.transform = `translateY(-${getOffsetY(current)}px)`;
+    updateViewportHeight();
   }
 
-  track.addEventListener("transitionend", () => {
+  track.addEventListener("transitionend", (e) => {
+    if (e.propertyName !== "transform") return;
     isTransitioning = false;
     if (current >= totalOriginal + visibleRows) {
       jumpTo(visibleRows);
@@ -412,10 +448,17 @@ if (eventList && eventDots && eventItems.length) {
     buildClones();
     current = visibleRows;
     jumpTo(visibleRows);
-    updateViewportHeight();
   }
 
-  init();
+  /* Delay init so real devices finish layout before reading heights */
+  requestAnimationFrame(() => {
+    setTimeout(init, 100);
+  });
+
+  /* Recalculate once everything (images/fonts) is fully loaded */
+  window.addEventListener("load", () => {
+    requestAnimationFrame(() => jumpTo(current));
+  });
 
   let resizeTimer;
   window.addEventListener("resize", () => {
