@@ -186,120 +186,310 @@
             <h2>Elige tu camino en Anáhuac</h2>
             <p>Explora cincuenta licenciaturas distribuidas en ocho áreas académicas. Encuentra el programa que se alinea con tus aspiraciones y comienza a construir tu futuro.</p>
           </div>
+
+          <!-- Search + Filters -->
           <div class="search-bar reveal" data-reveal>
-            <div class="search-input-wrap">
-              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" id="search-licenciatura" placeholder="Buscar" aria-label="Buscar licenciatura" />
+            <div class="search-input-group">
+              <div class="search-input-wrap">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="search-licenciatura" placeholder="Buscar" aria-label="Buscar licenciatura" />
+                <button class="search-clear" type="button" aria-label="Limpiar búsqueda">×</button>
+              </div>
+              <button class="btn btn-orange search-btn" type="button">Buscar</button>
             </div>
-            <div class="search-select-wrap">
-              <select id="filter-area" aria-label="Área académica">
-                <option value="">Área académica</option>
-                <option value="salud">Ciencias de la Salud</option>
-                <option value="ingenierias">Ingenierías y Ciencias</option>
-                <option value="negocios">Negocios y Economía</option>
-                <option value="derecho">Ciencias Sociales y Derecho</option>
-                <option value="comunicacion">Comunicación, Arquitectura y Diseño</option>
-                <option value="artes">Artes y Diseño</option>
-                <option value="educacion">Educación y Formación</option>
-              </select>
+            <div class="search-filters">
+              <span class="filter-label">Filtrar por:</span>
+              <div class="custom-dropdown" data-dropdown="area">
+                <button class="dropdown-toggle" type="button" aria-expanded="false">
+                  Área académica
+                  <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1,1 6,6 11,1"/></svg>
+                </button>
+                <div class="dropdown-menu">
+                  <label><input type="radio" name="filter-area" value="" checked /> Todas</label>
+                  <label><input type="radio" name="filter-area" value="salud" /> Ciencias de la Salud</label>
+                  <label><input type="radio" name="filter-area" value="ingenierias" /> Ingenierías</label>
+                  <label><input type="radio" name="filter-area" value="negocios" /> Economía y Negocios</label>
+                  <label><input type="radio" name="filter-area" value="comunicacion" /> Comunicación, Arq. y Diseño</label>
+                  <label><input type="radio" name="filter-area" value="derecho" /> Ciencias Sociales y Derecho</label>
+                  <label><input type="radio" name="filter-area" value="turismo" /> Turismo y Gastronomía</label>
+                </div>
+              </div>
+              <div class="custom-dropdown" data-dropdown="campus">
+                <button class="dropdown-toggle" type="button" aria-expanded="false">
+                  Campus
+                  <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1,1 6,6 11,1"/></svg>
+                </button>
+                <div class="dropdown-menu">
+                  <label><input type="radio" name="filter-campus" value="" checked /> Todos</label>
+                  <label><input type="radio" name="filter-campus" value="bicampus" /> Bicampus</label>
+                  <label><input type="radio" name="filter-campus" value="norte" /> Campus Norte</label>
+                  <label><input type="radio" name="filter-campus" value="sur" /> Campus Sur</label>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="filter-pills reveal" data-reveal>
-            <span>Filtrar por:</span>
-            <button class="pill active" data-filter="all">Todos</button>
-            <button class="pill" data-filter="bicampus">Bicampus</button>
-            <button class="pill" data-filter="norte">Campus Norte</button>
-            <button class="pill" data-filter="sur">Campus Sur</button>
-            <button class="pill" data-filter="presencial">Presencial</button>
-            <button class="pill" data-filter="virtual">Virtual</button>
-          </div>
-          <div class="search-results reveal" data-reveal>
-            <article class="result-card" data-campus="bicampus" data-mode="presencial" data-area="salud">
-              <div class="result-header">
-                <span class="result-area">Ciencias de la Salud</span>
+
+          <!-- Results count -->
+          <p class="search-count reveal" data-reveal><span id="result-count">6</span> programas encontrados</p>
+
+          <!-- Cards Grid -->
+          <div class="program-grid reveal" data-reveal>
+            <article class="program-card" data-area="salud" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/medico-cirujano.png" alt="Médico Cirujano" /></div>
+              <div class="program-body">
+                <span class="program-tag">Ciencias de la Salud</span>
                 <h3>Médico Cirujano</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Forma profesionales de la medicina con una visión integral, ética y humanista preparados para transformar el sistema de salud.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
               </div>
-              <p>Forma profesionales de la medicina con una visión integral, ética y humanista preparados para transformar el sistema de salud.</p>
-              <a class="btn btn-purple btn-sm" href="#">Conocer más</a>
             </article>
-            <article class="result-card" data-campus="bicampus" data-mode="presencial" data-area="comunicacion">
-              <div class="result-header">
-                <span class="result-area">Comunicación, Arquitectura y Diseño</span>
+            <article class="program-card" data-area="comunicacion" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/arquitectura.png" alt="Arquitectura" /></div>
+              <div class="program-body">
+                <span class="program-tag">Comunicación, Arquitectura y Diseño</span>
                 <h3>Arquitectura</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Diseña y construye espacios innovadores que transformen comunidades con criterio estético, técnico y sustentable.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
               </div>
-              <p>Diseña y construye espacios innovadores que transformen comunidades con criterio estético, técnico y sustentable.</p>
-              <a class="btn btn-purple btn-sm" href="#">Conocer más</a>
             </article>
-            <article class="result-card" data-campus="norte" data-mode="presencial" data-area="ingenierias">
-              <div class="result-header">
-                <span class="result-area">Ingenierías y Ciencias</span>
-                <h3>Ingeniería en Inteligencia Artificial</h3>
+            <article class="program-card" data-area="ingenierias" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/ingenieria-en-sistemas-y-tecnologia-de-informacion.png" alt="Ingeniería en Sistemas" /></div>
+              <div class="program-body">
+                <span class="program-tag">Ingenierías</span>
+                <h3>Ingeniería en Sistemas y Tecnología de Información</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Desarrolla soluciones tecnológicas de vanguardia usando inteligencia artificial, redes y ciencia de datos para resolver problemas reales.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
               </div>
-              <p>Desarrolla soluciones de vanguardia usando inteligencia artificial, machine learning y ciencia de datos.</p>
-              <a class="btn btn-purple btn-sm" href="#">Conocer más</a>
             </article>
-            <article class="result-card" data-campus="sur" data-mode="presencial" data-area="negocios">
-              <div class="result-header">
-                <span class="result-area">Negocios y Economía</span>
-                <h3>Administración de Empresas</h3>
-              </div>
-              <p>Lidera organizaciones con visión estratégica, innovación y sentido de responsabilidad social.</p>
-              <a class="btn btn-purple btn-sm" href="#">Conocer más</a>
-            </article>
-            <article class="result-card" data-campus="bicampus" data-mode="virtual" data-area="derecho">
-              <div class="result-header">
-                <span class="result-area">Ciencias Sociales y Derecho</span>
-                <h3>Derecho</h3>
-              </div>
-              <p>Forma juristas con pensamiento crítico y compromiso con la justicia social y el estado de derecho.</p>
-              <a class="btn btn-purple btn-sm" href="#">Conocer más</a>
-            </article>
-            <article class="result-card" data-campus="norte" data-mode="presencial" data-area="artes">
-              <div class="result-header">
-                <span class="result-area">Artes y Diseño</span>
+            <article class="program-card" data-area="comunicacion" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/diseno-industrial.png" alt="Diseño Industrial" /></div>
+              <div class="program-body">
+                <span class="program-tag">Diseño</span>
                 <h3>Diseño Industrial</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Crea productos y experiencias que integran funcionalidad, estética y sustentabilidad para mejorar la vida de las personas.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
               </div>
-              <p>Crea productos y experiencias que integran funcionalidad, estética y sustentabilidad.</p>
-              <a class="btn btn-purple btn-sm" href="#">Conocer más</a>
+            </article>
+            <article class="program-card" data-area="negocios" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/direccion-financiera.png" alt="Dirección Financiera" /></div>
+              <div class="program-body">
+                <span class="program-tag">Economía y Negocios</span>
+                <h3>Dirección Financiera</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Lidera organizaciones con visión estratégica, innovación y sentido de responsabilidad social en el mundo financiero.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="turismo" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/gastronomia.png" alt="Gastronomía" /></div>
+              <div class="program-body">
+                <span class="program-tag">Turismo y Gastronomía</span>
+                <h3>Gastronomía</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Domina el arte culinario con técnicas de vanguardia y una formación empresarial que te permitirá liderar proyectos gastronómicos.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <!-- Repeat 2 -->
+            <article class="program-card" data-area="salud" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/medico-cirujano.png" alt="Médico Cirujano" /></div>
+              <div class="program-body">
+                <span class="program-tag">Ciencias de la Salud</span>
+                <h3>Médico Cirujano</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Forma profesionales de la medicina con una visión integral, ética y humanista preparados para transformar el sistema de salud.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="comunicacion" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/arquitectura.png" alt="Arquitectura" /></div>
+              <div class="program-body">
+                <span class="program-tag">Comunicación, Arquitectura y Diseño</span>
+                <h3>Arquitectura</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Diseña y construye espacios innovadores que transformen comunidades con criterio estético, técnico y sustentable.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="ingenierias" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/ingenieria-en-sistemas-y-tecnologia-de-informacion.png" alt="Ingeniería en Sistemas" /></div>
+              <div class="program-body">
+                <span class="program-tag">Ingenierías</span>
+                <h3>Ingeniería en Sistemas y Tecnología de Información</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Desarrolla soluciones tecnológicas de vanguardia usando inteligencia artificial, redes y ciencia de datos para resolver problemas reales.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="comunicacion" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/diseno-industrial.png" alt="Diseño Industrial" /></div>
+              <div class="program-body">
+                <span class="program-tag">Diseño</span>
+                <h3>Diseño Industrial</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Crea productos y experiencias que integran funcionalidad, estética y sustentabilidad para mejorar la vida de las personas.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="negocios" data-campus="norte" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/direccion-financiera.png" alt="Dirección Financiera" /></div>
+              <div class="program-body">
+                <span class="program-tag">Economía y Negocios</span>
+                <h3>Dirección Financiera</h3>
+                <p class="program-mode">PRESENCIAL | CAMPUS NORTE</p>
+                <p class="program-desc">Lidera organizaciones con visión estratégica, innovación y sentido de responsabilidad social en el mundo financiero.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="turismo" data-campus="norte" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/gastronomia.png" alt="Gastronomía" /></div>
+              <div class="program-body">
+                <span class="program-tag">Turismo y Gastronomía</span>
+                <h3>Gastronomía</h3>
+                <p class="program-mode">PRESENCIAL | CAMPUS NORTE</p>
+                <p class="program-desc">Domina el arte culinario con técnicas de vanguardia y una formación empresarial que te permitirá liderar proyectos gastronómicos.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <!-- Repeat 3 -->
+            <article class="program-card" data-area="salud" data-campus="sur" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/medico-cirujano.png" alt="Médico Cirujano" /></div>
+              <div class="program-body">
+                <span class="program-tag">Ciencias de la Salud</span>
+                <h3>Médico Cirujano</h3>
+                <p class="program-mode">PRESENCIAL | CAMPUS SUR</p>
+                <p class="program-desc">Forma profesionales de la medicina con una visión integral, ética y humanista preparados para transformar el sistema de salud.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="comunicacion" data-campus="sur" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/arquitectura.png" alt="Arquitectura" /></div>
+              <div class="program-body">
+                <span class="program-tag">Comunicación, Arquitectura y Diseño</span>
+                <h3>Arquitectura</h3>
+                <p class="program-mode">PRESENCIAL | CAMPUS SUR</p>
+                <p class="program-desc">Diseña y construye espacios innovadores que transformen comunidades con criterio estético, técnico y sustentable.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="ingenierias" data-campus="sur" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/ingenieria-en-sistemas-y-tecnologia-de-informacion.png" alt="Ingeniería en Sistemas" /></div>
+              <div class="program-body">
+                <span class="program-tag">Ingenierías</span>
+                <h3>Ingeniería en Sistemas y Tecnología de Información</h3>
+                <p class="program-mode">PRESENCIAL | CAMPUS SUR</p>
+                <p class="program-desc">Desarrolla soluciones tecnológicas de vanguardia usando inteligencia artificial, redes y ciencia de datos para resolver problemas reales.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="comunicacion" data-campus="sur" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/diseno-industrial.png" alt="Diseño Industrial" /></div>
+              <div class="program-body">
+                <span class="program-tag">Diseño</span>
+                <h3>Diseño Industrial</h3>
+                <p class="program-mode">PRESENCIAL | CAMPUS SUR</p>
+                <p class="program-desc">Crea productos y experiencias que integran funcionalidad, estética y sustentabilidad para mejorar la vida de las personas.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="negocios" data-campus="sur" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/direccion-financiera.png" alt="Dirección Financiera" /></div>
+              <div class="program-body">
+                <span class="program-tag">Economía y Negocios</span>
+                <h3>Dirección Financiera</h3>
+                <p class="program-mode">PRESENCIAL | CAMPUS SUR</p>
+                <p class="program-desc">Lidera organizaciones con visión estratégica, innovación y sentido de responsabilidad social en el mundo financiero.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="turismo" data-campus="sur" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/gastronomia.png" alt="Gastronomía" /></div>
+              <div class="program-body">
+                <span class="program-tag">Turismo y Gastronomía</span>
+                <h3>Gastronomía</h3>
+                <p class="program-mode">PRESENCIAL | CAMPUS SUR</p>
+                <p class="program-desc">Domina el arte culinario con técnicas de vanguardia y una formación empresarial que te permitirá liderar proyectos gastronómicos.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <!-- Repeat 4 -->
+            <article class="program-card" data-area="salud" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/medico-cirujano.png" alt="Médico Cirujano" /></div>
+              <div class="program-body">
+                <span class="program-tag">Ciencias de la Salud</span>
+                <h3>Médico Cirujano</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Forma profesionales de la medicina con una visión integral, ética y humanista preparados para transformar el sistema de salud.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="comunicacion" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/arquitectura.png" alt="Arquitectura" /></div>
+              <div class="program-body">
+                <span class="program-tag">Comunicación, Arquitectura y Diseño</span>
+                <h3>Arquitectura</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Diseña y construye espacios innovadores que transformen comunidades con criterio estético, técnico y sustentable.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="ingenierias" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/ingenieria-en-sistemas-y-tecnologia-de-informacion.png" alt="Ingeniería en Sistemas" /></div>
+              <div class="program-body">
+                <span class="program-tag">Ingenierías</span>
+                <h3>Ingeniería en Sistemas y Tecnología de Información</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Desarrolla soluciones tecnológicas de vanguardia usando inteligencia artificial, redes y ciencia de datos para resolver problemas reales.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="comunicacion" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/diseno-industrial.png" alt="Diseño Industrial" /></div>
+              <div class="program-body">
+                <span class="program-tag">Diseño</span>
+                <h3>Diseño Industrial</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Crea productos y experiencias que integran funcionalidad, estética y sustentabilidad para mejorar la vida de las personas.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="negocios" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/direccion-financiera.png" alt="Dirección Financiera" /></div>
+              <div class="program-body">
+                <span class="program-tag">Economía y Negocios</span>
+                <h3>Dirección Financiera</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Lidera organizaciones con visión estratégica, innovación y sentido de responsabilidad social en el mundo financiero.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </article>
+            <article class="program-card" data-area="turismo" data-campus="bicampus" data-mode="presencial">
+              <div class="program-img"><img src="assets/oferta-academica/elige-tu-camino/gastronomia.png" alt="Gastronomía" /></div>
+              <div class="program-body">
+                <span class="program-tag">Turismo y Gastronomía</span>
+                <h3>Gastronomía</h3>
+                <p class="program-mode">PRESENCIAL | BICAMPUS</p>
+                <p class="program-desc">Domina el arte culinario con técnicas de vanguardia y una formación empresarial que te permitirá liderar proyectos gastronómicos.</p>
+                <a class="btn-program" href="#">Conocer más <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
             </article>
           </div>
-          <a class="btn btn-purple reveal" href="#" data-reveal>Ver todos los resultados</a>
+
+          <!-- Pagination -->
+          <nav class="pagination reveal" data-reveal aria-label="Paginación de resultados">
+            <button class="page-btn active" data-page="1">1</button>
+            <button class="page-btn" data-page="2">2</button>
+            <button class="page-btn" data-page="3">3</button>
+            <button class="page-btn page-next" data-page="next" aria-label="Siguiente">›</button>
+          </nav>
         </div>
       </section>
 
-      <!-- ===== 4. DESCUBRE TU LICENCIATURA IDEAL ===== -->
-      <section class="oferta-discover section-pad" id="descubre">
-        <div class="container oferta-discover-layout">
-          <div class="section-intro reveal" data-reveal>
-            <p class="tagline"><span></span>Descubre tu licenciatura ideal</p>
-            <h2>¿Aún no decides qué carrera estudiar?</h2>
-            <p>Si todavía estás explorando, te apoyamos en tu decisión para que encuentres una opción alineada con tus intereses y metas.</p>
-          </div>
-          <div class="discover-content reveal" data-reveal>
-            <div class="discover-cards">
-              <div class="discover-card">
-                <img class="discover-icon" src="assets/icons/icon-test.svg" alt="" />
-                <div>
-                  <h3>Hacer test vocacional</h3>
-                  <p>Descubre en qué área y carreras te puedes desempeñar con mayor éxito.</p>
-                </div>
-                <a href="#">Realizar test ›</a>
-              </div>
-              <div class="discover-card">
-                <img class="discover-icon" src="assets/icons/icon-asesor.svg" alt="" />
-                <div>
-                  <h3>Habla con un asesor</h3>
-                  <p>Nuestro equipo te guía hacia el programa que mejor se ajusta a ti.</p>
-                </div>
-                <a href="#">Hablar con asesor ›</a>
-              </div>
-            </div>
-            <img class="discover-photo" src="assets/oferta-discover.png" alt="Estudiantes descubriendo su licenciatura ideal" />
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== 5. POR QUÉ SER UN LEÓN ANÁHUAC ===== -->
+      <!-- ===== 4. POR QUÉ SER UN LEÓN ANÁHUAC ===== -->
       <section class="experience" id="experiencia">
         <div class="container experience-layout">
           <div class="experience-sticky">
@@ -314,105 +504,119 @@
             <article class="experience-card reveal" data-reveal>
               <div>
                 <h3>Un futuro con más posibilidades</h3>
-                <p>Desarrolla las habilidades, conocimientos y experiencia que necesitas para construir un perfil integral. Nuestro modelo educativo integra formación profesional, intelectual, humana, social y espiritual.</p>
+                <p>
+                  Desarrolla las habilidades, conocimientos y experiencia que necesitas para construir un
+                  perfil integral. Nuestro modelo educativo integra formación profesional, intelectual,
+                  humana, social y espiritual.
+                </p>
               </div>
-              <img src="assets/leon.jpg" alt="Estudiante Anáhuac celebrando" />
+              <video autoplay muted loop playsinline>
+                <source src="assets/estudiantes-humo.mp4" type="video/mp4" />
+              </video>
             </article>
             <article class="experience-card reveal" data-reveal>
               <div>
                 <h3>Oportunidades internacionales</h3>
-                <p>Amplía tu experiencia con intercambios, convenios y opciones académicas que amplían tu perspectiva y enriquecen tu formación dentro y fuera del aula.</p>
+                <p>
+                  Amplía tu experiencia con intercambios, convenios y opciones académicas que amplían tu
+                  perspectiva y enriquecen tu formación dentro y fuera del aula.
+                </p>
               </div>
-              <img src="assets/prestigio.jpg" alt="Estudiantes en programa de intercambio" />
+              <img src="assets/exp-internacional.png" alt="Estudiantes en programa de intercambio internacional" />
             </article>
             <article class="experience-card reveal" data-reveal>
               <div>
                 <h3>Una vida universitaria que te haga crecer</h3>
-                <p>Haz deporte, participa en actividades culturales, involúcrate en proyectos sociales y forma parte de una comunidad activa.</p>
+                <p>
+                  Haz deporte, participa en actividades culturales, involúcrate en proyectos sociales y
+                  forma parte de una comunidad activa.
+                </p>
               </div>
-              <img src="assets/hero-football.jpg" alt="Equipo deportivo Anáhuac" />
+              <video autoplay muted loop playsinline>
+                <source src="assets/jugadores-corriendo.mp4" type="video/mp4" />
+              </video>
             </article>
             <article class="experience-card reveal" data-reveal>
               <div>
                 <h3>Espacios que impulsan tu experiencia</h3>
-                <p>Disfruta de espacios creados para tu desarrollo integral: deportes, salud, innovación y recursos únicos que encontrarás en la Universidad Anáhuac.</p>
+                <p>
+                  Disfruta de espacios creados para tu desarrollo integral: deportes, salud, innovación
+                  y recursos únicos que encontrarás en la Universidad Anáhuac.
+                </p>
               </div>
-              <img src="assets/hero-friends.jpg" alt="Campus Anáhuac" />
+              <img src="assets/exp-espacios.png" alt="Campus y espacios de la Universidad Anáhuac" />
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ===== 6. HISTORIAS ANÁHUAC ===== -->
-      <section class="oferta-stories section-pad" id="historias">
+      <!-- ===== 4. HISTORIAS ANÁHUAC ===== -->
+      <section class="stories section-pad">
         <div class="container">
-          <div class="oferta-stories-head reveal" data-reveal>
-            <div>
+          <div class="stories-head">
+            <div class="section-intro wide reveal" data-reveal>
               <h2>Historias Anáhuac</h2>
               <p>Leones Anáhuac que han transformado sus vidas con nosotros</p>
             </div>
-            <div class="arrow-buttons">
-              <button type="button" aria-label="Testimonio anterior">‹</button>
-              <button type="button" aria-label="Siguiente testimonio">›</button>
+            <div class="story-arrows reveal" data-reveal><button type="button">↑</button><button type="button">↓</button></div>
+          </div>
+          <div class="stories-viewport">
+            <div class="stories-track">
+              <!-- Row 1 (Style 1: img, img, blockquote) -->
+              <div class="stories-row">
+                <img src="assets/historia-1.jpg" alt="María Gómez, egresada Anáhuac" />
+                <img src="assets/historia-2.jpg" alt="Estudiante en laboratorio" />
+                <blockquote class="quote orange">
+                  <p>"Anáhuac me dio más que una carrera, me dio una red de amigos y mentores que cambió mi trayectoria profesional"</p>
+                  <cite>María Gómez <span>Egresada, Ingeniería</span></cite>
+                </blockquote>
+              </div>
+              <!-- Row 2 (Style 2: blockquote, img, img) -->
+              <div class="stories-row">
+                <blockquote class="quote purple">
+                  <p>"Los convenios internacionales me permitieron estudiar un semestre en Europa y eso fue decisivo para conseguir mi primer trabajo"</p>
+                  <cite>Carlos Mendoza <span>Egresado, Ingeniería en Sistemas</span></cite>
+                </blockquote>
+                <img src="assets/historia-3.jpg" alt="Egresado trabajando con equipo de cómputo" />
+                <img src="assets/historia-4.jpg" alt="Carlos Mendoza, egresado Anáhuac" />
+              </div>
+              <!-- Row 3 (Style 1: img, img, blockquote) -->
+              <div class="stories-row">
+                <img src="assets/historia-2.jpg" alt="Estudiantes en campus" />
+                <img src="assets/historia-1.jpg" alt="Egresada exitosa" />
+                <blockquote class="quote orange">
+                  <p>"Gracias a las prácticas profesionales, conseguí trabajo antes de terminar la carrera"</p>
+                  <cite>Daniel Torres <span>Egresado, Administración</span></cite>
+                </blockquote>
+              </div>
+              <!-- Row 4 (Style 2: blockquote, img, img) -->
+              <div class="stories-row">
+                <blockquote class="quote purple">
+                  <p>"La formación integral que recibí en Anáhuac me preparó para enfrentar cualquier reto profesional con confianza"</p>
+                  <cite>Ana Rodríguez <span>Egresada, Comunicación</span></cite>
+                </blockquote>
+                <img src="assets/historia-3.jpg" alt="Proyecto estudiantil" />
+                <img src="assets/historia-4.jpg" alt="Laboratorio de innovación" />
+              </div>
+              <!-- Row 5 (Style 1: img, img, blockquote) -->
+              <div class="stories-row">
+                <img src="assets/historia-4.jpg" alt="Ceremonia de graduación" />
+                <img src="assets/historia-1.jpg" alt="Vida en campus" />
+                <blockquote class="quote orange">
+                  <p>"El programa de movilidad me cambió la vida. Estudié en España y volví con una visión completamente nueva"</p>
+                  <cite>Sofía Martínez <span>Egresada, Derecho</span></cite>
+                </blockquote>
+              </div>
+              <!-- Row 6 (Style 2: blockquote, img, img) -->
+              <div class="stories-row">
+                <blockquote class="quote purple">
+                  <p>"Anáhuac no solo me dio conocimientos, me dio una comunidad para toda la vida"</p>
+                  <cite>Roberto Silva <span>Egresado, Ingeniería Industrial</span></cite>
+                </blockquote>
+                <img src="assets/historia-2.jpg" alt="Espacios de estudio" />
+                <img src="assets/historia-3.jpg" alt="Comunidad Anáhuac" />
+              </div>
             </div>
-          </div>
-          <div class="testimonials reveal" data-reveal>
-            <article class="testimonial-card">
-              <img src="assets/historia-1.jpg" alt="María Gómez, egresada" />
-              <div class="testimonial-body">
-                <blockquote>"Anáhuac me dio más que una carrera, me dio una red de amigos y mentores que cambió mi trayectoria profesional"</blockquote>
-                <div class="testimonial-author">
-                  <strong>María Gómez</strong>
-                  <span>Egresada, Ingeniería</span>
-                </div>
-              </div>
-            </article>
-            <div class="testimonial-divider"></div>
-            <article class="testimonial-card">
-              <img src="assets/historia-3.jpg" alt="Testimonio alumno Anáhuac" />
-              <div class="testimonial-body">
-                <blockquote>"La experiencia internacional en Anáhuac me abrió puertas en Europa y me dio una perspectiva global que hoy aplico en mi trabajo"</blockquote>
-                <div class="testimonial-author">
-                  <strong>Carlos Martínez</strong>
-                  <span>Egresado, Negocios Internacionales</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== 7. FORMULARIO ===== -->
-      <section class="oferta-form section-pad" id="formulario">
-        <div class="container oferta-form-layout">
-          <div class="oferta-form-content">
-            <div class="section-intro reveal" data-reveal>
-              <p class="tagline"><span></span>Actúa</p>
-              <h2>Da el siguiente paso</h2>
-              <p>Encuentra tu camino académico y comienza tu transformación</p>
-            </div>
-            <form class="contact-form reveal" data-reveal>
-              <div class="form-field">
-                <label for="form-name">Nombre</label>
-                <input type="text" id="form-name" placeholder="Tu nombre completo" required />
-              </div>
-              <div class="form-field">
-                <label for="form-email">Correo</label>
-                <input type="email" id="form-email" placeholder="tu@email.com" required />
-              </div>
-              <div class="form-field">
-                <label for="form-msg">Cuéntanos sobre ti</label>
-                <textarea id="form-msg" rows="4" placeholder="¿Qué te gustaría saber?"></textarea>
-              </div>
-              <label class="form-check">
-                <input type="checkbox" required />
-                <span>Acepto los términos legales</span>
-              </label>
-              <button class="btn btn-dark" type="submit">Explorar</button>
-            </form>
-          </div>
-          <div class="oferta-form-mascot reveal" data-reveal>
-            <img src="assets/leonel-mascot.png" alt="Leonel, mascota de la Universidad Anáhuac" />
           </div>
         </div>
       </section>
@@ -439,7 +643,7 @@
           <form class="newsletter">
             <h2>Mantente informado sobre las novedades del mes de nuestra Universidad</h2>
             <p>Recibe noticias sobre admisiones, eventos preuniversitarios y vida universitaria en tu correo.</p>
-            <div><input type="email" placeholder="Tu correo electrónico" aria-label="Email" /><button class="btn btn-dark" type="submit">Suscribirme</button></div>
+            <div><input type="email" placeholder="Email" aria-label="Email" /><button class="btn btn-dark" type="submit">Enviar</button></div>
             <small>Al suscribirte aceptas nuestra política de privacidad</small>
           </form>
         </div>
@@ -452,10 +656,10 @@
             <p>Av. Universidad Anáhuac 46, Col. Lomas Anáhuac. Huixquilucan, Estado de México.</p>
             <a href="#">+52 (55) 5627 0210</a>
             <div class="social-links" aria-label="Redes sociales Campus Norte">
-              <a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a>
-              <a href="#" aria-label="X"><svg><use href="#icon-x"></use></svg></a>
-              <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a>
-              <a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a>
+              <a href="#" aria-label="Facebook Campus Norte"><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="#" aria-label="X Campus Norte"><svg><use href="#icon-x"></use></svg></a>
+              <a href="#" aria-label="Instagram Campus Norte"><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="#" aria-label="YouTube Campus Norte"><svg><use href="#icon-youtube"></use></svg></a>
             </div>
           </div>
           <div>
@@ -466,10 +670,10 @@
             <a href="#">Acreditaciones</a>
             <a href="#">Noticias</a>
             <div class="social-links" aria-label="Redes sociales Campus Sur">
-              <a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a>
-              <a href="#" aria-label="X"><svg><use href="#icon-x"></use></svg></a>
-              <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a>
-              <a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a>
+              <a href="#" aria-label="Facebook Campus Sur"><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="#" aria-label="X Campus Sur"><svg><use href="#icon-x"></use></svg></a>
+              <a href="#" aria-label="Instagram Campus Sur"><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="#" aria-label="YouTube Campus Sur"><svg><use href="#icon-youtube"></use></svg></a>
             </div>
           </div>
           <div>
@@ -479,10 +683,10 @@
             <a href="#">Síguenos en línea</a>
             <a href="#">Ubicación</a>
             <div class="social-links" aria-label="Redes sociales Anáhuac México">
-              <a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a>
-              <a href="#" aria-label="X"><svg><use href="#icon-x"></use></svg></a>
-              <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a>
-              <a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a>
+              <a href="#" aria-label="Facebook Anáhuac México"><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="#" aria-label="X Anáhuac México"><svg><use href="#icon-x"></use></svg></a>
+              <a href="#" aria-label="Instagram Anáhuac México"><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="#" aria-label="YouTube Anáhuac México"><svg><use href="#icon-youtube"></use></svg></a>
             </div>
           </div>
         </div>
@@ -493,4 +697,5 @@
     <script src="script.js"></script>
     <script src="oferta.js"></script>
   </body>
+
 </html>
