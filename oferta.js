@@ -5,54 +5,163 @@
 (function () {
   "use strict";
 
-  /* ===== AREA CAROUSEL ===== */
-  const areaScroller = document.querySelector(".area-scroller");
-  const areaNav = document.querySelector(".area-nav");
+  /* ===== AREA CAROUSEL — infinite vertical scroll, 2-card step ===== */
+  const areaGrid = document.querySelector(".area-grid");
+  const areasSection = document.querySelector(".oferta-areas");
 
-  if (areaScroller && areaNav) {
-    const cards = areaScroller.querySelectorAll(".area-card");
-    const dotsWrap = areaNav.querySelector(".dots");
-    const [prevBtn, nextBtn] = areaNav.querySelectorAll(".arrow-buttons button");
+  if (areaGrid && areasSection) {
+    const originalCards = Array.from(areaGrid.querySelectorAll(".area-card"));
+    const [prevBtn, nextBtn] = areasSection.querySelectorAll(".arrow-buttons button");
+    const totalOriginal = originalCards.length;
+    const GAP = 20;
 
-    /* Create dots */
-    cards.forEach((_, i) => {
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.setAttribute("aria-label", `Ir al área ${i + 1}`);
-      if (i === 0) dot.classList.add("active");
-      dot.addEventListener("click", () => scrollToCard(i));
-      dotsWrap.appendChild(dot);
-    });
+    if (totalOriginal) {
+      /* --- Wrap cards in an inner .area-track --- */
+      const track = document.createElement("div");
+      track.className = "area-track";
+      originalCards.forEach((card) => track.appendChild(card));
+      areaGrid.appendChild(track);
 
-    const dots = dotsWrap.querySelectorAll("button");
-
-    function scrollToCard(index) {
-      const card = cards[index];
-      if (!card) return;
-      areaScroller.scrollTo({
-        left: card.offsetLeft - areaScroller.offsetLeft,
-        behavior: "smooth",
+      /* --- Clone all cards for seamless infinite loop --- */
+      originalCards.forEach((card) => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        clone.classList.add("is-clone");
+        track.appendChild(clone);
       });
+
+      let currentRow = 0;
+      let isAnimating = false;
+
+      /* How many columns the track shows (depends on breakpoint) */
+      function getColCount() {
+        if (window.innerWidth <= 1180) return 1;
+        return 2;
+      }
+
+      /* How many rows of original cards exist */
+      function getTotalRows() {
+        return Math.ceil(totalOriginal / getColCount());
+      }
+
+      /* How many rows are visible at once */
+      function getVisibleRows() {
+        if (window.innerWidth <= 768) return 1;
+        return 2;
+      }
+
+      function getCardAt(row) {
+        const cols = getColCount();
+        const index = row * cols;
+        const allCards = track.querySelectorAll(".area-card");
+        return allCards[index] || null;
+      }
+
+      function getRowHeightAt(row) {
+        const card = getCardAt(row);
+        if (!card) return 0;
+        return card.offsetHeight + GAP;
+      }
+
+      function getOffsetForRow(row) {
+        let offset = 0;
+        for (let i = 0; i < row; i++) {
+          offset += getRowHeightAt(i);
+        }
+        return offset;
+      }
+
+      function setContainerHeight() {
+        const visible = getVisibleRows();
+        let totalH = 0;
+        for (let i = 0; i < visible; i++) {
+          totalH += getRowHeightAt(currentRow + i);
+        }
+        areaGrid.style.transition = "height 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+        areaGrid.style.height = (totalH - GAP) + "px";
+      }
+
+      function slideTo(row, animate) {
+        if (animate === undefined) animate = true;
+        currentRow = row;
+        const offset = getOffsetForRow(currentRow);
+        track.style.transition = animate
+          ? "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
+          : "none";
+        track.style.transform = "translateY(-" + offset + "px)";
+        setContainerHeight();
+      }
+
+      function normalizeAfterTransition() {
+        const total = getTotalRows();
+        if (currentRow >= total) {
+          currentRow = currentRow - total;
+          slideTo(currentRow, false);
+        } else if (currentRow < 0) {
+          currentRow = currentRow + total;
+          slideTo(currentRow, false);
+        }
+      }
+
+      function next() {
+        if (isAnimating) return;
+        isAnimating = true;
+        slideTo(currentRow + 1, true);
+        setTimeout(() => {
+          normalizeAfterTransition();
+          isAnimating = false;
+        }, 520);
+      }
+
+      function prev() {
+        if (isAnimating) return;
+        isAnimating = true;
+        const total = getTotalRows();
+        if (currentRow === 0) {
+          slideTo(total, false);
+          void track.offsetHeight;
+          slideTo(total - 1, true);
+        } else {
+          slideTo(currentRow - 1, true);
+        }
+        setTimeout(() => {
+          normalizeAfterTransition();
+          isAnimating = false;
+        }, 520);
+      }
+
+      prevBtn?.addEventListener("click", prev);
+      nextBtn?.addEventListener("click", next);
+
+      /* Recalculate on resize */
+      window.addEventListener("resize", () => {
+        setContainerHeight();
+        slideTo(currentRow, false);
+      });
+
+      /* Initial setup */
+      setContainerHeight();
+      slideTo(0, false);
+
+      /* Reveal animation for the area grid */
+      areaGrid.style.opacity = "0";
+      areaGrid.style.transform = "translateY(40px)";
+      areaGrid.style.transition = "opacity 600ms ease, transform 600ms ease";
+
+      const gridObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              areaGrid.style.opacity = "1";
+              areaGrid.style.transform = "translateY(0)";
+              gridObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.05 }
+      );
+      gridObserver.observe(areaGrid);
     }
-
-    function updateDots() {
-      const scrollLeft = areaScroller.scrollLeft;
-      const cardWidth = cards[0].offsetWidth + 20; /* 20 = gap */
-      const activeIdx = Math.round(scrollLeft / cardWidth);
-      dots.forEach((d, i) => d.classList.toggle("active", i === activeIdx));
-    }
-
-    areaScroller.addEventListener("scroll", updateDots, { passive: true });
-
-    prevBtn?.addEventListener("click", () => {
-      const cardWidth = cards[0].offsetWidth + 20;
-      areaScroller.scrollBy({ left: -cardWidth, behavior: "smooth" });
-    });
-
-    nextBtn?.addEventListener("click", () => {
-      const cardWidth = cards[0].offsetWidth + 20;
-      areaScroller.scrollBy({ left: cardWidth, behavior: "smooth" });
-    });
   }
 
   /* ===== FILTER PILLS ===== */

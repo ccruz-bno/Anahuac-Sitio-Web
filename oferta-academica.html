@@ -24,7 +24,7 @@
       </a>
 
       <nav class="desktop-nav" aria-label="Navegación principal">
-        <a href="oferta-academica.html" class="is-active">Oferta Académica</a>
+        <a href="oferta-academica.html" class="is-active">Licenciaturas</a>
         <a href="Inicio.html#admisiones">Admisiones</a>
         <div class="nav-dropdown">
           <button type="button" aria-expanded="false">
@@ -32,8 +32,11 @@
             Costos y Apoyos
           </button>
           <div class="dropdown-panel" role="menu">
-            <a href="#costos" role="menuitem">Costos</a>
-            <a href="#apoyos" role="menuitem">Apoyos</a>
+            <a href="#" role="menuitem">Costos</a>
+            <a href="#" role="menuitem">Cotiza tu licenciatura</a>
+            <a href="#" role="menuitem">Apoyos educativos</a>
+            <a href="#" role="menuitem">Financiamiento</a>
+            <a href="#" role="menuitem">Concursos</a>
           </div>
         </div>
         <div class="nav-dropdown">
@@ -58,20 +61,27 @@
 
     <div class="mobile-menu" aria-hidden="true">
       <div class="mobile-menu-panel">
-        <a class="is-active" href="oferta-academica.html">Oferta Académica</a>
+        <a class="is-active" href="oferta-academica.html">Licenciaturas</a>
         <a href="Inicio.html#admisiones">Admisiones</a>
         <button class="mobile-subnav" type="button" aria-expanded="false">
           <span class="arrow-down"></span>
           Costos y Apoyos
         </button>
-        <div class="mobile-submenu" style="display:none">
-          <a href="#costos">Costos</a>
-          <a href="#apoyos">Apoyos</a>
+        <div class="mobile-submenu">
+          <a href="#">Costos</a>
+          <a href="#">Cotiza tu licenciatura</a>
+          <a href="#">Apoyos educativos</a>
+          <a href="#">Financiamiento</a>
+          <a href="#">Concursos</a>
         </div>
         <button class="mobile-subnav" type="button" aria-expanded="false">
           <span class="arrow-down"></span>
           Vida Universitaria
         </button>
+        <div class="mobile-submenu">
+          <a href="Inicio.html#experiencia">Experiencia</a>
+          <a href="Inicio.html#eventos">Eventos</a>
+        </div>
         <a class="btn btn-dark mobile-contact" href="#formulario">Contacto</a>
       </div>
     </div>
@@ -81,11 +91,13 @@
       <section class="oferta-hero section-pad" id="inicio">
         <div class="container oferta-hero-inner">
           <div class="oferta-hero-copy">
-            <p class="oferta-breadcrumb reveal" data-reveal>Oferta Académica de la Universidad Anáhuac México</p>
+            <p class="tagline reveal" data-reveal><span></span>Oferta Académica de la Universidad Anáhuac México</p>
             <h1 class="reveal" data-reveal>Encuentra lo que te apasiona</h1>
           </div>
           <div class="oferta-hero-info reveal" data-reveal>
-            <p>Descubre las ocho áreas académicas y todos nuestros programas de licenciatura disponibles</p>
+            <div class="hero-card">
+              <p>Descubre las ocho áreas académicas y todos nuestros programas de licenciatura disponibles</p>
+            </div>
             <div class="button-row">
               <a class="btn btn-dark" href="#areas">Explorar áreas académicas</a>
               <a class="btn btn-light" href="#buscar">Buscar por licenciatura</a>
@@ -97,75 +109,72 @@
       <!-- ===== 2. ÁREAS ACADÉMICAS ===== -->
       <section class="oferta-areas section-pad" id="areas">
         <div class="container">
-          <div class="section-intro on-orange reveal" data-reveal>
-            <p class="tagline"><span></span>Áreas</p>
-            <h2>Conoce nuestras áreas académicas</h2>
-            <p>Agrupamos nuestras licenciaturas por áreas académicas para que te sea más fácil identificar campos afines, comparar opciones y descubrir caminos que quizá aún no habías considerado.</p>
+          <div class="programs-head">
+            <div class="section-intro on-orange reveal" data-reveal>
+              <p class="tagline"><span></span>Áreas</p>
+              <h2>Conoce nuestras áreas académicas</h2>
+              <p>Agrupamos nuestras licenciaturas por áreas académicas para que te sea más fácil identificar campos afines, comparar opciones y descubrir caminos que quizá aún no habías considerado.</p>
+            </div>
+            <div class="arrow-buttons reveal" data-reveal>
+              <button type="button" aria-label="Área anterior">‹</button>
+              <button type="button" aria-label="Siguiente área">›</button>
+            </div>
           </div>
-          <div class="area-scroller reveal" data-reveal>
+          <div class="area-grid reveal" data-reveal>
             <article class="area-card">
-              <div class="area-card-top">
-                <img src="assets/area-salud.jpg" alt="Ciencias de la Salud" />
-              </div>
+              <img src="assets/oferta academica/areas/Ciencias-de-la-Salud.jpg" alt="Ciencias de la Salud" />
               <div class="area-card-body">
                 <h3>Ciencias de la Salud</h3>
                 <p class="area-hook">¿Te interesa comprender cómo funciona el cuerpo humano?</p>
                 <p class="area-desc">¿Te apasiona cuidar de las personas, promover la salud o investigar nuevas soluciones para enfermedades? Si te motiva el bienestar de los demás y deseas contribuir al avance de la ciencia médica, esta área es para ti.</p>
-                <div class="area-actions">
-                  <a class="btn btn-dark btn-sm" href="#">Ver licenciaturas</a>
-                  <a class="area-link" href="#">Explorar área Académica ›</a>
-                </div>
+                <a class="btn btn-dark btn-sm" href="#">Explorar Licenciaturas</a>
               </div>
             </article>
             <article class="area-card">
-              <div class="area-card-top">
-                <img src="assets/area-ingenierias.jpg" alt="Ingenierías y Ciencias" />
-              </div>
+              <img src="assets/oferta academica/areas/Ingenierias-y-Ciencias.png" alt="Ingenierías y Ciencias" />
               <div class="area-card-body">
                 <h3>Ingenierías y Ciencias</h3>
                 <p class="area-hook">¿Eres curioso sobre cómo funcionan las cosas a tu alrededor?</p>
-                <p class="area-desc">¿Te gusta resolver problemas, trabajar con tecnología avanzada o construir soluciones innovadoras? Si te apasionan las matemáticas, las ciencias y la tecnología, esta área te permitirá convertir ideas en realidades tangibles y liderar el cambio en el mundo.</p>
-                <div class="area-actions">
-                  <a class="btn btn-dark btn-sm" href="#">Ver licenciaturas</a>
-                  <a class="area-link" href="#">Explorar área Académica ›</a>
-                </div>
+                <p class="area-desc">Si te apasionan las matemáticas, las ciencias y la tecnología, esta área te permitirá convertir ideas en realidades tangibles y liderar el cambio en el mundo.</p>
+                <a class="btn btn-dark btn-sm" href="#">Explorar Licenciaturas</a>
               </div>
             </article>
             <article class="area-card">
-              <div class="area-card-top">
-                <img src="assets/area-negocios.jpg" alt="Negocios y Economía" />
-              </div>
+              <img src="assets/oferta academica/areas/Negocios-y-Economia.png" alt="Negocios y Economía" />
               <div class="area-card-body">
                 <h3>Negocios y Economía</h3>
-                <p class="area-hook">¿Te interesa el mundo de las finanzas y la estrategia empresarial?</p>
-                <p class="area-desc">Si sueñas con emprender, liderar organizaciones o transformar industrias con ideas innovadoras, esta área te prepara con las herramientas y visión necesarias para destacar en el mundo de los negocios.</p>
-                <div class="area-actions">
-                  <a class="btn btn-dark btn-sm" href="#">Ver licenciaturas</a>
-                  <a class="area-link" href="#">Explorar área Académica ›</a>
-                </div>
+                <p class="area-hook">¿Sueñas con liderar tu propia empresa o gestionar proyectos globales?</p>
+                <p class="area-desc">¿Te interesa el mundo financiero, la economía global o la estrategia empresarial? Si tienes habilidades para la organización, la toma de decisiones y el trabajo en equipo, esta área te ayudará a convertirte en un líder en el mundo de los negocios.</p>
+                <a class="btn btn-dark btn-sm" href="#">Explorar Licenciaturas</a>
               </div>
             </article>
             <article class="area-card">
-              <div class="area-card-top">
-                <img src="assets/area-comunicacion.jpg" alt="Comunicación, Arquitectura y Diseño" />
-              </div>
+              <img src="assets/oferta academica/areas/Comunicacion-Arquitectura-y-Diseno.png" alt="Comunicación, Arquitectura y Diseño" />
               <div class="area-card-body">
                 <h3>Comunicación, Arquitectura y Diseño</h3>
-                <p class="area-hook">¿Te apasiona la creatividad y la expresión visual?</p>
-                <p class="area-desc">Si disfrutas comunicar ideas, diseñar espacios o crear contenido que inspire, esta área combina pensamiento creativo con habilidades técnicas para que transformes entornos y narrativas.</p>
-                <div class="area-actions">
-                  <a class="btn btn-dark btn-sm" href="#">Ver licenciaturas</a>
-                  <a class="area-link" href="#">Explorar área Académica ›</a>
-                </div>
+                <p class="area-hook">¿Te apasiona explorar ideas, comunicar perspectivas o diseñar soluciones que transformen la sociedad?</p>
+                <p class="area-desc">Aquí encontrarás el espacio perfecto para desarrollar tu pensamiento crítico, tus habilidades creativas y tu capacidad de impacto en un mundo en constante evolución.</p>
+                <a class="btn btn-dark btn-sm" href="#">Explorar Licenciaturas</a>
               </div>
             </article>
-          </div>
-          <div class="area-nav reveal" data-reveal>
-            <div class="dots"></div>
-            <div class="arrow-buttons">
-              <button type="button" aria-label="Área anterior">‹</button>
-              <button type="button" aria-label="Siguiente área">›</button>
-            </div>
+            <article class="area-card area-card--hidden">
+              <img src="assets/oferta academica/areas/Ciencias-Sociales-y-Derecho.png" alt="Ciencias Sociales y Derecho" />
+              <div class="area-card-body">
+                <h3>Ciencias Sociales y Derecho</h3>
+                <p class="area-hook">¿Te interesa entender el comportamiento humano, la sociedad, las políticas públicas o la defensa de los derechos humanos?</p>
+                <p class="area-desc">Si quieres marcar una diferencia en tu comunidad y en el mundo, esta área te permitirá explorar las relaciones humanas y su impacto en el entorno global.</p>
+                <a class="btn btn-dark btn-sm" href="#">Explorar Licenciaturas</a>
+              </div>
+            </article>
+            <article class="area-card area-card--hidden">
+              <img src="assets/oferta academica/areas/Turismo-Gastronomia-y-Hospitalidad.png" alt="Turismo, Gastronomía y Hospitalidad" />
+              <div class="area-card-body">
+                <h3>Turismo, Gastronomía y Hospitalidad</h3>
+                <p class="area-hook">¿Te encanta explorar nuevas culturas, sabores y experiencias?</p>
+                <p class="area-desc">¿Te apasiona el servicio, el arte culinario o la gestión de eventos y viajes? Si disfrutas planear momentos memorables para los demás, esta área es ideal para ti.</p>
+                <a class="btn btn-dark btn-sm" href="#">Explorar Licenciaturas</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>

@@ -10,17 +10,18 @@
 
 /* ===== 1. HERO ===== */
 .oferta-hero {
-  background:
-    radial-gradient(ellipse at 20% 60%, rgba(205, 185, 239, 0.7) 0%, rgba(205, 185, 239, 0) 60%),
-    var(--white);
+  position: relative;
+  overflow: hidden;
   padding-top: 191px;
   padding-bottom: 100px;
+  background:
+    radial-gradient(ellipse at 80% -28%, rgba(205, 185, 239, 0.76) 0%, rgba(225, 214, 247, 0.38) 28%, rgba(255, 255, 255, 0) 52%),
+    var(--white);
 }
 
 .oferta-hero-inner {
   display: grid;
-  grid-template-columns: 1fr 505px;
-  gap: 60px;
+  grid-template-columns: 610px auto 505px;
   align-items: end;
 }
 
@@ -28,38 +29,29 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 610px;
+  grid-column: 1;
 }
 
-.oferta-breadcrumb {
-  font-size: 14px;
-  color: var(--text-gray);
-  letter-spacing: 0.5px;
-}
 
-.oferta-hero h1 {
-  font-family: var(--font-heading);
-  font-size: 100px;
-  line-height: 0.95;
-  font-weight: 700;
-  color: var(--black);
-}
 
 .oferta-hero-info {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 505px;
+  grid-column: 3;
 }
 
-.oferta-hero-info p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
+.oferta-hero .hero-card {
+  background: var(--purple-2);
 }
 
 .oferta-hero-info .button-row {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 0;
 }
 
 /* ===== 2. ÁREAS ACADÉMICAS ===== */
@@ -74,71 +66,87 @@
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.4;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0 3.5px, transparent 4px);
-  background-size: 30px 30px;
-  pointer-events: none;
+  z-index: 0;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.55) 1px, transparent 1px);
+  background-size: 89px 85px;
+  transform: translate(-32px, -20px);
+  -webkit-mask-image:
+    linear-gradient(to bottom, black 40%, transparent 100%),
+    linear-gradient(to right, black 80%, transparent 100%);
+  -webkit-mask-composite: destination-in;
+  mask-image:
+    linear-gradient(to bottom, black 40%, transparent 100%),
+    linear-gradient(to right, black 80%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.oferta-areas .container {
+  position: relative;
+  z-index: 1;
 }
 
 .oferta-areas .section-intro {
-  text-align: center;
-  max-width: 715px;
-  margin: 0 auto 60px;
+  width: 715px;
 }
 
-.area-scroller {
-  display: flex;
+.oferta-areas .section-intro h2,
+.oferta-areas .section-intro p {
+  text-wrap: balance;
+}
+
+/* Area cards — wrapper */
+.area-grid {
+  overflow: hidden;
+  padding-bottom: 4px;
+}
+
+/* Area cards — inner track (2-col grid, translated by JS) */
+.area-track {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-bottom: 20px;
-}
-
-.area-scroller::-webkit-scrollbar {
-  display: none;
 }
 
 .area-card {
-  flex: 0 0 300px;
-  height: 500px;
+  height: auto;
+  min-height: 380px;
+  padding: 40px;
   background: var(--white);
   color: var(--black);
   border-radius: var(--radius);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 300ms ease, box-shadow 300ms ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.area-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+.area-card--hidden {
+  /* controlled by JS carousel */
 }
 
-.area-card-top {
-  height: 180px;
-  overflow: hidden;
-}
-
-.area-card-top img {
+.area-card > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: var(--radius);
+  aspect-ratio: 4 / 5;
 }
 
 .area-card-body {
-  flex: 1;
-  padding: 24px;
   display: flex;
   flex-direction: column;
 }
 
 .area-card-body h3 {
   font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
   margin-bottom: 10px;
+  text-wrap: balance;
 }
 
 .area-hook {
@@ -146,6 +154,7 @@
   font-weight: 600;
   color: var(--orange);
   margin-bottom: 8px;
+  text-wrap: balance;
 }
 
 .area-desc {
@@ -153,83 +162,12 @@
   line-height: 1.5;
   color: var(--color-text-secondary);
   flex: 1;
+  text-wrap: balance;
 }
 
-.area-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.area-actions .btn-sm {
-  font-size: 13px;
-  padding: 10px 20px;
-}
-
-.area-link {
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--orange);
-  text-decoration: none;
-  letter-spacing: 0.5px;
-}
-
-.area-link:hover {
-  text-decoration: underline;
-}
-
-.area-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-}
-
-.area-nav .dots {
-  display: flex;
-  gap: 8px;
-}
-
-.area-nav .dots button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid var(--white);
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  transition: background 200ms;
-}
-
-.area-nav .dots button.active {
-  background: var(--white);
-}
-
-.area-nav .arrow-buttons {
-  display: flex;
-  gap: 12px;
-}
-
-.area-nav .arrow-buttons button {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid var(--white);
-  background: transparent;
-  color: var(--white);
-  font-size: 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 200ms, color 200ms;
-}
-
-.area-nav .arrow-buttons button:hover {
-  background: var(--white);
-  color: var(--orange);
+.area-card-body .btn-sm {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* ===== 3. ELIGE TU CAMINO ===== */
@@ -681,11 +619,95 @@
   object-fit: contain;
 }
 
+@media (max-width: 1440px) {
+  .oferta-hero-inner {
+    grid-template-columns: 6fr 5fr;
+    gap: var(--grid-gutter, 20px);
+    align-items: start;
+  }
+
+  .oferta-hero-copy,
+  .oferta-hero-info {
+    grid-column: auto;
+  }
+
+  .oferta-hero-info {
+    justify-self: end;
+  }
+
+  .area-card {
+    width: 100%;
+    min-height: 340px;
+    padding: 28px;
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .area-card > img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .area-card-body h3 {
+    font-size: 24px;
+  }
+
+  .area-hook {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .area-desc {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+}
+
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
   .oferta-hero-inner {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .oferta-hero-copy,
+  .oferta-hero-info {
+    max-width: none;
+  }
+
+  /* Áreas: 2 columnas — info izq, cards der */
+  .oferta-areas .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .oferta-areas .programs-head {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+
+  .oferta-areas .section-intro {
+    width: 100%;
+  }
+
+  .oferta-areas .arrow-buttons {
+    margin-top: auto;
+  }
+
+  .area-grid {
+    overflow: hidden;
+  }
+
+  .area-track {
+    grid-template-columns: 1fr;
+  }
+
+  .area-card {
+    max-width: 100%;
+    grid-template-columns: 2fr 3fr;
+    min-height: auto;
+    padding: 24px;
   }
 
   .oferta-hero h1 {
@@ -724,9 +746,113 @@
   }
 }
 
+/* ===== TABLET ===== */
+@media (max-width: 1100px) {
+  /* Áreas: vuelve a 1 columna full-width */
+  .oferta-areas .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-items: center;
+    max-width: 90%;
+  }
+
+  .oferta-areas .programs-head {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0;
+    max-width: 80%;
+  }
+
+  .area-track {
+    justify-items: center;
+  }
+
+  .area-card {
+    max-width: 80%;
+    grid-template-columns: 2fr 3fr;
+    min-height: auto;
+    padding: 24px;
+  }
+}
+
+/* Tablet — card-body ancho: textos XL */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .area-card-body h3 {
+    font-size: 24px;
+  }
+
+  .area-hook {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .area-desc {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+}
+
+/* Tablet wide (>900px) — card-body más ancho, textos grandes */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .area-card-body h3 {
+    font-size: 32px;
+  }
+
+  .area-hook {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .area-desc {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
 @media (max-width: 768px) {
   .oferta-hero {
     padding-top: 140px;
+    padding-bottom: 60px;
+  }
+
+  .area-card {
+    grid-template-columns: 2fr 3fr;
+    max-width: 100%;
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .area-card > img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .area-card-body h3 {
+    font-size: 24px;
+  }
+
+  .area-desc {
+    margin-bottom: 20px;
+  }
+
+  /* Mobile: areas 1 columna */
+  .oferta-areas .container {
+    grid-template-columns: 1fr;
+    max-width: 80%;
+    justify-items: center;
+  }
+
+  /* Mobile: arrows + head below cards */
+  .oferta-areas .programs-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .oferta-areas .programs-head .arrow-buttons {
+    display: flex;
+    justify-content: flex-start;
   }
 
   .oferta-hero h1 {
@@ -752,11 +878,6 @@
     justify-self: start;
   }
 
-  .area-card {
-    flex: 0 0 280px;
-    height: 460px;
-  }
-
   .testimonial-card {
     flex-direction: column;
   }
@@ -774,5 +895,43 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .oferta-areas .container {
+    max-width: 60%;
+    grid-template-columns: 1fr;
+  }
+
+  .area-card > img {
+    min-width: 180px;
+    max-width: 250px;
+  }
+
+  .area-card {
+    grid-template-columns: 1fr;
+  }
+
+  .area-card-body .btn-sm {
+    padding: 10px 18px !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .oferta-areas .container {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .oferta-areas .container {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 395px) {
+  .oferta-areas .container {
+    max-width: 100%;
   }
 }
