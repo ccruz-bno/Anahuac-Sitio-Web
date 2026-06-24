@@ -427,7 +427,7 @@
 }
 
 .oferta-search .program-card {
-  background: #f2f2f2;
+  background: var(--gray);
   border: none;
   border-radius: 20px;
   padding: 40px;
@@ -628,82 +628,124 @@
   font-size: 20px;
 }
 
-/* ===== 4. DESCUBRE TU LICENCIATURA IDEAL ===== */
-.oferta-discover {
-  background: rgba(0, 0, 0, 0.03);
+/* ===== DESCUBRE TU LICENCIATURA IDEAL ===== */
+.descubre {
+  background: var(--gray);
 }
 
-.oferta-discover .section-intro {
+.descubre .section-intro {
   text-align: center;
-  max-width: 700px;
+  align-items: center;
+  max-width: 820px;
   margin: 0 auto 60px;
 }
 
-.discover-content {
+.descubre .section-intro h2,
+.descubre .section-intro p {
+  text-wrap: balance;
+}
+
+.descubre-grid {
   display: grid;
-  grid-template-columns: 1fr 505px;
+  grid-template-columns: auto 505px;
   gap: 40px;
-  align-items: start;
+  align-items: stretch;
 }
 
-.discover-cards {
-  display: flex;
-  flex-direction: column;
+.descubre-cards {
+  display: grid;
+  grid-template-columns: 295px 295px;
   gap: 20px;
+  width: 610px;
 }
 
-.discover-card {
-  background: var(--white);
-  border: 2px solid rgba(0, 0, 0, 0.06);
-  border-radius: var(--radius);
-  padding: 30px;
+.descubre-card {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
+  background: var(--white);
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 295px;
+  height: 390px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--black);
   transition: transform 200ms, box-shadow 200ms, border-color 200ms;
 }
 
-.discover-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+.descubre-card--orange {
   border-color: var(--orange);
 }
 
-.discover-icon {
+.descubre-card--purple {
+  border-color: var(--purple-2);
+}
+
+.descubre-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.descubre-card-icon {
   width: 48px;
   height: 48px;
-  padding: 8px;
-  background: var(--purple-2);
-  border-radius: 12px;
 }
 
-.discover-card h3 {
+.descubre-card h3 {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 40px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1;
+  text-wrap: balance;
 }
 
-.discover-card p {
+.descubre-card p {
   font-size: 15px;
   line-height: 1.6;
   color: var(--color-text-secondary);
+  text-wrap: balance;
 }
 
-.discover-card a {
+.descubre-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 600;
-  color: var(--orange);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  margin-top: auto;
 }
 
-.discover-photo {
+.descubre-card--orange .descubre-cta {
+  color: var(--orange);
+}
+
+.descubre-card--purple .descubre-cta {
+  color: var(--purple-2);
+}
+
+.descubre-cta svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.descubre-img {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.descubre-img img {
   width: 100%;
-  height: 610px;
+  height: 100%;
   object-fit: cover;
-  border-radius: var(--radius);
+  display: block;
 }
 
 /* ===== 6. HISTORIAS ANÁHUAC ===== */
@@ -1005,6 +1047,21 @@
   .oferta-form-mascot img {
     max-width: 300px;
   }
+
+  .descubre-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+    justify-content: unset;
+  }
+
+  .descubre-img {
+    min-width: unset;
+    max-width: 100%;
+    overflow: hidden;
+  }
 }
 
 /* Elige tu camino: 2 columns for tablet/md/lg */
@@ -1025,6 +1082,30 @@
   .oferta-search .section-intro {
     max-width: 70%;
   }
+
+  /* Descubre: 2 cols, cards stacked */
+  .descubre-grid {
+    grid-template-columns: auto auto;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .descubre-cards {
+    width: auto;
+    grid-template-columns: minmax(250px, 295px) minmax(250px, 295px);
+    gap: 20px;
+  }
+
+  .descubre-card {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+  }
+
+  .descubre-img {
+    max-width: 505px;
+    max-height: 610px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -1043,6 +1124,29 @@
 @media (max-width: 1100px) {
   .oferta-search .section-intro {
     max-width: 100%;
+  }
+
+  /* Descubre: 1 col 90% */
+  .descubre-grid {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .descubre-cards {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .descubre-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .descubre-img {
+    max-width: 100%;
+    min-width: unset;
   }
 
   .oferta-search::before,
@@ -1145,6 +1249,24 @@
   .oferta-search::before,
   .oferta-search::after {
     transform: scale(0.6);
+  }
+
+  /* Descubre: 1 col 100% */
+  .descubre-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .descubre-cards {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .descubre-card {
+    width: 100%;
+    height: auto;
   }
 
   .oferta-search::before {
@@ -1264,6 +1386,12 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+  }
+}
+
+@media (min-width: 476px) and (max-width: 768px) {
+  .descubre-grid {
+    max-width: 80%;
   }
 }
 
