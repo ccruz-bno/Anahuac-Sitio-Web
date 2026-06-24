@@ -583,7 +583,7 @@ body::before {
 
 .stories::after {
   right: -330px;
-  bottom: -620px;
+  top: -400px;
   width: 1320px;
   height: 1380px;
   opacity: 1;
