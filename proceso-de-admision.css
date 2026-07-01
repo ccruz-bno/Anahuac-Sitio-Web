@@ -3,63 +3,158 @@
    Uses tokens from styles.css (shared DS)
    ============================================= */
 
-/* ===== 1. HERO ===== */
+/* ===== 1. HERO (copia del hero de Oferta Académica) ===== */
 .adm-hero {
-  background:
-    radial-gradient(ellipse at 70% 40%, rgba(205, 185, 239, 0.5) 0%, transparent 60%),
-    var(--white);
+  position: relative;
+  overflow: hidden;
   padding-top: 191px;
   padding-bottom: 100px;
-  text-align: center;
+  /* Elemento de fondo degradado (radial morado sobre blanco) */
+  background:
+    radial-gradient(ellipse at 80% -28%, rgba(205, 185, 239, 0.76) 0%, rgba(225, 214, 247, 0.38) 28%, rgba(255, 255, 255, 0) 52%),
+    var(--white);
 }
 
 .adm-hero-inner {
-  max-width: 800px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 610px auto 505px;
+  align-items: end;
+}
+
+.adm-hero-copy {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 24px;
+  gap: 20px;
+  max-width: 610px;
+  grid-column: 1;
 }
 
-.adm-breadcrumb {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--orange);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.adm-hero-copy .tagline,
+.adm-hero-copy h1 {
+  text-wrap: balance;
 }
 
-.adm-hero h1 {
-  font-family: var(--font-heading);
-  font-size: 80px;
-  line-height: 0.95;
-  font-weight: 700;
+.adm-hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 505px;
+  grid-column: 3;
 }
 
-.adm-hero-sub {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
-  max-width: 560px;
+.adm-hero .hero-card {
+  background: var(--purple-2);
 }
 
-.adm-hero .button-row {
+.adm-hero .hero-card p {
+  text-wrap: balance;
+}
+
+.adm-hero-info .button-row {
   display: flex;
   gap: 12px;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 12px;
+  margin-top: 0;
+}
+
+@media (max-width: 1440px) {
+  .adm-hero-inner {
+    grid-template-columns: 6fr 5fr;
+    gap: var(--grid-gutter, 20px);
+    align-items: start;
+  }
+
+  .adm-hero-copy,
+  .adm-hero-info {
+    grid-column: auto;
+  }
+
+  .adm-hero-info {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 1180px) {
+  .adm-hero {
+    padding-top: 180px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .adm-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .adm-hero-copy,
+  .adm-hero-info {
+    max-width: none;
+  }
+
+  .adm-hero h1 {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .adm-hero {
+    padding-top: 140px;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .adm-hero h1 {
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .adm-hero {
+    padding-top: 160px;
+  }
+}
+
+@media (max-width: 475px) {
+  .adm-hero {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 /* ===== 2. PASOS DE ADMISIÓN ===== */
 .adm-steps {
-  background: var(--white);
+  background: var(--gray);
+  overflow: hidden;
+}
+
+/* Fondo de puntos (mismo patrón que la sección Contacto ".questions" de Inicio) */
+.adm-steps::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.3;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0 2px, transparent 2.5px);
+  background-size: 35px 35px;
+  transform: translateY(160px);
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to top, black 50%, transparent 100%);
+  mask-image: linear-gradient(to top, black 50%, transparent 100%);
+}
+
+.adm-steps .container {
+  position: relative;
+  z-index: 1;
 }
 
 .adm-steps .section-intro {
-  text-align: center;
+  text-align: left;
   margin-bottom: 60px;
+}
+
+.adm-steps .section-intro p:not(.tagline) {
+  text-wrap: balance;
 }
 
 /* Timeline */
@@ -106,6 +201,8 @@
   font-family: var(--font-heading);
   font-size: 20px;
   font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
   color: var(--color-text-secondary);
   transition: all 300ms ease;
 }
@@ -144,7 +241,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  background: rgba(0, 0, 0, 0.03);
+  background: var(--white);
   border-radius: var(--radius);
   padding: 50px;
   animation: panelIn 400ms ease;
@@ -165,19 +262,37 @@
   gap: 20px;
 }
 
+.step-panel-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .step-tag {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--orange);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+.step-time {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.step-time strong {
+  font-weight: 600;
+  color: var(--black);
+}
+
 .step-panel h3 {
   font-family: var(--font-heading);
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.15;
+  text-wrap: balance;
 }
 
 .step-panel ol {
@@ -191,6 +306,78 @@
   font-size: 15px;
   line-height: 1.6;
   color: var(--color-text-secondary);
+  text-wrap: pretty;
+}
+
+/* Párrafo introductorio dentro de un panel (p. ej. antes de una lista) */
+.step-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  text-wrap: pretty;
+}
+
+/* Lista de documentos con viñetas y sub-nivel */
+.step-doclist {
+  padding-left: 22px;
+  list-style: disc;
+  color: var(--color-text-secondary);
+}
+
+.step-doclist li {
+  font-size: 15px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.step-doclist li + li,
+.step-doclist ul {
+  margin-top: 8px;
+}
+
+.step-doclist ul {
+  padding-left: 20px;
+  list-style: circle;
+}
+
+/* Lista numerada visible (marcadores decimales) */
+.step-numlist {
+  padding-left: 22px;
+  list-style: decimal;
+  color: var(--color-text-secondary);
+}
+
+.step-numlist li {
+  font-size: 15px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.step-numlist li + li {
+  margin-top: 8px;
+}
+
+/* Nota al pie dentro de un panel (aclaraciones con *) */
+.step-note {
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  opacity: 0.85;
+  text-wrap: pretty;
+}
+
+/* Enlace secundario de texto (acción distinta al CTA principal) */
+.step-link {
+  width: fit-content;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.step-link:hover {
+  text-decoration: underline;
 }
 
 .step-panel .button-row {
@@ -202,7 +389,7 @@
 
 .step-panel img {
   width: 100%;
-  height: 380px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius);
 }
@@ -577,13 +764,24 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1100px) {
-  .adm-hero h1 {
-    font-size: 60px;
-  }
-
   .step-panel {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  /* En una sola columna, la imagen 4:3 se vuelve muy alta; la limitamos
+     a un banner apaisado (object-fit: cover recorta el excedente) y la
+     mostramos al 80% del ancho, centrada, para que quede más proporcionada. */
+  .step-panel img {
+    width: 80%;
+    max-height: 440px;
+    justify-self: center;
+  }
+
+  /* En una sola columna, el cuerpo también al 80% y centrado */
+  .step-panel-body {
+    width: 80%;
+    justify-self: center;
   }
 
   .medicina-steps {
@@ -610,14 +808,6 @@
 }
 
 @media (max-width: 768px) {
-  .adm-hero {
-    padding-top: 140px;
-  }
-
-  .adm-hero h1 {
-    font-size: 44px;
-  }
-
   .steps-timeline {
     flex-wrap: wrap;
     gap: 20px;
@@ -646,5 +836,29 @@
 
   .adm-form {
     padding: 24px;
+  }
+}
+
+/* En móvil, banner más compacto (3:2) y a todo el ancho del panel */
+@media (max-width: 600px) {
+  .step-panel img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+  }
+
+  /* El cuerpo vuelve a todo el ancho para no quedar angosto en móvil */
+  .step-panel-body {
+    width: 100%;
+  }
+}
+
+/* Reparto equitativo de los step-dots al envolver (efecto "balance"):
+   en vez de caer uno por uno, se acomodan en filas iguales (3 + 3). */
+@media (max-width: 515px) {
+  .steps-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: 20px;
   }
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Admisiones | Universidad Anáhuac México</title>
+    <title>Proceso de admisión | Universidad Anáhuac México</title>
     <meta
       name="description"
       content="Conoce los pasos para ingresar a Anáhuac México. Proceso de admisión, documentos, fechas de examen y asesoría personalizada."
@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="admisiones.css" />
+    <link rel="stylesheet" href="proceso-de-admision.css" />
   </head>
   <body>
     <header class="site-header">
@@ -23,51 +23,86 @@
         <img src="assets/logo-anahuac.svg" alt="Anáhuac México" />
       </a>
       <nav class="desktop-nav" aria-label="Navegación principal">
-        <a href="oferta-academica.html">Oferta Académica</a>
-        <a href="admisiones.html" class="is-active">Admisiones</a>
+        <a href="oferta-academica.html">Licenciaturas</a>
         <div class="nav-dropdown">
           <button type="button" aria-expanded="false">
             <span class="arrow-down"></span>
-            Costos y Apoyos
+            Admisiones
           </button>
           <div class="dropdown-panel" role="menu">
-            <a href="#costos" role="menuitem">Costos</a>
-            <a href="#apoyos" role="menuitem">Apoyos</a>
+            <a href="proceso-de-admision.html" class="is-active" role="menuitem">Proceso de admisión</a>
+            <a href="#" role="menuitem">Fechas de examen</a>
+            <a href="#" role="menuitem">Revalidación y equivalencia</a>
+            <a href="#" role="menuitem">Curso para examen de admisión</a>
           </div>
         </div>
         <div class="nav-dropdown">
           <button type="button" aria-expanded="false">
             <span class="arrow-down"></span>
-            Vida Universitaria
+            Costos y apoyos
+          </button>
+          <div class="dropdown-panel" role="menu">
+            <a href="#" role="menuitem">Costos</a>
+            <a href="#" role="menuitem">Cotiza tu licenciatura</a>
+            <a href="#" role="menuitem">Apoyos educativos</a>
+            <a href="#" role="menuitem">Financiamiento</a>
+            <a href="#" role="menuitem">Concursos</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button type="button" aria-expanded="false">
+            <span class="arrow-down"></span>
+            Vida universitaria
           </button>
           <div class="dropdown-panel" role="menu">
             <a href="Inicio.html#experiencia" role="menuitem">Experiencia</a>
             <a href="Inicio.html#eventos" role="menuitem">Eventos</a>
           </div>
         </div>
+        <a href="#">Foráneos</a>
       </nav>
+
       <a class="btn btn-dark nav-contact" href="#contacto">Contacto</a>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </header>
 
     <div class="mobile-menu" aria-hidden="true">
       <div class="mobile-menu-panel">
-        <a href="oferta-academica.html">Oferta Académica</a>
-        <a class="is-active" href="admisiones.html">Admisiones</a>
+        <a href="oferta-academica.html">Licenciaturas</a>
         <button class="mobile-subnav" type="button" aria-expanded="false">
           <span class="arrow-down"></span>
-          Costos y Apoyos
+          Admisiones
         </button>
-        <div class="mobile-submenu" style="display:none">
-          <a href="#costos">Costos</a>
-          <a href="#apoyos">Apoyos</a>
+        <div class="mobile-submenu">
+          <a href="proceso-de-admision.html" class="is-active">Proceso de admisión</a>
+          <a href="#">Fechas de examen</a>
+          <a href="#">Revalidación y equivalencia</a>
+          <a href="#">Curso para examen de admisión</a>
         </div>
         <button class="mobile-subnav" type="button" aria-expanded="false">
           <span class="arrow-down"></span>
-          Vida Universitaria
+          Costos y apoyos
         </button>
+        <div class="mobile-submenu">
+          <a href="#">Costos</a>
+          <a href="#">Cotiza tu licenciatura</a>
+          <a href="#">Apoyos educativos</a>
+          <a href="#">Financiamiento</a>
+          <a href="#">Concursos</a>
+        </div>
+        <button class="mobile-subnav" type="button" aria-expanded="false">
+          <span class="arrow-down"></span>
+          Vida universitaria
+        </button>
+        <div class="mobile-submenu">
+          <a href="Inicio.html#experiencia">Experiencia</a>
+          <a href="Inicio.html#eventos">Eventos</a>
+        </div>
+        <a href="#">Foráneos</a>
         <a class="btn btn-dark mobile-contact" href="#contacto">Contacto</a>
       </div>
     </div>
@@ -76,12 +111,18 @@
       <!-- ===== 1. HERO ===== -->
       <section class="adm-hero section-pad" id="inicio">
         <div class="container adm-hero-inner">
-          <p class="adm-breadcrumb reveal" data-reveal>Admisiones</p>
-          <h1 class="reveal" data-reveal>Tu camino comienza aquí</h1>
-          <p class="adm-hero-sub reveal" data-reveal>Conoce los pasos para ingresar a Anáhuac México y encuentra toda la información que necesitas.</p>
-          <div class="button-row reveal" data-reveal>
-            <a class="btn btn-dark" href="#contacto">Iniciar mi proceso</a>
-            <a class="btn btn-light" href="#pasos">Ver los pasos</a>
+          <div class="adm-hero-copy">
+            <p class="tagline reveal" data-reveal><span></span>Admisiones</p>
+            <h1 class="reveal" data-reveal>Tu camino comienza aquí</h1>
+          </div>
+          <div class="adm-hero-info reveal" data-reveal>
+            <div class="hero-card">
+              <p>Conoce los pasos para ingresar a Anáhuac México y encuentra toda la información que necesitas.</p>
+            </div>
+            <div class="button-row">
+              <a class="btn btn-dark" href="#contacto">Iniciar mi proceso</a>
+              <a class="btn btn-light" href="#pasos">Ver los pasos</a>
+            </div>
           </div>
         </div>
       </section>
@@ -92,7 +133,7 @@
           <div class="section-intro wide reveal" data-reveal>
             <p class="tagline"><span></span>Proceso de admisión</p>
             <h2>Pasos hacia tu ingreso</h2>
-            <p>Conoce exactamente qué esperar en cada momento.</p>
+            <p>Conoce qué esperar en cada momento hacia tu ingreso a la Universidad Anáhuac ya seas estudiante nacional o internacional.</p>
           </div>
 
           <div class="steps-timeline reveal" data-reveal>
@@ -125,7 +166,10 @@
           <div class="step-panels">
             <article class="step-panel active" data-panel="0">
               <div class="step-panel-body">
-                <span class="step-tag">Paso 1</span>
+                <div class="step-panel-head">
+                  <span class="step-tag">Paso 1</span>
+                  <p class="step-time">Tiempo estimado: <strong>5 min.</strong></p>
+                </div>
                 <h3>Regístrate para iniciar tu solicitud en línea</h3>
                 <ol>
                   <li>Ingresa tu registro completando tus datos básicos aquí</li>
@@ -135,95 +179,88 @@
                 </ol>
                 <div class="button-row">
                   <a class="btn btn-dark" href="#">Empezar registro</a>
-                  <a class="btn btn-outline" href="#">Hablar con asesor ›</a>
                 </div>
               </div>
-              <img src="assets/hero-student.jpg" alt="Estudiante registrándose en línea" />
+              <img src="assets/proceso-de-admision/pasos-de-admision-img-1.webp" alt="Estudiante con audífonos llenando su registro en una laptop" />
             </article>
             <article class="step-panel" data-panel="1">
               <div class="step-panel-body">
-                <span class="step-tag">Paso 2</span>
-                <h3>Sube tus documentos al portal</h3>
-                <ol>
-                  <li>Prepara tu certificado de bachillerato en formato digital</li>
-                  <li>Escanea tu identificación oficial vigente</li>
-                  <li>Sube los documentos al portal de admisiones</li>
-                  <li>Verifica que todos los archivos se cargaron correctamente</li>
-                </ol>
+                <div class="step-panel-head">
+                  <span class="step-tag">Paso 2</span>
+                  <p class="step-time">Tiempo estimado: <strong>15 min.</strong></p>
+                </div>
+                <h3>Reúne y sube tus documentos</h3>
+                <p class="step-desc">Una vez que confirmes en tu mail, procede a registrar tu información personal y sube tus documentos:</p>
+                <ul class="step-doclist">
+                  <li>Acta de nacimiento.</li>
+                  <li>CURP.</li>
+                  <li>Documentos académicos de preparatoria:
+                    <ul>
+                      <li>Si concluiste la preparatoria, tu certificado de estudios.</li>
+                      <li>Si estudias actualmente, tu constancia de estudios con promedio acumulado.</li>
+                      <li>El formato PDF de tu historial académico de primer y segundo año de preparatoria y avance a la fecha.</li>
+                      <li>Si estás cursando preparatoria abierta, debes tener mínimo 29 materias acreditadas.</li>
+                    </ul>
+                  </li>
+                </ul>
                 <div class="button-row">
-                  <a class="btn btn-dark" href="#">Subir documentos</a>
-                  <a class="btn btn-outline" href="#">Hablar con asesor ›</a>
+                  <a class="btn btn-dark" href="#">Continuar proceso</a>
                 </div>
               </div>
-              <img src="assets/camino.jpg" alt="Estudiantes revisando documentos" />
+              <img src="assets/proceso-de-admision/pasos-de-admision-img-2.webp" alt="Manos abriendo un sobre con documentos" />
             </article>
             <article class="step-panel" data-panel="2">
               <div class="step-panel-body">
                 <span class="step-tag">Paso 3</span>
-                <h3>Completa tu información personal y académica</h3>
-                <ol>
-                  <li>Llena el formulario con tus datos personales completos</li>
-                  <li>Indica tu área de interés y programa de licenciatura</li>
-                  <li>Proporciona información de contacto de emergencia</li>
-                  <li>Revisa y confirma que toda la información es correcta</li>
-                </ol>
+                <h3>Completa tu información</h3>
+                <p class="step-desc">Ingresa de nueva cuenta a la plataforma, llena tu perfil de autodescripción y revisa que toda tu información esté correcta y completa antes de enviar la solicitud.</p>
                 <div class="button-row">
-                  <a class="btn btn-dark" href="#">Completar información</a>
-                  <a class="btn btn-outline" href="#">Hablar con asesor ›</a>
+                  <a class="btn btn-dark" href="#">Continuar proceso</a>
                 </div>
               </div>
-              <img src="assets/hero-friends.jpg" alt="Comunidad estudiantil Anáhuac" />
+              <img src="assets/proceso-de-admision/pasos-de-admision-img-3.webp" alt="Estudiante sonriente completando su información en una laptop" />
             </article>
             <article class="step-panel" data-panel="3">
               <div class="step-panel-body">
                 <span class="step-tag">Paso 4</span>
-                <h3>Agenda la fecha de tus pruebas de admisión</h3>
-                <ol>
-                  <li>Consulta las fechas disponibles en el calendario de exámenes</li>
-                  <li>Selecciona la fecha y horario de tu preferencia</li>
-                  <li>Recibe la confirmación con los detalles de tu examen</li>
-                  <li>Prepárate con los recursos que te compartiremos por correo</li>
+                <h3>Agenda tus pruebas</h3>
+                <p class="step-desc">Te aparecerán las fechas disponibles para tu examen y tu entrevista en el calendario de la página.</p>
+                <p class="step-desc">Las pruebas a presentar son:</p>
+                <ol class="step-numlist">
+                  <li>Examen de conocimientos académicos</li>
+                  <li>Entrevista personal</li>
+                  <li>Examen psicométrico</li>
                 </ol>
+                <p class="step-note">*Dependiendo de la carrera de ingreso se deberán de presentar pruebas complementarias, al seleccionar tu licenciatura, se te informará vía correo electrónico.</p>
+                <p class="step-desc">Deberás generar y guardar tu credencial digital, en ella encontrarás tu ID expediente (Banner ID, ID SIU) y las fechas para tu examen psicométrico y entrevista.</p>
+                <a class="step-link" href="#">Consultar próximas fechas de pruebas ›</a>
                 <div class="button-row">
-                  <a class="btn btn-dark" href="#">Ver fechas disponibles</a>
-                  <a class="btn btn-outline" href="#">Hablar con asesor ›</a>
+                  <a class="btn btn-dark" href="#">Agendar mis pruebas</a>
                 </div>
               </div>
-              <img src="assets/area-ingenierias.jpg" alt="Estudiante en examen de admisión" />
+              <img src="assets/proceso-de-admision/pasos-de-admision-img-4.webp" alt="Estudiante sonriente tomando notas en una libreta" />
             </article>
             <article class="step-panel" data-panel="4">
               <div class="step-panel-body">
                 <span class="step-tag">Paso 5</span>
-                <h3>Recibe tus resultados de admisión</h3>
-                <ol>
-                  <li>Recibirás un correo electrónico con tus resultados</li>
-                  <li>Consulta tu estatus en el portal de admisiones</li>
-                  <li>Si fuiste aceptado, revisa las instrucciones de inscripción</li>
-                  <li>Comunícate con tu asesor si tienes alguna duda</li>
-                </ol>
+                <h3>Fechas disponibles para tu examen</h3>
+                <p class="step-desc">Elige la fecha que mejor se ajuste a tu preparación. Contamos con múltiples opciones a lo largo del año.</p>
                 <div class="button-row">
-                  <a class="btn btn-dark" href="#">Consultar resultados</a>
-                  <a class="btn btn-outline" href="#">Hablar con asesor ›</a>
+                  <a class="btn btn-dark" href="#">Continuar proceso</a>
                 </div>
               </div>
-              <img src="assets/hero-medicine.jpg" alt="Estudiante celebrando admisión" />
+              <img src="assets/proceso-de-admision/pasos-de-admision-img-5.webp" alt="Calendario de escritorio con fechas disponibles" />
             </article>
             <article class="step-panel" data-panel="5">
               <div class="step-panel-body">
                 <span class="step-tag">Paso 6</span>
-                <h3>Termina tu inscripción y comienza tu camino</h3>
-                <ol>
-                  <li>Realiza el pago de inscripción en el portal</li>
-                  <li>Completa tu expediente con documentos originales</li>
-                  <li>Recibe tu credencial y accesos a plataformas</li>
-                  <li>¡Bienvenido a la familia Anáhuac!</li>
-                </ol>
+                <h3>Inversión en tu futuro profesional</h3>
+                <p class="step-desc">Las colegiaturas varían según tu programa. Ofrecemos becas y apoyos financieros para estudiantes calificados.</p>
                 <div class="button-row">
-                  <a class="btn btn-dark" href="#">Finalizar inscripción</a>
-                  <a class="btn btn-outline" href="#">Hablar con asesor ›</a>
+                  <a class="btn btn-dark" href="#">Calcular</a>
                 </div>
               </div>
-              <img src="assets/leon.jpg" alt="Nuevo León Anáhuac" />
+              <img src="assets/proceso-de-admision/pasos-de-admision-img-6.webp" alt="Persona usando el teléfono junto a una calculadora y documentos financieros" />
             </article>
           </div>
         </div>
@@ -388,7 +425,7 @@
           <form class="newsletter">
             <h2>Mantente informado sobre las novedades del mes de nuestra Universidad</h2>
             <p>Recibe noticias sobre admisiones, eventos preuniversitarios y vida universitaria en tu correo.</p>
-            <div><input type="email" placeholder="Tu correo electrónico" aria-label="Email" /><button class="btn btn-dark" type="submit">Suscribirme</button></div>
+            <div><input type="email" placeholder="Email" aria-label="Email" /><button class="btn btn-dark" type="submit">Enviar</button></div>
             <small>Al suscribirte aceptas nuestra política de privacidad</small>
           </form>
         </div>
@@ -401,32 +438,37 @@
             <p>Av. Universidad Anáhuac 46, Col. Lomas Anáhuac. Huixquilucan, Estado de México.</p>
             <a href="#">+52 (55) 5627 0210</a>
             <div class="social-links" aria-label="Redes sociales Campus Norte">
-              <a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a>
-              <a href="#" aria-label="X"><svg><use href="#icon-x"></use></svg></a>
-              <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a>
-              <a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a>
+              <a href="#" aria-label="Facebook Campus Norte"><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="#" aria-label="X Campus Norte"><svg><use href="#icon-x"></use></svg></a>
+              <a href="#" aria-label="Instagram Campus Norte"><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="#" aria-label="YouTube Campus Norte"><svg><use href="#icon-youtube"></use></svg></a>
             </div>
           </div>
           <div>
             <h3>Campus Sur</h3>
             <p>Av. de los Tanques 865, Col. Torres de Potrero. Álvaro Obregón, CDMX.</p>
             <a href="#">+52 (55) 5628 8800</a>
-            <a href="#">Misión y valores</a><a href="#">Acreditaciones</a><a href="#">Noticias</a>
+            <a href="#">Misión y valores</a>
+            <a href="#">Acreditaciones</a>
+            <a href="#">Noticias</a>
             <div class="social-links" aria-label="Redes sociales Campus Sur">
-              <a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a>
-              <a href="#" aria-label="X"><svg><use href="#icon-x"></use></svg></a>
-              <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a>
-              <a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a>
+              <a href="#" aria-label="Facebook Campus Sur"><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="#" aria-label="X Campus Sur"><svg><use href="#icon-x"></use></svg></a>
+              <a href="#" aria-label="Instagram Campus Sur"><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="#" aria-label="YouTube Campus Sur"><svg><use href="#icon-youtube"></use></svg></a>
             </div>
           </div>
           <div>
             <h3>Contacto</h3>
-            <a href="#">Teléfono principal</a><a href="#">Correo de admisiones</a><a href="#">Síguenos en línea</a><a href="#">Ubicación</a>
+            <a href="#">Teléfono principal</a>
+            <a href="#">Correo de admisiones</a>
+            <a href="#">Síguenos en línea</a>
+            <a href="#">Ubicación</a>
             <div class="social-links" aria-label="Redes sociales Anáhuac México">
-              <a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a>
-              <a href="#" aria-label="X"><svg><use href="#icon-x"></use></svg></a>
-              <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a>
-              <a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a>
+              <a href="#" aria-label="Facebook Anáhuac México"><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="#" aria-label="X Anáhuac México"><svg><use href="#icon-x"></use></svg></a>
+              <a href="#" aria-label="Instagram Anáhuac México"><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="#" aria-label="YouTube Anáhuac México"><svg><use href="#icon-youtube"></use></svg></a>
             </div>
           </div>
         </div>
@@ -435,6 +477,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="admisiones.js"></script>
+    <script src="proceso-de-admision.js"></script>
   </body>
 </html>
