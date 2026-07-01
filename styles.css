@@ -2960,3 +2960,12 @@ h2 {
     text-align: center;
   }
 }
+
+/* Path-card cerrada por encima de 1440px (donde antes eran 85px): 75px.
+   El rango 1181–1440 se queda en 65px (bloque max-width:1440px). */
+@media (min-width: 1441px) {
+  .path-card:not(:hover):not(.is-open) {
+    min-height: 75px;
+    height: 75px;
+  }
+}
