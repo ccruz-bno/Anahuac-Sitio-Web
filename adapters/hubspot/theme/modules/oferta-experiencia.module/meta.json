@@ -1,0 +1,13 @@
+{
+  "label": "Oferta · Experiencia — Anáhuac",
+  "help_text": "Sección «por qué ser un León Anáhuac» para Oferta: columna sticky + tarjetas con video o imagen. Las tarjetas 1 y 3 usan video autoplay por defecto (como la referencia).",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

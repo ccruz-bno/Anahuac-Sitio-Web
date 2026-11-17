@@ -1,0 +1,36 @@
+{# ===== Comienza tu camino — foto + tarjetas con hover (JS cambia .path-photo) ===== #}
+<section class="path section-pad" id="admisiones">
+  <div class="container">
+    <div class="section-intro wide reveal" data-reveal>
+      {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+      {% if module.intro %}<p>{{ module.intro }}</p>{% endif %}
+    </div>
+    <div class="path-layout">
+      <img class="path-photo reveal"
+           src="{{ module.main_photo.src or get_asset_url('../../images/camino.jpg') }}"
+           alt="{{ module.main_photo.alt|default('Estudiantes consultando información en laptop', true) }}"
+           data-reveal />
+      <div class="path-cards reveal" data-reveal>
+        {% set icon_fallbacks = ["icons/icon-admision.svg", "icons/icon-cotiza.svg", "icons/icon-apoyos.svg", "icons/icon-foraneo.svg", "icons/icon-foraneo.svg"] %}
+        {% set img_fallbacks = ["camino.jpg", "hero-student.jpg", "hero-medicine.jpg", "hero-friends.jpg", "extranjeros.webp"] %}
+        {% for card in module.cards %}
+          {% set icon_fb = icon_fallbacks[loop.index0] or "icons/icon-admision.svg" %}
+          {% set img_fb = img_fallbacks[loop.index0] or "camino.jpg" %}
+          <article class="path-card" tabindex="0" data-img="{{ card.hover_image.src or get_asset_url('../../images/' ~ img_fb) }}">
+            <div class="path-title">
+              <img class="path-icon" src="{{ card.icon.src or get_asset_url('../../images/' ~ icon_fb) }}" alt="{{ card.icon.alt }}" />
+              <h3>{{ card.title }}</h3>
+            </div>
+            <div class="path-bottom">
+              {% if card.description %}<p>{{ card.description }}</p>{% endif %}
+              {% if card.cta_text %}
+                <a href="{{ card.cta_link.url.href|default('#', true) }}"
+                   {% if card.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ card.cta_text }}</a>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+{
+  "label": "Áreas académicas — Anáhuac",
+  "help_text": "Carrusel vertical de áreas académicas (2 tarjetas por paso, scroll infinito por oferta.js). Eyebrow, título, intro y tarjetas editables.",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

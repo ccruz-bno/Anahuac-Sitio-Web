@@ -1,0 +1,13 @@
+{
+  "label": "Hero — Anáhuac",
+  "help_text": "Encabezado principal del home: título, tarjeta de oferta, botones y grid de imágenes.",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

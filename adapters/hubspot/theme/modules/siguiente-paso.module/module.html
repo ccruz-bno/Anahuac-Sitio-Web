@@ -1,0 +1,24 @@
+{# ===== El siguiente paso — tarjetas de acción ===== #}
+<section class="next section-pad" id="costos">
+  <div class="container next-layout">
+    <div class="section-intro reveal" data-reveal>
+      {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+      {% if module.intro %}<p>{{ module.intro }}</p>{% endif %}
+      <div class="long-arrow"></div>
+    </div>
+    <div class="next-cards reveal" data-reveal>
+      {% set fallbacks = ["seccion-costos/icono-1.svg", "seccion-costos/icono-2.svg", "seccion-costos/icono-3.svg", "seccion-costos/file-done-outlined.svg"] %}
+      {% for card in module.cards %}
+        <article class="next-card {% if loop.first %}featured{% endif %}">
+          <img src="{{ card.icon.src or get_asset_url('../../images/' ~ fallbacks[loop.index0 % 4]) }}" alt="{{ card.icon.alt|default('', true) }}" />
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+          {% if card.cta_text %}
+            <a href="{{ card.cta_link.url.href|default('#', true) }}"
+               {% if card.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ card.cta_text }}</a>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

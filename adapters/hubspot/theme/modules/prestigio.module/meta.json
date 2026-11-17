@@ -1,0 +1,13 @@
+{
+  "label": "Prestigio — Anáhuac",
+  "help_text": "Sección de prestigio: encabezado, video de YouTube y cifras animadas.",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

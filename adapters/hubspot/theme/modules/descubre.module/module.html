@@ -1,0 +1,31 @@
+{# ===== Descubre tu licenciatura ideal — intro + tarjetas de acción + imagen ===== #}
+<section class="descubre section-pad" id="descubre">
+  <div class="container">
+    <div class="section-intro wide reveal" data-reveal>
+      {% if module.eyebrow %}<p class="tagline"><span></span>{{ module.eyebrow }}</p>{% endif %}
+      {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+      {% if module.intro %}<p>{{ module.intro }}</p>{% endif %}
+    </div>
+
+    <div class="descubre-grid reveal" data-reveal>
+      <div class="descubre-cards">
+        {% set icon_fallbacks = ["descrubre-tu-licenciatura-ideal/FileTextOutlined.svg", "descrubre-tu-licenciatura-ideal/CommentOutlined.svg"] %}
+        {% for card in module.cards %}
+          <a class="descubre-card {{ card.variant }}" href="{{ card.link.url.href|default('#', true) }}"
+             {% if card.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+            <img class="descubre-card-icon"
+                 src="{{ card.icon.src or get_asset_url('../../images/oferta-academica/' ~ icon_fallbacks[loop.index0 % (icon_fallbacks|length)]) }}"
+                 alt="{{ card.icon.alt|default(card.title, true) }}" />
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.text }}</p>
+            <span class="descubre-cta">{{ card.cta_text }} <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        {% endfor %}
+      </div>
+      <div class="descubre-img">
+        <img src="{{ module.image.src or get_asset_url('../../images/oferta-academica/descrubre-tu-licenciatura-ideal/descubre-tu-licenciatura-ideal-imagen.png') }}"
+             alt="{{ module.image.alt|default('Estudiante Anáhuac pensando en su carrera', true) }}" />
+      </div>
+    </div>
+  </div>
+</section>

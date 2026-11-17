@@ -1,0 +1,107 @@
+[
+  {
+    "type": "text",
+    "name": "eyebrow",
+    "label": "Eyebrow (tagline)",
+    "default": "Mucho más que solo una Universidad."
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "Descubre por qué ser un León Anáhuac"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Texto de introducción",
+    "default": "Conoce por qué vivirás una experiencia universitaria única con nosotros."
+  },
+  {
+    "type": "text",
+    "name": "cta_text",
+    "label": "Botón · texto",
+    "default": "Conoce la experiencia Anáhuac"
+  },
+  {
+    "type": "link",
+    "name": "cta_link",
+    "label": "Botón · destino",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#"
+      },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "group",
+    "name": "slides",
+    "label": "Tarjetas de experiencia",
+    "help_text": "Cada tarjeta muestra un título, descripción e imagen.",
+    "occurrence": {
+      "min": 0,
+      "max": 12,
+      "default": 4
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "title",
+        "label": "Título (H3)",
+        "default": "Título de la tarjeta"
+      },
+      {
+        "type": "text",
+        "name": "description",
+        "label": "Descripción",
+        "default": "Descripción de la experiencia."
+      },
+      {
+        "type": "image",
+        "name": "image",
+        "label": "Imagen",
+        "responsive": true,
+        "default": {
+          "src": "",
+          "alt": "Experiencia Anáhuac"
+        }
+      }
+    ],
+    "default": [
+      {
+        "title": "Un futuro con más posibilidades",
+        "description": "Desarrolla las habilidades, conocimientos y experiencia que necesitas para construir un perfil integral. Nuestro modelo educativo integra formación profesional, intelectual, humana, social y espiritual.",
+        "image": {
+          "src": "",
+          "alt": "Estudiantes Anáhuac en actividad"
+        }
+      },
+      {
+        "title": "Oportunidades internacionales",
+        "description": "Amplía tu experiencia con intercambios, convenios y opciones académicas que amplían tu perspectiva y enriquecen tu formación dentro y fuera del aula.",
+        "image": {
+          "src": "",
+          "alt": "Estudiantes en programa de intercambio internacional"
+        }
+      },
+      {
+        "title": "Una vida universitaria que te haga crecer",
+        "description": "Haz deporte, participa en actividades culturales, involúcrate en proyectos sociales y forma parte de una comunidad activa.",
+        "image": {
+          "src": "",
+          "alt": "Vida universitaria y deporte en Anáhuac"
+        }
+      },
+      {
+        "title": "Espacios que impulsan tu experiencia",
+        "description": "Disfruta de espacios creados para tu desarrollo integral: deportes, salud, innovación y recursos únicos que encontrarás en la Universidad Anáhuac.",
+        "image": {
+          "src": "",
+          "alt": "Campus y espacios de la Universidad Anáhuac"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "label": "Anáhuac México",
+  "preview_path": "./templates/home.html",
+  "enable_domains": true,
+  "version": "1.0.0",
+  "author": {
+    "name": "Black n Orange"
+  },
+  "documentation_url": "",
+  "is_available_for_new_content": true,
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 640px)",
+      "previewWidth": {
+        "value": 375
+      }
+    }
+  ],
+  "cssAssets": [
+    {
+      "path": "./css/tokens.css"
+    },
+    {
+      "path": "./css/main.css"
+    }
+  ]
+}

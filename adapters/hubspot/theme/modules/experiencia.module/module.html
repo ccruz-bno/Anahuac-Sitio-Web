@@ -1,0 +1,29 @@
+{# ===== Experience — por qué ser un León Anáhuac (columna sticky + slides) ===== #}
+<section class="experience" id="experiencia">
+  <div class="container experience-layout">
+    <div class="experience-sticky">
+      <div class="section-intro reveal" data-reveal>
+        {% if module.eyebrow %}<p class="tagline"><span></span>{{ module.eyebrow }}</p>{% endif %}
+        {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+        {% if module.intro %}<p>{{ module.intro }}</p>{% endif %}
+        {% if module.cta_text %}
+          <a class="btn btn-purple" href="{{ module.cta_link.url.href|default('#', true) }}"
+             {% if module.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.cta_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="experience-slides">
+      {% set fallbacks = ["exp-vida.png", "exp-internacional.png", "hero-grid-fallback-imgs/jugadores-corriendo.png", "exp-espacios.png"] %}
+      {% for slide in module.slides %}
+        <article class="experience-card reveal" data-reveal>
+          <div>
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.description }}</p>
+          </div>
+          <img src="{{ slide.image.src or get_asset_url('../../images/' ~ fallbacks[loop.index0 % (fallbacks|length)]) }}"
+               alt="{{ slide.image.alt|default(slide.title, true) }}" loading="lazy" />
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

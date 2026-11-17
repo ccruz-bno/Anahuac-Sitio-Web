@@ -1,0 +1,95 @@
+[
+  {
+    "type": "text",
+    "name": "eyebrow",
+    "label": "Eyebrow (tagline)",
+    "default": "Prestigio Anáhuac"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "Excelencia en cifras"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Introducción",
+    "default": "Datos que hablan de nuestro compromiso con la calidad educativa."
+  },
+  {
+    "type": "text",
+    "name": "youtube_id",
+    "label": "ID del video de YouTube",
+    "help_text": "Solo el ID (ej. x3jzZcZOewk). El JS del theme lo usa para reproducir el video.",
+    "default": "x3jzZcZOewk"
+  },
+  {
+    "type": "image",
+    "name": "video_thumb",
+    "label": "Miniatura del video",
+    "help_text": "Opcional. Si se deja vacía se usa la miniatura de YouTube (hqdefault).",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Universidad Anáhuac México — Reproducir video"
+    }
+  },
+  {
+    "type": "group",
+    "name": "stats",
+    "label": "Cifras",
+    "help_text": "Cada tarjeta anima su número. 'Valor' es el número final; usa prefijo/sufijo para signos.",
+    "occurrence": {
+      "min": 0,
+      "max": 6,
+      "default": 3
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "value",
+        "label": "Valor (número final)",
+        "default": "0"
+      },
+      {
+        "type": "text",
+        "name": "prefix",
+        "label": "Prefijo",
+        "default": ""
+      },
+      {
+        "type": "text",
+        "name": "suffix",
+        "label": "Sufijo",
+        "default": ""
+      },
+      {
+        "type": "text",
+        "name": "text",
+        "label": "Etiqueta",
+        "default": "Etiqueta"
+      }
+    ],
+    "default": [
+      {
+        "value": "70",
+        "prefix": "",
+        "suffix": "%",
+        "text": "Egresados con trabajo"
+      },
+      {
+        "value": "65000",
+        "prefix": "+",
+        "suffix": "",
+        "text": "Egresados Anáhuac"
+      },
+      {
+        "value": "290",
+        "prefix": "+",
+        "suffix": "",
+        "text": "Convenios internacionales activos"
+      }
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "label": "Comienza tu camino — Anáhuac",
+  "help_text": "Sección de rutas: foto grande y tarjetas expandibles cuya imagen de hover cambia la foto.",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

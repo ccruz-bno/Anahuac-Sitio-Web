@@ -1,0 +1,183 @@
+[
+  {
+    "type": "text",
+    "name": "eyebrow",
+    "label": "Eyebrow (tagline)",
+    "default": "Áreas"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "Conoce nuestras áreas académicas"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Texto de introducción",
+    "default": "Agrupamos nuestras licenciaturas por áreas académicas para que te sea más fácil identificar campos afines, comparar opciones y descubrir caminos que quizá aún no habías considerado."
+  },
+  {
+    "type": "group",
+    "name": "areas",
+    "label": "Áreas académicas",
+    "help_text": "Tarjetas del carrusel. El slider (oferta.js) las clona para el scroll infinito. A partir de la 5.ª se marcan con «area-card--hidden» (fallback sin JS).",
+    "occurrence": {
+      "min": 0,
+      "max": 20,
+      "default": 6
+    },
+    "children": [
+      {
+        "type": "image",
+        "name": "image",
+        "label": "Imagen",
+        "responsive": true,
+        "default": {
+          "src": "",
+          "alt": "Área académica Anáhuac"
+        }
+      },
+      {
+        "type": "text",
+        "name": "item_name",
+        "label": "Nombre del área",
+        "default": "Área académica"
+      },
+      {
+        "type": "text",
+        "name": "hook",
+        "label": "Pregunta gancho",
+        "default": "¿Es esta tu área?"
+      },
+      {
+        "type": "text",
+        "name": "desc",
+        "label": "Descripción",
+        "default": "Describe brevemente esta área académica."
+      },
+      {
+        "type": "text",
+        "name": "link_text",
+        "label": "Enlace · texto",
+        "default": "Explorar Licenciaturas"
+      },
+      {
+        "type": "link",
+        "name": "link",
+        "label": "Enlace · destino",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "image": {
+          "src": "",
+          "alt": "Ciencias de la Salud"
+        },
+        "hook": "¿Te interesa comprender cómo funciona el cuerpo humano?",
+        "desc": "¿Te apasiona cuidar de las personas, promover la salud o investigar nuevas soluciones para enfermedades? Si te motiva el bienestar de los demás y deseas contribuir al avance de la ciencia médica, esta área es para ti.",
+        "link_text": "Explorar Licenciaturas",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "item_name": "Ciencias de la Salud"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Ingenierías y Ciencias"
+        },
+        "hook": "¿Eres curioso sobre cómo funcionan las cosas a tu alrededor?",
+        "desc": "Si te apasionan las matemáticas, las ciencias y la tecnología, esta área te permitirá convertir ideas en realidades tangibles y liderar el cambio en el mundo.",
+        "link_text": "Explorar Licenciaturas",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "item_name": "Ingenierías y Ciencias"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Negocios y Economía"
+        },
+        "hook": "¿Sueñas con liderar tu propia empresa o gestionar proyectos globales?",
+        "desc": "¿Te interesa el mundo financiero, la economía global o la estrategia empresarial? Si tienes habilidades para la organización, la toma de decisiones y el trabajo en equipo, esta área te ayudará a convertirte en un líder en el mundo de los negocios.",
+        "link_text": "Explorar Licenciaturas",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "item_name": "Negocios y Economía"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Comunicación, Arquitectura y Diseño"
+        },
+        "hook": "¿Te apasiona explorar ideas, comunicar perspectivas o diseñar soluciones que transformen la sociedad?",
+        "desc": "Aquí encontrarás el espacio perfecto para desarrollar tu pensamiento crítico, tus habilidades creativas y tu capacidad de impacto en un mundo en constante evolución.",
+        "link_text": "Explorar Licenciaturas",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "item_name": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Ciencias Sociales y Derecho"
+        },
+        "hook": "¿Te interesa entender el comportamiento humano, la sociedad, las políticas públicas o la defensa de los derechos humanos?",
+        "desc": "Si quieres marcar una diferencia en tu comunidad y en el mundo, esta área te permitirá explorar las relaciones humanas y su impacto en el entorno global.",
+        "link_text": "Explorar Licenciaturas",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "item_name": "Ciencias Sociales y Derecho"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Turismo, Gastronomía y Hospitalidad"
+        },
+        "hook": "¿Te encanta explorar nuevas culturas, sabores y experiencias?",
+        "desc": "¿Te apasiona el servicio, el arte culinario o la gestión de eventos y viajes? Si disfrutas planear momentos memorables para los demás, esta área es ideal para ti.",
+        "link_text": "Explorar Licenciaturas",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "item_name": "Turismo, Gastronomía y Hospitalidad"
+      }
+    ]
+  }
+]

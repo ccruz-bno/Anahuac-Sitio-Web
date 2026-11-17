@@ -1,0 +1,13 @@
+{
+  "label": "Encabezado — Anáhuac (global)",
+  "help_text": "Encabezado global: logo, navegación con submenús y CTA. Todo editable.",
+  "is_available_for_new_content": true,
+  "global": true,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "DESIGN"
+  ]
+}

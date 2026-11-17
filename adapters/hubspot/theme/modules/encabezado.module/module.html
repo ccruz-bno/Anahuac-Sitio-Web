@@ -1,0 +1,69 @@
+{# ===== Header global — logo + navegación con submenús + CTA =====
+   Variante «solo-logo»: quita navegación, CTA y menú móvil. Se usa en páginas de
+   tarea única donde el menú completo es una rampa de salida (ver specs/test-vocacional.md).
+   La variante es ADITIVA: el default sigue siendo «completo». #}
+{% set solo_logo = module.variante == 'solo-logo' %}
+<header class="site-header{% if solo_logo %} site-header--solo-logo{% endif %}">
+  <a class="logo-link" href="{{ module.logo_link.url.href|default('/', true) }}" aria-label="{{ module.logo.alt|default('Universidad Anáhuac México', true) }}"
+     {% if module.logo_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+    {% if module.logo.src %}
+      <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}"
+           {% if module.logo.width %}width="{{ module.logo.width }}"{% endif %}
+           {% if module.logo.height %}height="{{ module.logo.height }}"{% endif %} />
+    {% endif %}
+  </a>
+
+  {% if not solo_logo %}
+  <nav class="desktop-nav" aria-label="Navegación principal">
+    {% for item in module.nav_items %}
+      {% if item.submenu|length > 0 %}
+        <div class="nav-dropdown">
+          <button type="button" aria-expanded="false"><span class="arrow-down"></span>{{ item.text }}</button>
+          <div class="dropdown-panel" role="menu">
+            {% for sub in item.submenu %}
+              <a href="{{ sub.link.url.href|default('#', true) }}" role="menuitem"
+                 {% if sub.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ sub.text }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      {% else %}
+        <a href="{{ item.link.url.href|default('#', true) }}"
+           {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  {% if module.cta_text %}
+    <a class="btn btn-dark nav-contact" href="{{ module.cta_link.url.href|default('#', true) }}"
+       {% if module.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.cta_text }}</a>
+  {% endif %}
+
+  <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  {% endif %}
+</header>
+
+{% if not solo_logo %}
+<div class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-panel">
+    {% for item in module.nav_items %}
+      {% if item.submenu|length > 0 %}
+        <button class="mobile-subnav" type="button" aria-expanded="false"><span class="arrow-down"></span>{{ item.text }}</button>
+        <div class="mobile-submenu">
+          {% for sub in item.submenu %}
+            <a href="{{ sub.link.url.href|default('#', true) }}"
+               {% if sub.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ sub.text }}</a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <a href="{{ item.link.url.href|default('#', true) }}"
+           {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text }}</a>
+      {% endif %}
+    {% endfor %}
+    {% if module.cta_text %}
+      <a class="btn btn-dark mobile-contact" href="{{ module.cta_link.url.href|default('#', true) }}">{{ module.cta_text }}</a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}

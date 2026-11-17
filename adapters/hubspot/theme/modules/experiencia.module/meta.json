@@ -1,0 +1,13 @@
+{
+  "label": "Experiencia — Anáhuac",
+  "help_text": "Sección «por qué ser un León Anáhuac»: columna sticky con eyebrow, título, intro y botón, más tarjetas de experiencia. Todo editable.",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

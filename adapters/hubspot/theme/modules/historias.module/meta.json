@@ -1,0 +1,13 @@
+{
+  "label": "Historias — Anáhuac",
+  "help_text": "Slider vertical de historias de egresados: citas + imágenes, alternando color y orden. Todo editable.",
+  "is_available_for_new_content": true,
+  "global": true,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

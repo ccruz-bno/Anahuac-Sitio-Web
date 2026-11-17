@@ -1,0 +1,189 @@
+[
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "Comienza tu camino"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Introducción",
+    "default": "Accede rápidamente a la información que necesitas para decidir. Elige tu ruta y avanza."
+  },
+  {
+    "type": "image",
+    "name": "main_photo",
+    "label": "Foto principal",
+    "help_text": "Foto grande de la izquierda. Cambia al pasar el cursor sobre cada tarjeta.",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Estudiantes consultando información en laptop"
+    }
+  },
+  {
+    "type": "group",
+    "name": "cards",
+    "label": "Tarjetas de ruta",
+    "help_text": "Cada tarjeta tiene una imagen de hover que reemplaza la foto principal (usada por el JS del theme).",
+    "occurrence": {
+      "min": 0,
+      "max": 8,
+      "default": 5
+    },
+    "children": [
+      {
+        "type": "image",
+        "name": "icon",
+        "label": "Ícono",
+        "default": {
+          "src": "",
+          "alt": ""
+        }
+      },
+      {
+        "type": "text",
+        "name": "title",
+        "label": "Título",
+        "default": "Título"
+      },
+      {
+        "type": "text",
+        "name": "description",
+        "label": "Descripción",
+        "default": ""
+      },
+      {
+        "type": "text",
+        "name": "cta_text",
+        "label": "Texto del enlace",
+        "default": "Explorar ›"
+      },
+      {
+        "type": "link",
+        "name": "cta_link",
+        "label": "Destino del enlace",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      },
+      {
+        "type": "image",
+        "name": "hover_image",
+        "label": "Imagen de hover",
+        "help_text": "Reemplaza la foto principal al pasar el cursor sobre la tarjeta.",
+        "default": {
+          "src": "",
+          "alt": ""
+        }
+      }
+    ],
+    "default": [
+      {
+        "icon": {
+          "src": "",
+          "alt": ""
+        },
+        "title": "Tu admisión",
+        "description": "Conoce cada paso del proceso de admisión.",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "hover_image": {
+          "src": "",
+          "alt": ""
+        }
+      },
+      {
+        "icon": {
+          "src": "",
+          "alt": ""
+        },
+        "title": "Cotiza tu licenciatura",
+        "description": "Calcula el costo total de tus estudios.",
+        "cta_text": "Cotizar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "hover_image": {
+          "src": "",
+          "alt": ""
+        }
+      },
+      {
+        "icon": {
+          "src": "",
+          "alt": ""
+        },
+        "title": "Apoyos educativos",
+        "description": "Conoce las opciones de apoyos financieros disponibles para ti.",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "hover_image": {
+          "src": "",
+          "alt": ""
+        }
+      },
+      {
+        "icon": {
+          "src": "",
+          "alt": ""
+        },
+        "title": "Soy foráneo",
+        "description": "Conoce todo lo que la Universidad Anáhuac te ofrece para que te sientas en casa.",
+        "cta_text": "Conocer ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "hover_image": {
+          "src": "",
+          "alt": ""
+        }
+      },
+      {
+        "icon": {
+          "src": "",
+          "alt": ""
+        },
+        "title": "Soy extranjero",
+        "description": "Conoce todo lo que la Universidad Anáhuac te ofrece para que te sientas en casa.",
+        "cta_text": "Conocer ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "hover_image": {
+          "src": "",
+          "alt": ""
+        }
+      }
+    ]
+  }
+]

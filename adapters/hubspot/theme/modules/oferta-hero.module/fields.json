@@ -1,0 +1,56 @@
+[
+  {
+    "type": "text",
+    "name": "eyebrow",
+    "label": "Eyebrow (tagline)",
+    "default": "Oferta Académica de la Universidad Anáhuac México"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H1)",
+    "default": "Encuentra lo que te apasiona"
+  },
+  {
+    "type": "richtext",
+    "name": "card_text",
+    "label": "Tarjeta de oferta",
+    "default": "<p>Descubre las ocho áreas académicas y todos nuestros programas de licenciatura disponibles</p>"
+  },
+  {
+    "type": "text",
+    "name": "btn1_text",
+    "label": "Botón primario · texto",
+    "default": "Explorar áreas académicas"
+  },
+  {
+    "type": "link",
+    "name": "btn1_link",
+    "label": "Botón primario · destino",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#areas"
+      },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "text",
+    "name": "btn2_text",
+    "label": "Botón secundario · texto",
+    "default": "Buscar por licenciatura"
+  },
+  {
+    "type": "link",
+    "name": "btn2_link",
+    "label": "Botón secundario · destino",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#buscar"
+      },
+      "open_in_new_tab": false
+    }
+  }
+]

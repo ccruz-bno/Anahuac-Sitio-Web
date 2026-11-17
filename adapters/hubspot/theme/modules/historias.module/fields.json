@@ -1,0 +1,191 @@
+[
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "Historias Anáhuac"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Texto introductorio",
+    "default": "Leones Anáhuac que han transformado sus vidas con nosotros"
+  },
+  {
+    "type": "group",
+    "name": "stories",
+    "label": "Historias",
+    "help_text": "Cada fila alterna entre imágenes primero (naranja) y cita primero (morada).",
+    "occurrence": {
+      "min": 0,
+      "max": 12,
+      "default": 6
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "quote",
+        "label": "Cita",
+        "default": "Cita del egresado"
+      },
+      {
+        "type": "text",
+        "name": "author",
+        "label": "Autor",
+        "default": "Nombre Apellido"
+      },
+      {
+        "type": "text",
+        "name": "role",
+        "label": "Rol / carrera",
+        "default": "Egresado"
+      },
+      {
+        "type": "image",
+        "name": "image_a",
+        "label": "Imagen A",
+        "responsive": true,
+        "default": {
+          "src": "",
+          "alt": "Egresado Anáhuac"
+        }
+      },
+      {
+        "type": "image",
+        "name": "image_b",
+        "label": "Imagen B",
+        "responsive": true,
+        "default": {
+          "src": "",
+          "alt": "Comunidad Anáhuac"
+        }
+      },
+      {
+        "type": "choice",
+        "name": "variant",
+        "label": "Color de la cita",
+        "display": "select",
+        "choices": [
+          [
+            "orange",
+            "Naranja"
+          ],
+          [
+            "purple",
+            "Morada"
+          ]
+        ],
+        "default": "orange"
+      },
+      {
+        "type": "choice",
+        "name": "layout",
+        "label": "Orden de la fila",
+        "display": "select",
+        "choices": [
+          [
+            "img-first",
+            "Imágenes primero"
+          ],
+          [
+            "quote-first",
+            "Cita primero"
+          ]
+        ],
+        "default": "img-first"
+      }
+    ],
+    "default": [
+      {
+        "quote": "Anáhuac me dio más que una carrera, me dio una red de amigos y mentores que cambió mi trayectoria profesional",
+        "author": "María Gómez",
+        "role": "Egresada, Ingeniería",
+        "image_a": {
+          "src": "",
+          "alt": "María Gómez, egresada Anáhuac"
+        },
+        "image_b": {
+          "src": "",
+          "alt": "Estudiante en laboratorio"
+        },
+        "variant": "orange",
+        "layout": "img-first"
+      },
+      {
+        "quote": "Los convenios internacionales me permitieron estudiar un semestre en Europa y eso fue decisivo para conseguir mi primer trabajo",
+        "author": "Carlos Mendoza",
+        "role": "Egresado, Ingeniería en Sistemas",
+        "image_a": {
+          "src": "",
+          "alt": "Egresado trabajando con equipo de cómputo"
+        },
+        "image_b": {
+          "src": "",
+          "alt": "Carlos Mendoza, egresado Anáhuac"
+        },
+        "variant": "purple",
+        "layout": "quote-first"
+      },
+      {
+        "quote": "Gracias a las prácticas profesionales, conseguí trabajo antes de terminar la carrera",
+        "author": "Daniel Torres",
+        "role": "Egresado, Administración",
+        "image_a": {
+          "src": "",
+          "alt": "Estudiantes en campus"
+        },
+        "image_b": {
+          "src": "",
+          "alt": "Egresada exitosa"
+        },
+        "variant": "orange",
+        "layout": "img-first"
+      },
+      {
+        "quote": "La formación integral que recibí en Anáhuac me preparó para enfrentar cualquier reto profesional con confianza",
+        "author": "Ana Rodríguez",
+        "role": "Egresada, Comunicación",
+        "image_a": {
+          "src": "",
+          "alt": "Proyecto estudiantil"
+        },
+        "image_b": {
+          "src": "",
+          "alt": "Laboratorio de innovación"
+        },
+        "variant": "purple",
+        "layout": "quote-first"
+      },
+      {
+        "quote": "El programa de movilidad me cambió la vida. Estudié en España y volví con una visión completamente nueva",
+        "author": "Sofía Martínez",
+        "role": "Egresada, Derecho",
+        "image_a": {
+          "src": "",
+          "alt": "Ceremonia de graduación"
+        },
+        "image_b": {
+          "src": "",
+          "alt": "Vida en campus"
+        },
+        "variant": "orange",
+        "layout": "img-first"
+      },
+      {
+        "quote": "Anáhuac no solo me dio conocimientos, me dio una comunidad para toda la vida",
+        "author": "Roberto Silva",
+        "role": "Egresado, Ingeniería Industrial",
+        "image_a": {
+          "src": "",
+          "alt": "Espacios de estudio"
+        },
+        "image_b": {
+          "src": "",
+          "alt": "Comunidad Anáhuac"
+        },
+        "variant": "purple",
+        "layout": "quote-first"
+      }
+    ]
+  }
+]

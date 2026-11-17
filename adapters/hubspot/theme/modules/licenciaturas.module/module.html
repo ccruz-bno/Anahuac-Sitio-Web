@@ -1,0 +1,37 @@
+{# ===== Programs — áreas académicas (carrusel con scroll infinito) ===== #}
+<section class="programs section-pad" id="licenciaturas"{% if module.bg_color.color %} style="--programs-bg: {{ module.bg_color.color }};"{% endif %}>
+  <div class="container">
+    <div class="programs-head">
+      <div class="section-intro on-orange reveal" data-reveal>
+        {% if module.eyebrow %}<p class="tagline"><span></span>{{ module.eyebrow }}</p>{% endif %}
+        {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+        {% if module.intro %}<p>{{ module.intro }}</p>{% endif %}
+      </div>
+      {% if module.view_all_text %}
+        <a class="btn btn-white-arrow reveal" href="{{ module.view_all_link.url.href|default('#', true) }}" data-reveal
+           {% if module.view_all_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.view_all_text }} <span>›</span></a>
+      {% endif %}
+    </div>
+
+    <div class="program-scroller reveal" data-reveal>
+      {% set fallbacks = ["area-salud.jpg", "area-ingenierias.jpg", "area-negocios.jpg", "area-derecho.jpg", "area-comunicacion.jpg", "area-artes.jpg", "area-educacion.jpg"] %}
+      {% for program in module.programs %}
+        <article class="program-card">
+          <img src="{{ program.image.src or get_asset_url('../../images/' ~ fallbacks[loop.index0 % (fallbacks|length)]) }}"
+               alt="{{ program.image.alt|default(program.program_name, true) }}" loading="lazy" />
+          <div>
+            <h3>{{ program.program_name }}</h3>
+            <p>{{ program.count }}</p>
+            <a href="{{ program.cta_link.url.href|default('#', true) }}"
+               {% if program.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ program.cta_text }}</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="slider-ui">
+      <div class="dots"></div>
+      <div class="arrow-buttons"><button type="button">‹</button><button type="button">›</button></div>
+    </div>
+  </div>
+</section>

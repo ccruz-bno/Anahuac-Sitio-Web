@@ -1,0 +1,293 @@
+[
+  {
+    "type": "choice",
+    "name": "variante",
+    "label": "Variante",
+    "display": "select",
+    "default": "completo",
+    "help_text": "«Sólo logo» quita navegación y CTA. Para páginas de tarea única (p. ej. el test vocacional), donde el menú es una rampa de salida.",
+    "choices": [
+      [
+        "completo",
+        "Completo (logo + menú + CTA)"
+      ],
+      [
+        "solo-logo",
+        "Sólo logo"
+      ]
+    ]
+  },
+  {
+    "type": "image",
+    "name": "logo",
+    "label": "Logo",
+    "responsive": true,
+    "default": {
+      "src": "https://www.anahuac.mx/logo-anahuac.svg",
+      "alt": "Anáhuac México",
+      "width": 122,
+      "height": 47
+    }
+  },
+  {
+    "type": "link",
+    "name": "logo_link",
+    "label": "Enlace del logo",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "/"
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "type": "group",
+    "name": "nav_items",
+    "label": "Elementos del menú",
+    "help_text": "Cada elemento puede tener un submenú (déjalo vacío para un enlace simple).",
+    "occurrence": {
+      "min": 0,
+      "max": 12,
+      "default": 5
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "text",
+        "label": "Texto",
+        "default": "Enlace"
+      },
+      {
+        "type": "link",
+        "name": "link",
+        "label": "Destino",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      },
+      {
+        "type": "group",
+        "name": "submenu",
+        "label": "Submenú",
+        "occurrence": {
+          "min": 0,
+          "max": 8
+        },
+        "children": [
+          {
+            "type": "text",
+            "name": "text",
+            "label": "Texto",
+            "default": "Subenlace"
+          },
+          {
+            "type": "link",
+            "name": "link",
+            "label": "Destino",
+            "default": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            }
+          }
+        ]
+      }
+    ],
+    "default": [
+      {
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "/oferta-academica"
+          },
+          "open_in_new_tab": false
+        },
+        "submenu": [],
+        "text": "Licenciaturas"
+      },
+      {
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "submenu": [
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "/proceso-de-admision"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Proceso de admisión"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Fechas de examen"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Revalidación y equivalencia"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Curso para examen de admisión"
+          }
+        ],
+        "text": "Admisiones"
+      },
+      {
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "submenu": [
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Costos"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Cotiza tu licenciatura"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Apoyos educativos"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Financiamiento"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Concursos"
+          }
+        ],
+        "text": "Costos y apoyos"
+      },
+      {
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "submenu": [
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#experiencia"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Experiencia"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#eventos"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Eventos"
+          }
+        ],
+        "text": "Vida universitaria"
+      },
+      {
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "submenu": [],
+        "text": "Foráneos"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "name": "cta_text",
+    "label": "Texto del botón (CTA)",
+    "default": "Contacto"
+  },
+  {
+    "type": "link",
+    "name": "cta_link",
+    "label": "Destino del botón (CTA)",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#contacto"
+      },
+      "open_in_new_tab": false
+    }
+  }
+]

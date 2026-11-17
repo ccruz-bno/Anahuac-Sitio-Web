@@ -1,0 +1,60 @@
+[
+  {
+    "type": "image",
+    "name": "mascot_image",
+    "label": "Imagen de la mascota",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Leonel, mascota Anáhuac"
+    }
+  },
+  {
+    "type": "text",
+    "name": "eyebrow",
+    "label": "Eyebrow (tagline)",
+    "default": "Actúa"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "Da el siguiente paso"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Texto de introducción",
+    "default": "Encuentra tu camino académico y comienza tu transformación"
+  },
+  {
+    "type": "text",
+    "name": "name_label",
+    "label": "Campo nombre · placeholder",
+    "default": "Nombre"
+  },
+  {
+    "type": "text",
+    "name": "email_label",
+    "label": "Campo correo · placeholder",
+    "default": "Correo"
+  },
+  {
+    "type": "text",
+    "name": "message_label",
+    "label": "Campo mensaje · placeholder",
+    "default": "Cuéntanos sobre ti"
+  },
+  {
+    "type": "text",
+    "name": "terms_label",
+    "label": "Texto de términos legales",
+    "default": "Acepto los términos legales"
+  },
+  {
+    "type": "text",
+    "name": "submit_text",
+    "label": "Botón · texto",
+    "default": "Explorar"
+  }
+]

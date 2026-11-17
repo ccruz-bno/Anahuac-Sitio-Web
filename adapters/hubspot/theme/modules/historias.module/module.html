@@ -1,0 +1,39 @@
+{# ===== Historias — slider vertical de citas + imágenes ===== #}
+<section class="stories section-pad">
+  <div class="container">
+    <div class="stories-head">
+      <div class="section-intro wide reveal" data-reveal>
+        {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+        {% if module.intro %}<p>{{ module.intro }}</p>{% endif %}
+      </div>
+      <div class="story-arrows reveal" data-reveal><button type="button">↑</button><button type="button">↓</button></div>
+    </div>
+    <div class="stories-viewport">
+      <div class="stories-track">
+        {% set fallbacks_a = ["historia-1.jpg", "historia-3.jpg", "historia-2.jpg", "historia-3.jpg", "historia-4.jpg", "historia-2.jpg"] %}
+        {% set fallbacks_b = ["historia-2.jpg", "historia-4.jpg", "historia-1.jpg", "historia-4.jpg", "historia-1.jpg", "historia-3.jpg"] %}
+        {% for story in module.stories %}
+          {% set fb_a = fallbacks_a[loop.index0 % 6] %}
+          {% set fb_b = fallbacks_b[loop.index0 % 6] %}
+          <div class="stories-row">
+            {% if story.layout == "quote-first" %}
+              <blockquote class="quote {{ story.variant }}">
+                <p>"{{ story.quote }}"</p>
+                <cite>{{ story.author }} <span>{{ story.role }}</span></cite>
+              </blockquote>
+              <img src="{{ story.image_a.src or get_asset_url('../../images/' ~ fb_a) }}" alt="{{ story.image_a.alt|default('Egresado Anáhuac', true) }}" loading="lazy" />
+              <img src="{{ story.image_b.src or get_asset_url('../../images/' ~ fb_b) }}" alt="{{ story.image_b.alt|default('Comunidad Anáhuac', true) }}" loading="lazy" />
+            {% else %}
+              <img src="{{ story.image_a.src or get_asset_url('../../images/' ~ fb_a) }}" alt="{{ story.image_a.alt|default('Egresado Anáhuac', true) }}" loading="lazy" />
+              <img src="{{ story.image_b.src or get_asset_url('../../images/' ~ fb_b) }}" alt="{{ story.image_b.alt|default('Comunidad Anáhuac', true) }}" loading="lazy" />
+              <blockquote class="quote {{ story.variant }}">
+                <p>"{{ story.quote }}"</p>
+                <cite>{{ story.author }} <span>{{ story.role }}</span></cite>
+              </blockquote>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,746 @@
+[
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "Elige tu camino en Anáhuac"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Texto de introducción",
+    "default": "Explora cincuenta licenciaturas distribuidas en ocho áreas académicas. Encuentra el programa que se alinea con tus aspiraciones y comienza a construir tu futuro."
+  },
+  {
+    "type": "text",
+    "name": "search_placeholder",
+    "label": "Buscador · placeholder",
+    "default": "Buscar"
+  },
+  {
+    "type": "text",
+    "name": "search_button_text",
+    "label": "Buscador · texto del botón",
+    "default": "Buscar"
+  },
+  {
+    "type": "text",
+    "name": "filter_label",
+    "label": "Filtros · etiqueta",
+    "default": "Filtrar por:"
+  },
+  {
+    "type": "text",
+    "name": "area_toggle_label",
+    "label": "Filtro Área · texto del selector",
+    "help_text": "Texto por defecto del botón del filtro de área. oferta.js lo usa como estado «sin selección», así que mantenlo alineado con el filtro.",
+    "default": "Área académica"
+  },
+  {
+    "type": "text",
+    "name": "area_all_label",
+    "label": "Filtro Área · opción «todas»",
+    "default": "Todas"
+  },
+  {
+    "type": "group",
+    "name": "area_options",
+    "label": "Filtro Área · opciones",
+    "help_text": "El «value» de cada opción debe coincidir EXACTO con el «data-area» de las tarjetas (ej. salud, ingenierias). El slug es lo que filtra oferta.js.",
+    "occurrence": {
+      "min": 0,
+      "max": 20,
+      "default": 6
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "value",
+        "label": "Slug (value) — debe igualar data-area",
+        "default": "salud"
+      },
+      {
+        "type": "text",
+        "name": "label_text",
+        "label": "Etiqueta visible",
+        "default": "Ciencias de la Salud"
+      }
+    ],
+    "default": [
+      {
+        "value": "salud",
+        "label_text": "Ciencias de la Salud"
+      },
+      {
+        "value": "ingenierias",
+        "label_text": "Ingenierías"
+      },
+      {
+        "value": "negocios",
+        "label_text": "Economía y Negocios"
+      },
+      {
+        "value": "comunicacion",
+        "label_text": "Comunicación, Arq. y Diseño"
+      },
+      {
+        "value": "derecho",
+        "label_text": "Ciencias Sociales y Derecho"
+      },
+      {
+        "value": "turismo",
+        "label_text": "Turismo y Gastronomía"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "name": "campus_toggle_label",
+    "label": "Filtro Campus · texto del selector",
+    "help_text": "Texto por defecto del botón del filtro de campus. oferta.js lo usa como estado «sin selección».",
+    "default": "Campus"
+  },
+  {
+    "type": "text",
+    "name": "campus_all_label",
+    "label": "Filtro Campus · opción «todos»",
+    "default": "Todos"
+  },
+  {
+    "type": "group",
+    "name": "campus_options",
+    "label": "Filtro Campus · opciones",
+    "help_text": "El «value» de cada opción debe coincidir EXACTO con el «data-campus» de las tarjetas (bicampus, norte, sur).",
+    "occurrence": {
+      "min": 0,
+      "max": 10,
+      "default": 3
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "value",
+        "label": "Slug (value) — debe igualar data-campus",
+        "default": "bicampus"
+      },
+      {
+        "type": "text",
+        "name": "label_text",
+        "label": "Etiqueta visible",
+        "default": "Bicampus"
+      }
+    ],
+    "default": [
+      {
+        "value": "bicampus",
+        "label_text": "Bicampus"
+      },
+      {
+        "value": "norte",
+        "label_text": "Campus Norte"
+      },
+      {
+        "value": "sur",
+        "label_text": "Campus Sur"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "name": "count_suffix",
+    "label": "Contador de resultados · sufijo",
+    "default": "programas encontrados"
+  },
+  {
+    "type": "group",
+    "name": "programs",
+    "label": "Licenciaturas",
+    "help_text": "Cada tarjeta. «Área (slug)» y «Campus (slug)» son los data-* que usa el filtro de oferta.js; deben coincidir con los value de los filtros. «Modalidad (texto)» se parte por «|» en spans clicables, mantén el formato «PRESENCIAL | BICAMPUS».",
+    "occurrence": {
+      "min": 0,
+      "max": 80,
+      "default": 24
+    },
+    "children": [
+      {
+        "type": "image",
+        "name": "image",
+        "label": "Imagen",
+        "responsive": true,
+        "default": {
+          "src": "",
+          "alt": "Licenciatura Anáhuac"
+        }
+      },
+      {
+        "type": "text",
+        "name": "tag_text",
+        "label": "Etiqueta / área visible (.program-tag)",
+        "default": "Ciencias de la Salud"
+      },
+      {
+        "type": "text",
+        "name": "item_name",
+        "label": "Nombre de la licenciatura (H3)",
+        "default": "Licenciatura"
+      },
+      {
+        "type": "text",
+        "name": "mode_text",
+        "label": "Modalidad (texto visible)",
+        "help_text": "Formato «MODALIDAD | CAMPUS» separado por «|». oferta.js lo divide en spans clicables.",
+        "default": "PRESENCIAL | BICAMPUS"
+      },
+      {
+        "type": "text",
+        "name": "description",
+        "label": "Descripción",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "type": "text",
+        "name": "cta_text",
+        "label": "Botón · texto",
+        "default": "Conocer más"
+      },
+      {
+        "type": "link",
+        "name": "link",
+        "label": "Botón · destino",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      },
+      {
+        "type": "text",
+        "name": "area",
+        "label": "Área (slug) → data-area",
+        "help_text": "Slug de filtro. Debe coincidir con un value del filtro Área (salud, ingenierias, negocios, comunicacion, derecho, turismo).",
+        "default": "salud"
+      },
+      {
+        "type": "text",
+        "name": "campus",
+        "label": "Campus (slug) → data-campus",
+        "help_text": "Slug de filtro. Debe coincidir con un value del filtro Campus (bicampus, norte, sur).",
+        "default": "bicampus"
+      },
+      {
+        "type": "text",
+        "name": "mode",
+        "label": "Modalidad (slug) → data-mode",
+        "default": "presencial"
+      }
+    ],
+    "default": [
+      {
+        "image": {
+          "src": "",
+          "alt": "Médico Cirujano"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Forma profesionales de la medicina con una visión integral, ética y humanista preparados para transformar el sistema de salud.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "salud",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Médico Cirujano",
+        "tag_text": "Ciencias de la Salud"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Arquitectura"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Diseña y construye espacios innovadores que transformen comunidades con criterio estético, técnico y sustentable.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "comunicacion",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Arquitectura",
+        "tag_text": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Ingeniería en Sistemas y Tecnología de Información"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Desarrolla soluciones tecnológicas de vanguardia usando inteligencia artificial, redes y ciencia de datos para resolver problemas reales.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "ingenierias",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Ingeniería en Sistemas y Tecnología de Información",
+        "tag_text": "Ingenierías"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Diseño Industrial"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Crea productos y experiencias que integran funcionalidad, estética y sustentabilidad para mejorar la vida de las personas.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "comunicacion",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Diseño Industrial",
+        "tag_text": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Dirección Financiera"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Lidera organizaciones con visión estratégica, innovación y sentido de responsabilidad social en el mundo financiero.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "negocios",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Dirección Financiera",
+        "tag_text": "Economía y Negocios"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Gastronomía"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Domina el arte culinario con técnicas de vanguardia y una formación empresarial que te permitirá liderar proyectos gastronómicos.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "turismo",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Gastronomía",
+        "tag_text": "Turismo y Gastronomía"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Médico Cirujano Dentista"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "salud",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Médico Cirujano Dentista",
+        "tag_text": "Ciencias de la Salud"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Nutrición"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS NORTE",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "salud",
+        "campus": "norte",
+        "mode": "presencial",
+        "item_name": "Nutrición",
+        "tag_text": "Ciencias de la Salud"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Terapia Física y Rehabilitación"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS SUR",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "salud",
+        "campus": "sur",
+        "mode": "presencial",
+        "item_name": "Terapia Física y Rehabilitación",
+        "tag_text": "Ciencias de la Salud"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Arquitectura de Interiores"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS NORTE",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "comunicacion",
+        "campus": "norte",
+        "mode": "presencial",
+        "item_name": "Arquitectura de Interiores",
+        "tag_text": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Comunicación"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "comunicacion",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Comunicación",
+        "tag_text": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Dirección de Empresas de Entretenimiento"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS SUR",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "comunicacion",
+        "campus": "sur",
+        "mode": "presencial",
+        "item_name": "Dirección de Empresas de Entretenimiento",
+        "tag_text": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Diseño Gráfico"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS NORTE",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "comunicacion",
+        "campus": "norte",
+        "mode": "presencial",
+        "item_name": "Diseño Gráfico",
+        "tag_text": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Diseño de Moda e Innovación"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS SUR",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "comunicacion",
+        "campus": "sur",
+        "mode": "presencial",
+        "item_name": "Diseño de Moda e Innovación",
+        "tag_text": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Diseño Multimedia"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "comunicacion",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Diseño Multimedia",
+        "tag_text": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Ingeniería Ambiental"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS NORTE",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "ingenierias",
+        "campus": "norte",
+        "mode": "presencial",
+        "item_name": "Ingeniería Ambiental",
+        "tag_text": "Ingenierías"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Ingeniería Biomédica"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS SUR",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "ingenierias",
+        "campus": "sur",
+        "mode": "presencial",
+        "item_name": "Ingeniería Biomédica",
+        "tag_text": "Ingenierías"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Ingeniería Civil"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "ingenierias",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Ingeniería Civil",
+        "tag_text": "Ingenierías"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Economía"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS NORTE",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "negocios",
+        "campus": "norte",
+        "mode": "presencial",
+        "item_name": "Economía",
+        "tag_text": "Economía y Negocios"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Finanzas y Contaduría Pública"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS SUR",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "negocios",
+        "campus": "sur",
+        "mode": "presencial",
+        "item_name": "Finanzas y Contaduría Pública",
+        "tag_text": "Economía y Negocios"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Negocios Internacionales"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "negocios",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Negocios Internacionales",
+        "tag_text": "Economía y Negocios"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Derecho"
+        },
+        "mode_text": "PRESENCIAL | BICAMPUS",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "derecho",
+        "campus": "bicampus",
+        "mode": "presencial",
+        "item_name": "Derecho",
+        "tag_text": "Ciencias Sociales y Derecho"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Dirección de Restaurantes"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS NORTE",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "turismo",
+        "campus": "norte",
+        "mode": "presencial",
+        "item_name": "Dirección de Restaurantes",
+        "tag_text": "Turismo y Gastronomía"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Administración Turística"
+        },
+        "mode_text": "PRESENCIAL | CAMPUS SUR",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "cta_text": "Conocer más",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "area": "turismo",
+        "campus": "sur",
+        "mode": "presencial",
+        "item_name": "Administración Turística",
+        "tag_text": "Turismo y Gastronomía"
+      }
+    ]
+  }
+]

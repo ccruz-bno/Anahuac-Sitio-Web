@@ -1,0 +1,13 @@
+{
+  "label": "Pie de página — Anáhuac (global)",
+  "help_text": "Pie de página global: logo, newsletter, columnas de enlaces con redes sociales y copyright. Todo editable.",
+  "is_available_for_new_content": true,
+  "global": true,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "DESIGN"
+  ]
+}

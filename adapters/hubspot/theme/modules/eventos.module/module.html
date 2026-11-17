@@ -1,0 +1,59 @@
+{# ===== Próximos eventos — destacado + filtros + lista paginada ===== #}
+<section class="events section-pad" id="eventos">
+  <div class="container">
+    <div class="section-intro event-title reveal" data-reveal>
+      {% if module.eyebrow %}<p class="tagline"><span></span>{{ module.eyebrow }}</p>{% endif %}
+      {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+      {% if module.intro %}<p>{{ module.intro }}</p>{% endif %}
+    </div>
+
+    <div class="featured-event reveal" data-reveal>
+      <img src="{{ module.featured.image.src or get_asset_url('../../images/evento.jpg') }}"
+           alt="{{ module.featured.image.alt|default('Estudiantes caminando en campus', true) }}" />
+      <div class="event-date large"><strong>{{ module.featured.day }}</strong><span>{{ module.featured.month }}</span></div>
+      <div class="event-info">
+        {% if module.featured.pill_text %}<span class="pill dark">{{ module.featured.pill_text }}</span>{% endif %}
+        <h3>{{ module.featured.title }}</h3>
+        <p class="meta">{{ module.featured.modality }} <span></span> {{ module.featured.campus }}</p>
+        <p>{{ module.featured.description }}</p>
+        {% if module.featured.cta_text %}
+          <a class="btn btn-orange" href="{{ module.featured.cta_link.url.href|default('#', true) }}"
+             {% if module.featured.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.featured.cta_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="event-tags reveal" data-reveal role="tablist" aria-label="Filtrar próximos eventos">
+      {% for filter in module.filters %}
+        {% if loop.first %}
+          <button class="active" type="button" data-filter="all" aria-pressed="true">{{ filter.text }}</button>
+        {% else %}
+          <button type="button" data-filter="{{ filter.slug }}" aria-pressed="false">{{ filter.text }}</button>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="event-list reveal" data-reveal aria-live="polite">
+      {% for event in module.events %}
+        <article data-tags="{{ event.tags }}">
+          <div class="event-date"><strong>{{ event.day }}</strong><span>{{ event.month }}</span></div>
+          <div>
+            <h3>{{ event.title }}{% if event.pill_text %} <span class="pill dark">{{ event.pill_text }}</span>{% endif %}</h3>
+            <p class="meta">{{ event.modality }} <span></span> {{ event.campus }}</p>
+            <p>{{ event.description }}</p>
+          </div>
+          <a class="btn btn-purple small" href="{{ event.cta_link.url.href|default('#', true) }}"
+             {% if event.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ event.cta_text }}</a>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="event-pagination reveal" data-reveal aria-label="Paginación de próximos eventos">
+      <div class="event-dots" aria-label="Páginas de eventos"></div>
+      <div class="event-arrows">
+        <button type="button" class="event-prev" aria-label="Ver eventos anteriores">‹</button>
+        <button type="button" class="event-next" aria-label="Ver siguientes eventos">›</button>
+      </div>
+    </div>
+  </div>
+</section>

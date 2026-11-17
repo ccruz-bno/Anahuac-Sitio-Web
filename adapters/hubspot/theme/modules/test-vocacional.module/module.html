@@ -1,0 +1,111 @@
+{# ===== Test vocacional — dos fases con ramificación =====
+   Spec: specs/test-vocacional.md
+   Registro por zona: inicio, desempate, transición y resultado son Brand;
+   las pantallas de pregunta son Product y van sin adorno.
+
+   Los reactivos y el mapeo NO viven aquí: vienen de HubDB y, mientras no haya
+   portal, del archivo semilla theme/js/test-vocacional-data.js. #}
+
+<section class="tv tv--marca section-pad" id="test-vocacional"
+         data-areas-que-pasan="{{ module.reglas.areas_que_pasan }}"
+         data-max-carreras="{{ module.reglas.max_carreras }}"
+         data-puntaje-minimo="{{ module.reglas.puntaje_minimo }}"
+         data-img-base="{{ get_asset_url('../../images/') }}"
+         {% if module.reglas.marcar_provisional %}data-marcar-provisional{% endif %}>
+  <span class="tv-glow" aria-hidden="true"></span>
+  <div class="container">
+
+    {# --- Textos editables, para el motor --- #}
+    <script type="application/json" class="tv-config">
+      {
+        "atras": {{ module.preguntas.back_label|tojson }},
+        "tiempo": {{ module.preguntas.time_label|tojson }},
+        "tiempoCorto": {{ module.preguntas.time_short|tojson }},
+        "eleccionTitulo": {{ module.eleccion.heading|tojson }},
+        "eleccionTexto": {{ module.eleccion.body|tojson }},
+        "eleccionContador": {{ module.eleccion.counter|tojson }},
+        "eleccionBoton": {{ module.eleccion.continue_label|tojson }},
+        "transicionTitulo": {{ module.transicion.heading|tojson }},
+        "transicionTexto": {{ module.transicion.body|tojson }},
+        "transicionBoton": {{ module.transicion.continue_label|tojson }},
+        "resultadoEyebrow": {{ module.resultado.eyebrow|tojson }},
+        "resultadoTitulo": {{ module.resultado.heading|tojson }},
+        "resultadoSub": {{ module.resultado.sub|tojson }},
+        "resultadoSegunda": {{ module.resultado.second_area|tojson }},
+        "resultadoCarreras": {{ module.resultado.carreras_heading|tojson }},
+        "resultadoCarrerasResto": {{ module.resultado.carreras_resto|tojson }},
+        "explorar": {{ module.resultado.explore_label|tojson }},
+        "reiniciar": {{ module.resultado.restart_label|tojson }},
+        "resultadoNota": {{ module.resultado.disclaimer|tojson }},
+        "cierreTitulo": {{ module.cierre.heading|tojson }},
+        "cierreTexto": {{ module.cierre.body|tojson }},
+        "asesorBoton": {{ module.cierre.cta_label|tojson }},
+        "asesorUrl": {{ module.cierre.cta_link.url.href|default('#', true)|tojson }},
+        "pdfBoton": {{ module.cierre.pdf_label|tojson }},
+        "pdfUrl": {{ module.cierre.pdf_link.url.href|default('', true)|tojson }},
+        "cierreImagen": {{ get_asset_url('../../images/leonel-mascot.png')|tojson }},
+        "avisoReglas": {{ module.reglas.aviso|tojson }},
+        "avisoResultado": {{ module.reglas.aviso_resultado|tojson }}
+      }
+    </script>
+
+    {# --- Datos ---
+       Cuando exista el portal, aquí va el volcado de HubDB con esta forma exacta
+       (el motor lo prefiere sobre la semilla y no hay que tocar module.js):
+         <script type="application/json" class="tv-data">{ … }</script>
+       Tablas y columnas en adapters/hubspot/hubdb/*.csv. #}
+    <script src="{{ get_asset_url('../../js/test-vocacional-data.js') }}"></script>
+
+    {# --- Avance: un hito por fase, no una barra de 44 pasos --- #}
+    <div class="tv-avance" data-tv-avance hidden>
+      <ol class="tv-hitos">
+        <li class="tv-hito" data-tv-hito>
+          <span class="tv-hito-barra"><i></i></span>
+          <span class="tv-hito-nombre">{{ module.preguntas.fase1_label }}</span>
+        </li>
+        <li class="tv-hito" data-tv-hito>
+          <span class="tv-hito-barra"><i></i></span>
+          <span class="tv-hito-nombre">{{ module.preguntas.fase2_label }}</span>
+        </li>
+      </ol>
+      <p class="tv-tiempo" data-tv-tiempo></p>
+    </div>
+
+    {# --- BRAND · inicio (server-rendered: visible sin JS) --- #}
+    <div class="tv-screen tv-intro" data-tv-screen="intro">
+      <div class="tv-intro-texto">
+        {% if module.intro.eyebrow %}<p class="tagline"><span></span>{{ module.intro.eyebrow }}</p>{% endif %}
+        <h1>{{ module.intro.heading }}</h1>
+        {% if module.intro.body %}<div class="tv-richtext">{{ module.intro.body }}</div>{% endif %}
+
+        <div class="tv-retomar" data-tv-retomar hidden>
+          <h2>{{ module.intro.resume_heading }}</h2>
+          <p>{{ module.intro.resume_body }}</p>
+          <button type="button" class="btn btn-orange" data-tv-continuar>{{ module.intro.resume_continue }}</button>
+          <button type="button" class="tv-secundario" data-tv-nuevo>{{ module.intro.resume_restart }}</button>
+        </div>
+
+        <div class="tv-intro-acciones">
+          <button type="button" class="btn btn-orange" data-tv-start>{{ module.intro.start_label }}</button>
+          {% if module.intro.duration %}<p class="tv-duracion">{{ module.intro.duration }}</p>{% endif %}
+        </div>
+        {% if module.intro.disclaimer %}<p class="tv-nota">{{ module.intro.disclaimer }}</p>{% endif %}
+        <noscript>
+          <p class="tv-nota">Este test necesita JavaScript para funcionar. Actívalo o escríbenos para que te lo apliquemos de otra forma.</p>
+        </noscript>
+      </div>
+      <div class="tv-intro-imagen">
+        <img src="{{ module.intro.image.src or get_asset_url('../../images/oferta-academica/formulario/leonel-formulario-1.png') }}"
+             alt="{{ module.intro.image.alt|default('Leonel, mascota Anáhuac', true) }}" />
+      </div>
+    </div>
+
+    {# --- Las arma el motor --- #}
+    <div class="tv-screen" data-tv-screen="pregunta" hidden></div>
+    <div class="tv-screen" data-tv-screen="eleccion" hidden></div>
+    <div class="tv-screen" data-tv-screen="transicion" hidden></div>
+    <div class="tv-screen" data-tv-screen="resultado" hidden></div>
+
+    <p class="visually-hidden" data-tv-live aria-live="polite"></p>
+  </div>
+</section>

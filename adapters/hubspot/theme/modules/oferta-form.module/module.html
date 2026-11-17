@@ -1,0 +1,29 @@
+{# ===== Oferta · Formulario "Actúa" — mascota + textos e inputs editables ===== #}
+{# Nota: reproducción visual; el bloque no envía datos (sin <form>, igual que la fuente). #}
+<section class="oferta-form section-pad" id="actua">
+  <div class="container">
+    <div class="oferta-form-layout">
+      <div class="oferta-form-mascot">
+        <img src="{{ module.mascot_image.src or get_asset_url('../../images/oferta-academica/formulario/leonel-formulario-1.png') }}"
+             alt="{{ module.mascot_image.alt|default('Leonel, mascota Anáhuac', true) }}" />
+      </div>
+      <div class="oferta-form-content">
+        <div class="section-intro reveal" data-reveal>
+          {% if module.eyebrow %}<p class="tagline"><span></span>{{ module.eyebrow }}</p>{% endif %}
+          {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+          {% if module.intro %}<p>{{ module.intro }}</p>{% endif %}
+        </div>
+        <div class="oferta-form-card reveal" data-reveal>
+          <input type="text" placeholder="{{ module.name_label }}" aria-label="{{ module.name_label }}" />
+          <input type="email" placeholder="{{ module.email_label }}" aria-label="{{ module.email_label }}" />
+          <textarea placeholder="{{ module.message_label }}" rows="4" aria-label="{{ module.message_label }}"></textarea>
+          <label class="oferta-form-check">
+            <input type="checkbox" />
+            {{ module.terms_label }}
+          </label>
+          <button type="submit" class="btn btn-orange">{{ module.submit_text }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

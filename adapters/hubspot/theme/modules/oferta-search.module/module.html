@@ -1,0 +1,80 @@
+{# ===== Oferta search — buscador/filtro de TODAS las licenciaturas (Elige tu camino) =====
+   Las clases, ids, name= de los radios y los data-* (data-area / data-campus / data-mode)
+   son el contrato que espera oferta.js. No renombrar. #}
+<section class="oferta-search section-pad" id="buscar">
+  <div class="container">
+    <div class="section-intro wide reveal" data-reveal>
+      {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+      {% if module.intro %}<p>{{ module.intro }}</p>{% endif %}
+    </div>
+
+    {# Search + Filters #}
+    <div class="search-bar reveal" data-reveal>
+      <div class="search-input-group">
+        <div class="search-input-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="search-licenciatura" placeholder="{{ module.search_placeholder|default('Buscar', true) }}" aria-label="Buscar licenciatura" />
+          <button class="search-clear" type="button" aria-label="Limpiar búsqueda">×</button>
+        </div>
+        {% if module.search_button_text %}<button class="btn btn-orange search-btn" type="button">{{ module.search_button_text }}</button>{% endif %}
+      </div>
+      <div class="search-filters">
+        {% if module.filter_label %}<span class="filter-label">{{ module.filter_label }}</span>{% endif %}
+        <div class="custom-dropdown" data-dropdown="area">
+          <button class="dropdown-toggle" type="button" aria-expanded="false">
+            {{ module.area_toggle_label|default('Área académica', true) }}
+            <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1,1 6,6 11,1"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <label><input type="radio" name="filter-area" value="" checked /> {{ module.area_all_label|default('Todas', true) }}</label>
+            {% for opt in module.area_options %}
+              <label><input type="radio" name="filter-area" value="{{ opt.value }}" /> {{ opt.label_text }}</label>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="custom-dropdown" data-dropdown="campus">
+          <button class="dropdown-toggle" type="button" aria-expanded="false">
+            {{ module.campus_toggle_label|default('Campus', true) }}
+            <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1,1 6,6 11,1"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <label><input type="radio" name="filter-campus" value="" checked /> {{ module.campus_all_label|default('Todos', true) }}</label>
+            {% for opt in module.campus_options %}
+              <label><input type="radio" name="filter-campus" value="{{ opt.value }}" /> {{ opt.label_text }}</label>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# Results count — oferta.js sobreescribe #result-count con el nº de tarjetas visibles #}
+    <p class="search-count reveal" data-reveal><span id="result-count">{{ module.programs|length }}</span> {{ module.count_suffix|default('programas encontrados', true) }}</p>
+
+    {# Cards Grid — TODAS las carreras. data-area/data-campus deben coincidir con los value de los filtros #}
+    <div class="program-grid reveal" data-reveal>
+      {% set fallbacks = ["medico-cirujano.png", "arquitectura.png", "ingenieria-en-sistemas-y-tecnologia-de-informacion.png", "diseno-industrial.png", "direccion-financiera.png", "gastronomia.png", "medico-cirujano-dentista.png", "nutricion.png", "terapia-fisica-y-rehabilitacion.png", "arquitectura-de-interiores.png", "comunicacion.png", "direccion-de-empresas-de-entretenimiento.png", "diseno-grafico.png", "diseno-de-moda-e-innovacion.png", "diseno-multimedia.png", "ingenieria-ambiental.png", "ingenieria-biomedica.png", "ingenieria-civil.png", "economia.png", "finanzas-y-contaduria-publica.png", "negocios-internacionales.png", "derecho.png", "direccion-de-restaurantes.png", "administracion-turistica.png"] %}
+      {% for program in module.programs %}
+        <article class="program-card" data-area="{{ program.area }}" data-campus="{{ program.campus }}" data-mode="{{ program.mode|default('presencial', true) }}">
+          <div class="program-img"><img src="{{ program.image.src or get_asset_url('../../images/oferta-academica/elige-tu-camino/' ~ fallbacks[loop.index0 % (fallbacks|length)]) }}" alt="{{ program.image.alt|default(program.item_name, true) }}" loading="lazy" /></div>
+          <div class="program-body">
+            {% if program.tag_text %}<span class="program-tag">{{ program.tag_text }}</span>{% endif %}
+            {% if program.item_name %}<h3>{{ program.item_name }}</h3>{% endif %}
+            {% if program.mode_text %}<p class="program-mode">{{ program.mode_text }}</p>{% endif %}
+            {% if program.description %}<p class="program-desc">{{ program.description }}</p>{% endif %}
+            {% if program.cta_text %}
+              <a class="btn-program" href="{{ program.link.url.href|default('#', true) }}"{% if program.link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}>{{ program.cta_text }} <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {# Pagination — oferta.js la reconstruye por completo; se deja como fallback sin JS #}
+    <nav class="pagination reveal" data-reveal aria-label="Paginación de resultados">
+      <button class="page-btn active" data-page="1">1</button>
+      <button class="page-btn" data-page="2">2</button>
+      <button class="page-btn" data-page="3">3</button>
+      <button class="page-btn page-next" data-page="next" aria-label="Siguiente">›</button>
+    </nav>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+{# ===== Hero — título + oferta + CTAs + grid de imágenes ===== #}
+<section class="hero section-pad" id="inicio">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      {% if module.heading %}
+        <h1 class="reveal" data-reveal>{{ module.heading }}</h1>
+      {% endif %}
+
+      <div class="hero-actions">
+        {% if module.offer_text %}
+          <div class="hero-card reveal" data-reveal>{{ module.offer_text }}</div>
+        {% endif %}
+        <div class="button-row reveal" data-reveal>
+          {% if module.primary_btn_text %}
+            <a class="btn btn-dark" href="{{ module.primary_btn_link.url.href|default('#', true) }}"
+               {% if module.primary_btn_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.primary_btn_text }}</a>
+          {% endif %}
+          {% if module.secondary_btn_text %}
+            <a class="btn btn-light" href="{{ module.secondary_btn_link.url.href|default('#', true) }}"
+               {% if module.secondary_btn_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.secondary_btn_text }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-grid reveal" data-reveal>
+      {% set imgs = [module.image_1, module.image_2, module.image_3, module.image_4] %}
+      {% set vids = [module.video_1, module.video_2, module.video_3, module.video_4] %}
+      {% set fallbacks = ["hero-grid-fallback-imgs/estudiante-tablet.png", "hero-grid-fallback-imgs/estudiantes-saltando.png", "hero-grid-fallback-imgs/estudiante-medicina.png", "hero-grid-fallback-imgs/jugadores-corriendo.png"] %}
+      {% set offsets = ["1.5", "", "3", ""] %}
+      {% for img in imgs %}
+        {% set vid = vids[loop.index0] %}
+        {% set poster = img.src or get_asset_url('../../images/' ~ fallbacks[loop.index0]) %}
+        <figure class="hero-media pos-{{ loop.index0 }}">
+          {% if vid %}
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="{{ poster }}"{% if offsets[loop.index0] %} data-offset="{{ offsets[loop.index0] }}"{% endif %}>
+              <source src="{{ vid }}" type="video/mp4" />
+            </video>
+          {% else %}
+            <img src="{{ poster }}" alt="{{ img.alt|default('Estudiantes Anáhuac México', true) }}" loading="eager" fetchpriority="{% if loop.index0 == 1 %}high{% else %}auto{% endif %}" />
+          {% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,247 @@
+/* ============================================================
+   TOKENS — Design System Anáhuac (dos capas)
+   Fuente: design/01-tokens.md (Figma UI Kit, ingesta 2026-06-08)
+
+   Este es el ÚNICO archivo donde viven valores crudos (hex/px/rgba).
+   Está exento de check:tokens y stylelint. Todo el demás CSS
+   (main.css + module.css) usa EXCLUSIVAMENTE var(--…).
+
+   Los primitivos marcados como (editable) reciben su valor real
+   desde los Theme Fields, inyectados en :root por la plantilla base
+   (templates/layouts/base.html). Aquí quedan sus defaults.
+   ============================================================ */
+
+:root {
+  /* ---------- CAPA 1 · PRIMITIVOS ---------- */
+
+  /* Primarios institucionales */
+  --orange: #ff5900;        /* (editable → theme.colors.brand_primary) */
+  --brown: #6b3f23;         /* (editable → theme.colors.brand_secondary) */
+  --black: #000000;         /* (editable → theme.colors.surface_dark) */
+  --white: #ffffff;
+  --gray: #f2f2f2;
+
+  /* Secundarios — morada monocromática */
+  --purple-1: #432f64;
+  --purple-2: #5d428c;      /* (editable → theme.colors.accent_purple) */
+  --purple-3: #9267dc;
+  --lilac-1: #b99ee8;
+  --lilac-2: #cdb9ef;
+
+  /* Acentos */
+  --accent-red: #ea2828;
+  --accent-yellow: #ffda00;
+  --accent-blue: #0f66ab;
+  --accent-grape: #3a164c;
+  --accent-korma: #85390e;
+  --accent-tuatara: #282726;
+
+  /* Sistema */
+  --black-web: #0c1115;
+  --text-gray: #788592;
+  /* Gris de texto TINTA — el gris del UI Kit cuando tiene que LEERSE.
+     #788592 da 3.77:1 sobre blanco y 3.37:1 sobre la superficie gris:
+     alcanza como componente de interfaz (AA pide 3:1 a bordes e iconos)
+     pero no como texto, que pide 4.5:1. Esta tinta da 5.28:1 sobre blanco
+     y 4.72:1 sobre el gris. Se deriva del gris del UI Kit, así que lo sigue
+     si la ingesta de Figma lo cambia; el hex de arriba es el respaldo para
+     navegadores sin color-mix. */
+  --text-gray-ink: #626d78;
+  --text-gray-ink: color-mix(in srgb, var(--text-gray) 82%, #000000);
+
+  /* Tipografía (editable → theme.typography.*) */
+  --font-heading: "Zilla Slab", serif;
+  --font-body: "Roboto", sans-serif;
+
+  /* Escala tipográfica — headings (Zilla Slab) */
+  --heading-1-size: 110px;
+  --heading-2-size: 90px;
+  --heading-3-size: 40px;
+  --heading-4-size: 24px;
+  --heading-5-size: 20px;
+  --heading-6-size: 18px;
+  --h1-1440: 88px;
+  --h2-1440: 72px;
+  --h1-1180: 90px;
+  --h2-1180: 64px;
+  --h1-640: 58px;
+  --h2-640: 50px;
+  --paragraph-size: 16px;
+  --frase-size: 37px;
+  --btn-large-size: 27px;
+  --btn-medium-size: 21px;
+  --small-size: 16px;
+  --lead-size: 32px;
+  --eyebrow-size: 14px;
+  --meta-size: 17px;
+  --micro-size: 12px;
+  --size-13: 13px;
+  --size-11: 11px;
+  --size-22: 22px;
+  --size-30: 30px;
+  --size-38: 38px;
+  --size-25: 25px;
+  --size-26: 26px;
+  --size-28: 28px;
+  --size-64: 64px;
+  --event-date-size: 80px;
+  --event-date-lg-size: 100px;
+
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-regular: 400;
+
+  --lh-tight: 1;
+  --lh-snug: 1.1;
+  --lh-heading: 1.2;
+  --lh-relaxed: 1.4;
+  --lh-body: 1.6;
+
+  --tracking-btn: 0.2px;
+  --tracking-1: 0.5px;
+  --tracking-eyebrow: 0.6px;
+
+  /* Espaciado */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 10px;
+  --space-4: 12px;
+  --space-5: 15px;
+  --space-6: 16px;
+  --space-7: 20px;
+  --space-8: 24px;
+  --space-9: 30px;
+  --space-10: 40px;
+  --space-11: 60px;
+  --space-12: 80px;
+  --space-13: 100px;
+  --space-14: 120px;
+
+  /* Radios */
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 40px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --motion-duration: 0.4s;
+  --motion-duration-fast: 0.2s;
+  --motion-duration-slow: 0.6s;
+  --motion-ease: ease-out;
+
+  /* Layout — grid 12 col (Figma) */
+  --grid-columns: 12;
+  --grid-column-width: 85px;
+  --grid-gutter: 20px;
+  --grid-margin: 20px;
+  --container: 1280px;
+  --section-pad-y: 100px;
+  --section-pad-x: 80px;
+  --nav-height: 80px;
+
+  /* Componentes — dimensiones (crudas, one-off) */
+  --border-width: 2px;
+  --border-width-thin: 1px;
+  --logo-width: 122px;
+  --logo-height: 47px;
+  --header-top: 40px;
+  --header-max: 1240px;
+  --header-min-height: 91px;
+  --nav-link-gap: 21px;
+  --blur: 10px;
+  --blur-sm: 6px;
+  --btn-pad-y: 15px;
+  --btn-pad-x: 40px;
+  --btn-pad-x-sm: 25px;
+
+  /* Sombras */
+  --shadow-header: 0 16px 36px rgba(0, 0, 0, 0.05);
+  --shadow-btn-hover: 0 14px 24px rgba(0, 0, 0, 0.14);
+  --shadow-card: 0 12px 24px rgba(67, 47, 100, 0.08);
+  --shadow-md: 0 18px 40px rgba(0, 0, 0, 0.08);
+
+  /* Superficies compuestas / glass / gradientes */
+  --surface-glass: rgba(255, 255, 255, 0.72);
+  --surface-glass-strong: rgba(255, 255, 255, 0.7);
+  --surface-glass-panel: rgba(255, 255, 255, 0.84);
+  --shadow-panel: 0 24px 60px rgba(0, 0, 0, 0.16);
+  --header-glass-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 25%);
+  --hero-glow: radial-gradient(ellipse at 80% -28%, rgba(205, 185, 239, 0.76) 0%, rgba(225, 214, 247, 0.38) 28%, rgba(255, 255, 255, 0) 52%);
+  --overlay-dark: rgba(0, 0, 0, 0.45);
+
+  /* Decorativos de sección (gradientes / blobs / patrones) */
+  --glow-orange: radial-gradient(circle, rgba(255, 89, 0, 0.08), rgba(255, 89, 0, 0) 65%);
+  --glow-orange-strong: radial-gradient(ellipse at 21% 48%, rgba(255, 89, 0, 0.48) 0%, rgba(255, 151, 99, 0.26) 28%, rgba(255, 229, 215, 0.13) 51%, rgba(255, 255, 255, 0) 78%);
+  --glow-purple: radial-gradient(ellipse at 50% 50%, rgba(146, 103, 220, 0.22) 0%, rgba(255, 255, 255, 0) 70%);
+  --dots-pattern: radial-gradient(rgba(146, 103, 220, 0.35) 22%, transparent 23%);
+  --dots-size: 35px 35px;
+  --dots-pattern-gray: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0 2px, transparent 2.5px);
+  --overlay-card: linear-gradient(180deg, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0.72) 100%);
+  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+  --grid-lines: linear-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.55) 1px, transparent 1px);
+  --grid-cell: 89px 85px;
+
+  /* Bordes sutiles translúcidos + naranja oscuro (inputs/dropdowns/paginación oferta) */
+  --border-hairline: rgba(0, 0, 0, 0.1);
+  --border-hairline-soft: rgba(0, 0, 0, 0.08);
+  --border-hairline-strong: rgba(0, 0, 0, 0.12);
+  /* Filo de tarjeta de opcion. Se llamaba "-radio" y por el nombre acabo
+     puesto en los indicadores redondos, que daban 1.61:1 sobre blanco y no
+     llegaban al 3:1 que AA pide a un componente. El aro de un control va en
+     --color-control-ring; esto es el filo de la tarjeta que lo contiene. */
+  --border-hairline-card: rgba(0, 0, 0, 0.2);
+  --orange-dark: #d44a00;
+
+  /* Naranja TINTA — el naranja de marca leído como texto.
+     #ff5900 da 3.14:1 sobre blanco: alcanza para títulos (AA pide 3:1 a partir
+     de 24px, o 18.66px en negrita) pero NO para texto de lectura, que pide 4.5.
+     Esta tinta da 5.06:1 sobre blanco y 4.52:1 sobre el gris de superficie.
+     Se deriva del naranja de marca, así que sigue al theme field si el cliente
+     lo edita; el hex de arriba es el respaldo para navegadores sin color-mix. */
+  --orange-ink: #c34400;
+  --orange-ink: color-mix(in srgb, var(--orange) 76%, #000000);
+
+  /* ---------- CAPA 2 · SEMÁNTICOS (rol → primitivo) ---------- */
+  /* Esto es lo que consume el resto del CSS. */
+
+  --color-brand-primary: var(--orange);
+  --color-brand-secondary: var(--brown);
+
+  --surface: var(--white);
+  --surface-muted: var(--gray);
+  --surface-dark: var(--black);
+  --surface-accent: var(--purple-1);
+  --surface-accent-light: var(--lilac-2);
+
+  /* Aro del control sin marcar (casillas, radios, la marca del desempate).
+     AA pide 3:1 a un componente de interfaz, y sobre una tarjeta clara de
+     acento el gris del UI Kit se queda en 2.1:1. Se deriva del morado de
+     acento para que el aro pertenezca a la familia de la tarjeta, aclarado
+     lo suficiente para que no compita con la etiqueta: da 3.6:1 sobre la
+     tarjeta y 6.3:1 sobre blanco. */
+  --color-control-ring: #695983;
+  --color-control-ring: color-mix(in srgb, var(--surface-accent) 80%, var(--surface));
+
+  --color-text: var(--black);
+  /* Gris de apoyo. Tinta, no el gris crudo del UI Kit: en cuerpos chicos
+     aquél no pasa AA. Para bordes e iconos servirían los dos; se deja la
+     tinta para no mantener dos grises casi iguales. */
+  --color-text-secondary: var(--text-gray-ink);
+  --color-text-invert: var(--white);
+  /* Naranja de marca cuando tiene que LEERSE (enlaces, antetítulos, etiquetas).
+     Por encima de 24px —o 18.66px en negrita— se usa --color-brand-primary. */
+  --color-text-brand: var(--orange-ink);
+
+  --cta-bg: var(--color-brand-primary);
+  --cta-text: var(--color-text-invert);
+  --cta-bg-dark: var(--black);
+  --cta-bg-purple: var(--purple-2);
+
+  --border-brand: var(--color-brand-primary);
+  --border-dark: var(--black);
+
+  --radius: var(--radius-md);
+  --radius-button: var(--radius-sm);
+  --radius-section: var(--radius-lg);
+}

@@ -1,0 +1,440 @@
+[
+  {
+    "type": "image",
+    "name": "logo",
+    "label": "Logo",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Anáhuac México"
+    }
+  },
+  {
+    "type": "text",
+    "name": "news_heading",
+    "label": "Newsletter · título",
+    "default": "Mantente informado sobre las novedades del mes de nuestra Universidad"
+  },
+  {
+    "type": "text",
+    "name": "news_text",
+    "label": "Newsletter · texto",
+    "default": "Recibe noticias sobre admisiones, eventos preuniversitarios y vida universitaria en tu correo."
+  },
+  {
+    "type": "text",
+    "name": "news_placeholder",
+    "label": "Newsletter · placeholder del email",
+    "default": "Email"
+  },
+  {
+    "type": "text",
+    "name": "news_button",
+    "label": "Newsletter · texto del botón",
+    "default": "Enviar"
+  },
+  {
+    "type": "text",
+    "name": "news_disclaimer",
+    "label": "Newsletter · aviso legal",
+    "default": "Al suscribirte aceptas nuestra política de privacidad"
+  },
+  {
+    "type": "group",
+    "name": "columns",
+    "label": "Columnas del footer",
+    "help_text": "Cada columna: título, texto opcional (dirección), enlaces y opción de mostrar redes sociales.",
+    "occurrence": {
+      "min": 0,
+      "max": 8,
+      "default": 6
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "title",
+        "label": "Título (H3)",
+        "default": "Columna"
+      },
+      {
+        "type": "richtext",
+        "name": "col_body",
+        "label": "Texto (opcional)",
+        "default": ""
+      },
+      {
+        "type": "group",
+        "name": "links",
+        "label": "Enlaces",
+        "occurrence": {
+          "min": 0,
+          "max": 12
+        },
+        "children": [
+          {
+            "type": "text",
+            "name": "text",
+            "label": "Texto",
+            "default": "Enlace"
+          },
+          {
+            "type": "link",
+            "name": "link",
+            "label": "Destino",
+            "default": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            }
+          }
+        ]
+      },
+      {
+        "type": "boolean",
+        "name": "show_social",
+        "label": "Mostrar redes sociales",
+        "default": false
+      }
+    ],
+    "default": [
+      {
+        "title": "Descubre",
+        "show_social": false,
+        "links": [
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Por qué Anáhuac"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Vida universitaria"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Estudiantes foráneos"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Competencias académicas"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Ubicaciones"
+          }
+        ],
+        "col_body": ""
+      },
+      {
+        "title": "Programas",
+        "show_social": false,
+        "links": [
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Oferta académica"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Todas las licenciaturas"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Áreas académicas"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Solicita información"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Visita el campus"
+          }
+        ],
+        "col_body": ""
+      },
+      {
+        "title": "Admisiones",
+        "show_social": false,
+        "links": [
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Admisión general"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Admisión medicina"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Admisión internacional"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Fechas de examen"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Inicia tu proceso"
+          }
+        ],
+        "col_body": ""
+      },
+      {
+        "title": "Campus Norte",
+        "show_social": true,
+        "links": [
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "tel:+525556270210"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "+52 (55) 5627 0210"
+          }
+        ],
+        "col_body": "<p>Av. Universidad Anáhuac 46, Col. Lomas Anáhuac. Huixquilucan, Estado de México.</p>"
+      },
+      {
+        "title": "Campus Sur",
+        "show_social": true,
+        "links": [
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "tel:+525556288800"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "+52 (55) 5628 8800"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Misión y valores"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Acreditaciones"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Noticias"
+          }
+        ],
+        "col_body": "<p>Av. de los Tanques 865, Col. Torres de Potrero. Álvaro Obregón, CDMX.</p>"
+      },
+      {
+        "title": "Contacto",
+        "show_social": true,
+        "links": [
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Teléfono principal"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Correo de admisiones"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Síguenos en línea"
+          },
+          {
+            "link": {
+              "url": {
+                "type": "EXTERNAL",
+                "href": "#"
+              },
+              "open_in_new_tab": false
+            },
+            "text": "Ubicación"
+          }
+        ],
+        "col_body": ""
+      }
+    ]
+  },
+  {
+    "type": "link",
+    "name": "social_facebook",
+    "label": "Redes · Facebook",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#"
+      },
+      "open_in_new_tab": true
+    }
+  },
+  {
+    "type": "link",
+    "name": "social_x",
+    "label": "Redes · X",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#"
+      },
+      "open_in_new_tab": true
+    }
+  },
+  {
+    "type": "link",
+    "name": "social_instagram",
+    "label": "Redes · Instagram",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#"
+      },
+      "open_in_new_tab": true
+    }
+  },
+  {
+    "type": "link",
+    "name": "social_youtube",
+    "label": "Redes · YouTube",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#"
+      },
+      "open_in_new_tab": true
+    }
+  },
+  {
+    "type": "text",
+    "name": "copyright",
+    "label": "Aviso de copyright",
+    "default": "© 2026 Universidad Anáhuac México. Todos los derechos reservados."
+  }
+]

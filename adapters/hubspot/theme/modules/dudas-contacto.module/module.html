@@ -1,0 +1,24 @@
+{# ===== Dudas / Contacto — imagen + tarjeta con dos CTAs ===== #}
+<section class="questions section-pad" id="contacto">
+  <div class="container questions-card reveal" data-reveal>
+    <img src="{{ module.image.src or get_asset_url('../../images/dudas.jpg') }}"
+         alt="{{ module.image.alt|default('Estudiante Anáhuac en aula', true) }}"
+         {% if module.image.width %}width="{{ module.image.width }}"{% endif %}
+         {% if module.image.height %}height="{{ module.image.height }}"{% endif %}
+         loading="lazy" />
+    <div>
+      {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+      {% if module.description %}<p>{{ module.description }}</p>{% endif %}
+      <div class="button-row centered">
+        {% if module.primary_text %}
+          <a class="btn btn-dark" href="{{ module.primary_link.url.href|default('#', true) }}"
+             {% if module.primary_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.primary_text }}</a>
+        {% endif %}
+        {% if module.secondary_text %}
+          <a class="btn btn-light" href="{{ module.secondary_link.url.href|default('#', true) }}"
+             {% if module.secondary_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.secondary_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

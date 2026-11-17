@@ -1,0 +1,62 @@
+{# ===== Footer global — sprite de íconos + newsletter + columnas + copyright ===== #}
+<footer class="site-footer">
+  <svg class="social-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-facebook" viewBox="0 0 24 24">
+      <path d="M15.1 8.3h3V4h-3.7c-4 0-6 2.4-6 6v2.4H5v4.4h3.4V24h4.7v-7.2h3.8l.7-4.4h-4.5v-2c0-1.3.5-2.1 2-2.1Z" />
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24">
+      <path d="M18.9 2h3.3l-7.3 8.3L23.5 22h-6.7l-5.2-6.9L5.6 22H2.3l7.8-8.9L1.8 2h6.9l4.7 6.3L18.9 2Zm-1.2 18h1.8L7.7 3.9h-2L17.7 20Z" />
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <path d="M7.3 2h9.4A5.3 5.3 0 0 1 22 7.3v9.4a5.3 5.3 0 0 1-5.3 5.3H7.3A5.3 5.3 0 0 1 2 16.7V7.3A5.3 5.3 0 0 1 7.3 2Zm0 2.2a3.1 3.1 0 0 0-3.1 3.1v9.4a3.1 3.1 0 0 0 3.1 3.1h9.4a3.1 3.1 0 0 0 3.1-3.1V7.3a3.1 3.1 0 0 0-3.1-3.1H7.3ZM12 7.1A4.9 4.9 0 1 1 12 17a4.9 4.9 0 0 1 0-9.9Zm0 2.2a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5.2-2.8a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z" />
+    </symbol>
+    <symbol id="icon-youtube" viewBox="0 0 24 24">
+      <path d="M21.7 7.1a3 3 0 0 0-2.1-2.1C17.7 4.5 12 4.5 12 4.5s-5.7 0-7.6.5a3 3 0 0 0-2.1 2.1C1.8 9 1.8 12 1.8 12s0 3 .5 4.9A3 3 0 0 0 4.4 19c1.9.5 7.6.5 7.6.5s5.7 0 7.6-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.9.5-4.9s0-3-.5-4.9ZM10 15.2V8.8l5.6 3.2-5.6 3.2Z" />
+    </symbol>
+  </svg>
+  <div class="container footer-inner">
+    <div class="footer-top">
+      {% if module.logo.src %}
+        <img src="{{ module.logo.src }}" alt="{{ module.logo.alt|default('Anáhuac México', true) }}"
+             {% if module.logo.width %}width="{{ module.logo.width }}"{% endif %}
+             {% if module.logo.height %}height="{{ module.logo.height }}"{% endif %} />
+      {% else %}
+        <img src="{{ get_asset_url('../../images/logo-anahuac.svg') }}" alt="{{ module.logo.alt|default('Anáhuac México', true) }}" />
+      {% endif %}
+      <form class="newsletter">
+        {% if module.news_heading %}<h2>{{ module.news_heading }}</h2>{% endif %}
+        {% if module.news_text %}<p>{{ module.news_text }}</p>{% endif %}
+        <div>
+          <input type="email" placeholder="{{ module.news_placeholder|default('Email', true) }}" aria-label="{{ module.news_placeholder|default('Email', true) }}" />
+          <button class="btn btn-dark" type="submit">{{ module.news_button|default('Enviar', true) }}</button>
+        </div>
+        {% if module.news_disclaimer %}<small>{{ module.news_disclaimer }}</small>{% endif %}
+      </form>
+    </div>
+    <div class="footer-links">
+      {% for col in module.columns %}
+        <div>
+          {% if col.title %}<h3>{{ col.title }}</h3>{% endif %}
+          {% if col.col_body %}{{ col.col_body }}{% endif %}
+          {% for l in col.links %}
+            <a href="{{ l.link.url.href|default('#', true) }}"
+               {% if l.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ l.text }}</a>
+          {% endfor %}
+          {% if col.show_social %}
+            <div class="social-links" aria-label="Redes sociales {{ col.title }}">
+              <a href="{{ module.social_facebook.url.href|default('#', true) }}" aria-label="Facebook {{ col.title }}"
+                 {% if module.social_facebook.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}><svg><use href="#icon-facebook"></use></svg></a>
+              <a href="{{ module.social_x.url.href|default('#', true) }}" aria-label="X {{ col.title }}"
+                 {% if module.social_x.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}><svg><use href="#icon-x"></use></svg></a>
+              <a href="{{ module.social_instagram.url.href|default('#', true) }}" aria-label="Instagram {{ col.title }}"
+                 {% if module.social_instagram.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}><svg><use href="#icon-instagram"></use></svg></a>
+              <a href="{{ module.social_youtube.url.href|default('#', true) }}" aria-label="YouTube {{ col.title }}"
+                 {% if module.social_youtube.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}><svg><use href="#icon-youtube"></use></svg></a>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    {% if module.copyright %}<p class="copyright">{{ module.copyright }}</p>{% endif %}
+  </div>
+</footer>

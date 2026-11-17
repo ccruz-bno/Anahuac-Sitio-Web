@@ -1,0 +1,114 @@
+[
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H1)",
+    "default": "Forma tu futuro en Anáhuac México"
+  },
+  {
+    "type": "richtext",
+    "name": "offer_text",
+    "label": "Tarjeta de oferta",
+    "default": "<p>Descubre una educación que te prepara para generar un impacto real. Explora nuestras licenciaturas y encuentra tu camino.</p>"
+  },
+  {
+    "type": "text",
+    "name": "primary_btn_text",
+    "label": "Botón primario · texto",
+    "default": "Ver licenciaturas"
+  },
+  {
+    "type": "link",
+    "name": "primary_btn_link",
+    "label": "Botón primario · destino",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#licenciaturas"
+      },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "text",
+    "name": "secondary_btn_text",
+    "label": "Botón secundario · texto",
+    "default": "Proceso de admisión"
+  },
+  {
+    "type": "link",
+    "name": "secondary_btn_link",
+    "label": "Botón secundario · destino",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#admisiones"
+      },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "image",
+    "name": "image_1",
+    "label": "Imagen 1 (arriba izquierda)",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Estudiante Anáhuac con tablet"
+    }
+  },
+  {
+    "type": "image",
+    "name": "image_2",
+    "label": "Imagen 2 (destacada grande)",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Estudiantes Anáhuac"
+    }
+  },
+  {
+    "type": "image",
+    "name": "image_3",
+    "label": "Imagen 3 (media)",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Estudiante de medicina Anáhuac"
+    }
+  },
+  {
+    "type": "image",
+    "name": "image_4",
+    "label": "Imagen 4 / poster (banda inferior)",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Jugadores Anáhuac"
+    }
+  },
+  {
+    "type": "file",
+    "name": "video_1",
+    "label": "Video 1 (arriba izquierda) · mp4",
+    "default": "https://3807214.fs1.hubspotusercontent-na1.net/hubfs/3807214/sitioweb26/videos/estudiante-tablet.mp4"
+  },
+  {
+    "type": "file",
+    "name": "video_2",
+    "label": "Video 2 (destacado) · mp4",
+    "default": "https://3807214.fs1.hubspotusercontent-na1.net/hubfs/3807214/sitioweb26/videos/estudiantes-saltando.mp4"
+  },
+  {
+    "type": "file",
+    "name": "video_3",
+    "label": "Video 3 (medio) · mp4",
+    "default": "https://3807214.fs1.hubspotusercontent-na1.net/hubfs/3807214/sitioweb26/videos/estudiante-medicina.mp4"
+  },
+  {
+    "type": "file",
+    "name": "video_4",
+    "label": "Video 4 (banda inferior) · mp4",
+    "default": "https://3807214.fs1.hubspotusercontent-na1.net/hubfs/3807214/sitioweb26/videos/jugadores-corriendo.mp4"
+  }
+]

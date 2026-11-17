@@ -1,0 +1,74 @@
+[
+  {
+    "type": "group",
+    "name": "colors",
+    "label": "Colores de marca",
+    "help_text": "Colores principales configurables. Alimentan los tokens semánticos del sitio; cambiarlos re-tematiza todos los módulos.",
+    "expanded": true,
+    "children": [
+      {
+        "type": "color",
+        "name": "brand_primary",
+        "label": "Primario (Naranja Anáhuac)",
+        "help_text": "CTAs principales, acentos de marca, hover.",
+        "default": { "color": "#FF5900", "opacity": 100 }
+      },
+      {
+        "type": "color",
+        "name": "brand_secondary",
+        "label": "Secundario (Café Anáhuac)",
+        "help_text": "Acentos institucionales secundarios.",
+        "default": { "color": "#6B3F23", "opacity": 100 }
+      },
+      {
+        "type": "color",
+        "name": "surface_dark",
+        "label": "Superficie oscura",
+        "help_text": "Fondos oscuros: botones dark, footer.",
+        "default": { "color": "#000000", "opacity": 100 }
+      },
+      {
+        "type": "color",
+        "name": "accent_purple",
+        "label": "Acento morado",
+        "help_text": "Botones morados y superficies de acento.",
+        "default": { "color": "#5D428C", "opacity": 100 }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "typography",
+    "label": "Tipografía",
+    "help_text": "La tipografía se hereda del Theme: los módulos usan estas familias vía tokens. No se define tipografía por módulo.",
+    "expanded": true,
+    "children": [
+      {
+        "type": "font",
+        "name": "heading_font",
+        "label": "Fuente de títulos",
+        "help_text": "Encabezados (h1–h6), botones y frases destacadas.",
+        "load_external_fonts": true,
+        "default": {
+          "font": "Zilla Slab",
+          "font_set": "GOOGLE",
+          "fallback": "serif",
+          "styles": {}
+        }
+      },
+      {
+        "type": "font",
+        "name": "body_font",
+        "label": "Fuente de cuerpo",
+        "help_text": "Texto de cuerpo, párrafos y UI.",
+        "load_external_fonts": true,
+        "default": {
+          "font": "Roboto",
+          "font_set": "GOOGLE",
+          "fallback": "sans-serif",
+          "styles": {}
+        }
+      }
+    ]
+  }
+]

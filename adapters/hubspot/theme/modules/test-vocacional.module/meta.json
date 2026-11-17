@@ -1,0 +1,13 @@
+{
+  "label": "Test vocacional — Anáhuac",
+  "help_text": "Test vocacional de dos fases. Fase 1 ubica al alumno en áreas; Fase 2 sólo pregunta por las carreras de esas áreas. Los textos de pantalla son editables; los reactivos y el mapeo viven en los datos (HubDB).",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

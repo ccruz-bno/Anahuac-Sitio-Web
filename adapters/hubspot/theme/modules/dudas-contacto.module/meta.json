@@ -1,0 +1,13 @@
+{
+  "label": "Dudas / Contacto — Anáhuac",
+  "help_text": "Banda de contacto: imagen, título, descripción y dos botones (contactar / agendar visita).",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "FORMS_AND_BUTTONS"
+  ]
+}

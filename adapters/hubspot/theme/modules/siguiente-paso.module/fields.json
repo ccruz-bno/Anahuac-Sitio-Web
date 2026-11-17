@@ -1,0 +1,133 @@
+[
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "El siguiente paso hacia tus sueños"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Texto introductorio",
+    "default": "Avanza hacia tu futuro hoy mismo."
+  },
+  {
+    "type": "group",
+    "name": "cards",
+    "label": "Tarjetas",
+    "help_text": "La primera tarjeta se resalta automáticamente.",
+    "occurrence": {
+      "min": 0,
+      "max": 8,
+      "default": 4
+    },
+    "children": [
+      {
+        "type": "image",
+        "name": "icon",
+        "label": "Ícono",
+        "responsive": true,
+        "default": {
+          "src": "",
+          "alt": ""
+        }
+      },
+      {
+        "type": "text",
+        "name": "title",
+        "label": "Título (H3)",
+        "default": "Título de la tarjeta"
+      },
+      {
+        "type": "text",
+        "name": "description",
+        "label": "Descripción",
+        "default": "Descripción de la tarjeta."
+      },
+      {
+        "type": "text",
+        "name": "cta_text",
+        "label": "Texto del enlace",
+        "default": "Explorar ›"
+      },
+      {
+        "type": "link",
+        "name": "cta_link",
+        "label": "Destino del enlace",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "icon": {
+          "src": "",
+          "alt": ""
+        },
+        "title": "Elige tu carrera ideal",
+        "description": "Explora nuestras ocho áreas académicas y encuentra el programa que te llama.",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      },
+      {
+        "icon": {
+          "src": "",
+          "alt": ""
+        },
+        "title": "Calcula tu inversión",
+        "description": "Conoce el costo real y las becas disponibles para ti en minutos.",
+        "cta_text": "Calcular ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      },
+      {
+        "icon": {
+          "src": "",
+          "alt": ""
+        },
+        "title": "Visita el campus",
+        "description": "Experimenta Anáhuac en persona y resuelve tus últimas dudas con nuestro equipo.",
+        "cta_text": "Agendar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      },
+      {
+        "icon": {
+          "src": "",
+          "alt": ""
+        },
+        "title": "Inicia tu admisión",
+        "description": "Completa tu solicitud y comienza el camino hacia tu futuro profesional.",
+        "cta_text": "Solicitar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      }
+    ]
+  }
+]

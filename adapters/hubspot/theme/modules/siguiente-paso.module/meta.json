@@ -1,0 +1,13 @@
+{
+  "label": "El siguiente paso — Anáhuac",
+  "help_text": "Tarjetas de acción (elige carrera, calcula inversión, visita, admisión). La primera se resalta. Todo editable.",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

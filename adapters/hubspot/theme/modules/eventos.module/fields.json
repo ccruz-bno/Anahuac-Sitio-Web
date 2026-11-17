@@ -1,0 +1,333 @@
+[
+  {
+    "type": "text",
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "default": "Próximos eventos"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "Sé parte de nuestras experiencias preuniversitarias"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Texto introductorio",
+    "default": "Participa en experiencias diseñadas para conocer tu futuro en Anáhuac."
+  },
+  {
+    "type": "group",
+    "name": "featured",
+    "label": "Evento destacado",
+    "children": [
+      {
+        "type": "image",
+        "name": "image",
+        "label": "Imagen",
+        "responsive": true,
+        "default": {
+          "src": "",
+          "alt": "Estudiantes caminando en campus"
+        }
+      },
+      {
+        "type": "text",
+        "name": "day",
+        "label": "Día",
+        "default": "15"
+      },
+      {
+        "type": "text",
+        "name": "month",
+        "label": "Mes",
+        "default": "Mayo 2026"
+      },
+      {
+        "type": "text",
+        "name": "pill_text",
+        "label": "Etiqueta (pill)",
+        "default": "Evento Masivo"
+      },
+      {
+        "type": "text",
+        "name": "title",
+        "label": "Título del evento",
+        "default": "Vive Anáhuac"
+      },
+      {
+        "type": "text",
+        "name": "modality",
+        "label": "Modalidad",
+        "default": "Presencial"
+      },
+      {
+        "type": "text",
+        "name": "campus",
+        "label": "Campus",
+        "default": "Campus Norte"
+      },
+      {
+        "type": "text",
+        "name": "description",
+        "label": "Descripción",
+        "default": "Vive el mejor evento para preuniversitarios con talleres, conferencias, juegos, concursos, premios y mucho más."
+      },
+      {
+        "type": "text",
+        "name": "cta_text",
+        "label": "Texto del botón",
+        "default": "Regístrate aquí ›"
+      },
+      {
+        "type": "link",
+        "name": "cta_link",
+        "label": "Destino del botón",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "filters",
+    "label": "Filtros",
+    "help_text": "El primer filtro es siempre 'Ver todos'. Cada slug debe coincidir con las etiquetas (tags) de los eventos.",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 5
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "text",
+        "label": "Texto",
+        "default": "Filtro"
+      },
+      {
+        "type": "text",
+        "name": "slug",
+        "label": "Slug",
+        "default": "all"
+      }
+    ],
+    "default": [
+      {
+        "slug": "all",
+        "text": "Ver todos"
+      },
+      {
+        "slug": "sesiones-informativas",
+        "text": "Sesiones informativas"
+      },
+      {
+        "slug": "visitas-campus",
+        "text": "Visitas en Campus"
+      },
+      {
+        "slug": "brunch-informativo",
+        "text": "Brunch informativo"
+      },
+      {
+        "slug": "eventos-masivos",
+        "text": "Eventos masivos"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "events",
+    "label": "Eventos",
+    "help_text": "En 'Etiquetas' escribe uno o varios slugs separados por espacio que coincidan con los filtros.",
+    "occurrence": {
+      "min": 0,
+      "max": 24,
+      "default": 6
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "day",
+        "label": "Día",
+        "default": "18"
+      },
+      {
+        "type": "text",
+        "name": "month",
+        "label": "Mes",
+        "default": "Mayo 2026"
+      },
+      {
+        "type": "text",
+        "name": "title",
+        "label": "Título",
+        "default": "Evento"
+      },
+      {
+        "type": "text",
+        "name": "pill_text",
+        "label": "Etiqueta (pill)",
+        "default": ""
+      },
+      {
+        "type": "text",
+        "name": "modality",
+        "label": "Modalidad",
+        "default": "Virtual"
+      },
+      {
+        "type": "text",
+        "name": "campus",
+        "label": "Campus",
+        "default": "Campus Norte"
+      },
+      {
+        "type": "text",
+        "name": "description",
+        "label": "Descripción",
+        "default": ""
+      },
+      {
+        "type": "text",
+        "name": "cta_text",
+        "label": "Texto del botón",
+        "default": "Conocer más"
+      },
+      {
+        "type": "link",
+        "name": "cta_link",
+        "label": "Destino del botón",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      },
+      {
+        "type": "text",
+        "name": "tags",
+        "label": "Etiquetas (slugs)",
+        "default": ""
+      }
+    ],
+    "default": [
+      {
+        "day": "18",
+        "month": "Mayo 2026",
+        "title": "Movilidad Internacional",
+        "pill_text": "Sesión Informativa",
+        "modality": "Virtual",
+        "campus": "Campus Norte",
+        "description": "Explora nuestros convenios globales y estudia un semestre en universidades aliadas del mundo.",
+        "cta_text": "Conocer más",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "tags": "sesiones-informativas"
+      },
+      {
+        "day": "22",
+        "month": "Mayo 2026",
+        "title": "Día de puertas abiertas",
+        "pill_text": "",
+        "modality": "Virtual",
+        "campus": "Campus Sur",
+        "description": "Vive un día como León Anáhuac con talleres, conferencias y competencias en vivo.",
+        "cta_text": "Agendar visita",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "tags": "visitas-campus"
+      },
+      {
+        "day": "25",
+        "month": "Mayo 2026",
+        "title": "Encuentro con egresados",
+        "pill_text": "",
+        "modality": "Presencial",
+        "campus": "Bi-Campus",
+        "description": "Escucha historias reales de quiénes estudiaron aquí y hoy generan impacto profesional.",
+        "cta_text": "Inscribirse",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "tags": "eventos-masivos"
+      },
+      {
+        "day": "29",
+        "month": "Mayo 2026",
+        "title": "Taller vocacional Anáhuac",
+        "pill_text": "",
+        "modality": "Presencial",
+        "campus": "Campus Norte",
+        "description": "Descubre tus intereses profesionales con actividades guiadas por orientadores universitarios.",
+        "cta_text": "Apartar lugar",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "tags": "visitas-campus"
+      },
+      {
+        "day": "04",
+        "month": "Junio 2026",
+        "title": "Brunch para familias",
+        "pill_text": "",
+        "modality": "Presencial",
+        "campus": "Campus Sur",
+        "description": "Conoce instalaciones, resuelve dudas de admisión y conversa con asesores académicos.",
+        "cta_text": "Reservar",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "tags": "brunch-informativo"
+      },
+      {
+        "day": "11",
+        "month": "Junio 2026",
+        "title": "Clase muestra por área",
+        "pill_text": "",
+        "modality": "Virtual",
+        "campus": "Bi-Campus",
+        "description": "Vive una sesión académica breve para acercarte a la experiencia real de tu licenciatura.",
+        "cta_text": "Ver horarios",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "tags": "sesiones-informativas"
+      }
+    ]
+  }
+]

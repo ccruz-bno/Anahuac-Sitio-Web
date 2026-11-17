@@ -1,0 +1,13 @@
+{
+  "label": "Eventos — Anáhuac",
+  "help_text": "Próximos eventos: destacado, filtros y lista paginada. El filtrado y la paginación los maneja el JS del theme.",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

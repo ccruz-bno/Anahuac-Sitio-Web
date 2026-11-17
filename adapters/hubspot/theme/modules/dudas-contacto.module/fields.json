@@ -1,0 +1,60 @@
+[
+  {
+    "type": "image",
+    "name": "image",
+    "label": "Imagen",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Estudiante Anáhuac en aula"
+    }
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "¿Tienes alguna duda de nuestra universidad?"
+  },
+  {
+    "type": "text",
+    "name": "description",
+    "label": "Descripción",
+    "default": "Nuestro equipo de asesores preuniversitarios en la Universidad Anáhuac México está aquí para guiarte en cada paso hacia tu futuro brillante. ¡Contáctanos hoy y comienza a trazar el camino hacia tus sueños!"
+  },
+  {
+    "type": "text",
+    "name": "primary_text",
+    "label": "Botón primario · texto",
+    "default": "Contactar"
+  },
+  {
+    "type": "link",
+    "name": "primary_link",
+    "label": "Botón primario · destino",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#"
+      },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "text",
+    "name": "secondary_text",
+    "label": "Botón secundario · texto",
+    "default": "Agenda tu visita"
+  },
+  {
+    "type": "link",
+    "name": "secondary_link",
+    "label": "Botón secundario · destino",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#"
+      },
+      "open_in_new_tab": false
+    }
+  }
+]

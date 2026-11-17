@@ -1,0 +1,28 @@
+{# ===== Oferta · Hero — eyebrow + título + tarjeta de oferta + CTAs ===== #}
+<section class="oferta-hero section-pad" id="inicio">
+  <div class="container oferta-hero-inner">
+    <div class="oferta-hero-copy">
+      {% if module.eyebrow %}
+        <p class="tagline reveal" data-reveal><span></span>{{ module.eyebrow }}</p>
+      {% endif %}
+      {% if module.heading %}
+        <h1 class="reveal" data-reveal>{{ module.heading }}</h1>
+      {% endif %}
+    </div>
+    <div class="oferta-hero-info reveal" data-reveal>
+      {% if module.card_text %}
+        <div class="hero-card">{{ module.card_text }}</div>
+      {% endif %}
+      <div class="button-row">
+        {% if module.btn1_text %}
+          <a class="btn btn-dark" href="{{ module.btn1_link.url.href|default('#', true) }}"
+             {% if module.btn1_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.btn1_text }}</a>
+        {% endif %}
+        {% if module.btn2_text %}
+          <a class="btn btn-light" href="{{ module.btn2_link.url.href|default('#', true) }}"
+             {% if module.btn2_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.btn2_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

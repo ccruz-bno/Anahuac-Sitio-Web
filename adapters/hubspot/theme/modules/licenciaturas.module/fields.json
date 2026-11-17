@@ -1,0 +1,212 @@
+[
+  {
+    "type": "color",
+    "name": "bg_color",
+    "label": "Color de fondo de la sección",
+    "help_text": "Fondo de la sección de áreas académicas. Por defecto naranja Anáhuac.",
+    "default": { "color": "#FF5900", "opacity": 100 }
+  },
+  {
+    "type": "text",
+    "name": "eyebrow",
+    "label": "Eyebrow (tagline)",
+    "default": "Áreas académicas"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "Explora nuestras licenciaturas"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Texto de introducción",
+    "default": "Encuentra la carrera que conecta con tus intereses, habilidades y metas."
+  },
+  {
+    "type": "text",
+    "name": "view_all_text",
+    "label": "Botón «Ver todas» · texto",
+    "default": "Ver todas"
+  },
+  {
+    "type": "link",
+    "name": "view_all_link",
+    "label": "Botón «Ver todas» · destino",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#"
+      },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "group",
+    "name": "programs",
+    "label": "Áreas académicas",
+    "help_text": "Tarjetas del carrusel de áreas. El slider las clona para el scroll infinito.",
+    "occurrence": {
+      "min": 0,
+      "max": 20,
+      "default": 7
+    },
+    "children": [
+      {
+        "type": "image",
+        "name": "image",
+        "label": "Imagen",
+        "responsive": true,
+        "default": {
+          "src": "",
+          "alt": "Área académica Anáhuac"
+        }
+      },
+      {
+        "type": "text",
+        "name": "program_name",
+        "label": "Nombre del área",
+        "default": "Área académica"
+      },
+      {
+        "type": "text",
+        "name": "count",
+        "label": "Número de programas",
+        "default": "5 programas"
+      },
+      {
+        "type": "text",
+        "name": "cta_text",
+        "label": "Enlace · texto",
+        "default": "Explorar ›"
+      },
+      {
+        "type": "link",
+        "name": "cta_link",
+        "label": "Enlace · destino",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "image": {
+          "src": "",
+          "alt": "Ciencias de la Salud"
+        },
+        "count": "5 programas",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "program_name": "Ciencias de la Salud"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Ingenierías y Ciencias"
+        },
+        "count": "11 programas",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "program_name": "Ingenierías y Ciencias"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Negocios y Economía"
+        },
+        "count": "11 programas",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "program_name": "Negocios y Economía"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Ciencias Sociales y Derecho"
+        },
+        "count": "8 programas",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "program_name": "Ciencias Sociales y Derecho"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Comunicación, Arquitectura y Diseño"
+        },
+        "count": "7 programas",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "program_name": "Comunicación, Arquitectura y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Artes y Diseño"
+        },
+        "count": "5 programas",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "program_name": "Artes y Diseño"
+      },
+      {
+        "image": {
+          "src": "",
+          "alt": "Educación y Formación"
+        },
+        "count": "4 programas",
+        "cta_text": "Explorar ›",
+        "cta_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        },
+        "program_name": "Educación y Formación"
+      }
+    ]
+  }
+]

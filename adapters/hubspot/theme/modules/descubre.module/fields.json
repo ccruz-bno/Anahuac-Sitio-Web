@@ -1,0 +1,136 @@
+[
+  {
+    "type": "text",
+    "name": "eyebrow",
+    "label": "Eyebrow (tagline)",
+    "default": "Descubre tu licenciatura ideal"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Título (H2)",
+    "default": "¿Aún no decides qué carrera estudiar?"
+  },
+  {
+    "type": "text",
+    "name": "intro",
+    "label": "Texto de introducción",
+    "default": "Si todavía estás explorando, te apoyamos en tu decisión para que encuentres una opción alineada con tus intereses y metas."
+  },
+  {
+    "type": "image",
+    "name": "image",
+    "label": "Imagen lateral",
+    "responsive": true,
+    "default": {
+      "src": "",
+      "alt": "Estudiante Anáhuac pensando en su carrera"
+    }
+  },
+  {
+    "type": "group",
+    "name": "cards",
+    "label": "Tarjetas de acción",
+    "help_text": "Tarjetas para orientar la decisión del prospecto (test vocacional, asesor, etc.).",
+    "occurrence": {
+      "min": 0,
+      "max": 4,
+      "default": 2
+    },
+    "children": [
+      {
+        "type": "image",
+        "name": "icon",
+        "label": "Ícono",
+        "responsive": false,
+        "default": {
+          "src": "",
+          "alt": ""
+        }
+      },
+      {
+        "type": "choice",
+        "name": "variant",
+        "label": "Estilo de la tarjeta",
+        "display": "select",
+        "choices": [
+          [
+            "descubre-card--orange",
+            "Naranja"
+          ],
+          [
+            "descubre-card--purple",
+            "Morada"
+          ]
+        ],
+        "default": "descubre-card--orange"
+      },
+      {
+        "type": "text",
+        "name": "title",
+        "label": "Título",
+        "default": "Hacer test vocacional"
+      },
+      {
+        "type": "text",
+        "name": "text",
+        "label": "Descripción",
+        "default": "Descubre en qué área y carreras te puedes desempeñar con mayor éxito."
+      },
+      {
+        "type": "text",
+        "name": "cta_text",
+        "label": "Enlace · texto",
+        "default": "Realizar test"
+      },
+      {
+        "type": "link",
+        "name": "link",
+        "label": "Enlace · destino",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "icon": {
+          "src": "",
+          "alt": "Ícono test vocacional"
+        },
+        "variant": "descubre-card--orange",
+        "title": "Hacer test vocacional",
+        "text": "Descubre en qué área y carreras te puedes desempeñar con mayor éxito.",
+        "cta_text": "Realizar test",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      },
+      {
+        "icon": {
+          "src": "",
+          "alt": "Ícono hablar con asesor"
+        },
+        "variant": "descubre-card--purple",
+        "title": "Habla con un asesor",
+        "text": "Nuestro equipo te guía hacia el programa que mejor se ajusta a ti.",
+        "cta_text": "Hablar con asesor",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          },
+          "open_in_new_tab": false
+        }
+      }
+    ]
+  }
+]

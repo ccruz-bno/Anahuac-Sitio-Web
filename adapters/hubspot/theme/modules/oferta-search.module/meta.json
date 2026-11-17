@@ -1,0 +1,13 @@
+{
+  "label": "Oferta · Buscador de licenciaturas — Anáhuac",
+  "help_text": "Buscador y filtro de todas las licenciaturas (Elige tu camino). Título, intro, buscador, filtros de área y campus, y tarjetas de programa editables. El filtrado y la paginación los maneja oferta.js mediante clases y data-* fijos.",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

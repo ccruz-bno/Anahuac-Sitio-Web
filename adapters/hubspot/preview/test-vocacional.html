@@ -1,0 +1,130 @@
+<!doctype html>
+<!-- Preview local del módulo test-vocacional.
+     El HubL está resuelto con los valores por defecto de fields.json (este archivo
+     se genera desde ahí para que no puedan divergir). Incluye el encabezado en su
+     variante «sólo logo» y el pie, como la página real.
+     NO es un entregable del sitio. -->
+<html class="no-js" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test vocacional — preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../theme/css/tokens.css" />
+  <link rel="stylesheet" href="../theme/css/main.css" />
+</head>
+<body>
+
+  <header class="site-header site-header--solo-logo">
+    <a class="logo-link" href="../../../Inicio.html" aria-label="Universidad Anáhuac México">
+      <img src="../theme/images/logo-anahuac.svg" alt="Universidad Anáhuac México" />
+    </a>
+  </header>
+
+  <main id="contenido">
+    <section class="tv tv--marca section-pad" id="test-vocacional"
+             data-areas-que-pasan="2"
+             data-max-carreras="5"
+             data-puntaje-minimo="5"
+             data-img-base="../theme/images/"
+             data-marcar-provisional>
+      <span class="tv-glow" aria-hidden="true"></span>
+      <div class="container">
+
+        <script type="application/json" class="tv-config">
+{
+  "atras": "Volver a la anterior",
+  "tiempo": "Te faltan unos {n} minutos",
+  "tiempoCorto": "Te falta menos de un minuto",
+  "eleccionTitulo": "Varias áreas te interesan por igual",
+  "eleccionTexto": "Quedaron empatadas. Elige {n} para continuar: son las que vamos a explorar a fondo.",
+  "eleccionContador": "{n} de {total} áreas elegidas",
+  "eleccionBoton": "Continuar con estas",
+  "transicionTitulo": "Ya sabemos por dónde vas",
+  "transicionTexto": "Son las áreas donde tus intereses se concentran. Ahora vamos a las licenciaturas de cada una. {tiempo}.",
+  "transicionBoton": "Seguir",
+  "resultadoEyebrow": "Tu área",
+  "resultadoTitulo": "Esto es lo que encontramos",
+  "resultadoSub": "Es el campo donde tus intereses se concentran. Aquí abajo están las licenciaturas que más se acercan.",
+  "resultadoSegunda": "También te late",
+  "resultadoCarreras": "Las que más se acercan",
+  "resultadoCarrerasResto": "También se acercan",
+  "explorar": "Conocer la licenciatura",
+  "reiniciar": "Volver a empezar",
+  "resultadoNota": "Este resultado es una guía para explorar, no una decisión definitiva. Lo mejor que puedes hacer con él es contrastarlo con alguien que conozca los planes de estudio.",
+  "cierreTitulo": "¿Lo platicamos?",
+  "cierreTexto": "Un asesor puede ayudarte a entender qué se estudia en cada una, cómo es el plan y qué sigue si te decides.",
+  "asesorBoton": "Habla con un asesor",
+  "asesorUrl": "#contacto",
+  "pdfBoton": "Descargar mi resultado",
+  "pdfUrl": "",
+  "cierreImagen": "../theme/images/leonel-mascot.png",
+  "avisoReglas": "Regla provisional: pasan las {n} áreas con mayor puntaje. Si hay empate en el corte, lo decide el alumno. Pendiente de validar con la autora.",
+  "avisoResultado": "Demo con el mapa de áreas provisional y sin los textos de resultado. Faltan las respuestas de la autora y los 55 textos (8 de área y 47 de licenciatura)."
+}
+        </script>
+
+        <script src="../theme/js/test-vocacional-data.js"></script>
+
+        <div class="tv-avance" data-tv-avance hidden>
+          <ol class="tv-hitos">
+            <li class="tv-hito" data-tv-hito>
+              <span class="tv-hito-barra"><i></i></span>
+              <span class="tv-hito-nombre">Áreas</span>
+            </li>
+            <li class="tv-hito" data-tv-hito>
+              <span class="tv-hito-barra"><i></i></span>
+              <span class="tv-hito-nombre">Licenciaturas</span>
+            </li>
+          </ol>
+          <p class="tv-tiempo" data-tv-tiempo></p>
+        </div>
+
+        <div class="tv-screen tv-intro" data-tv-screen="intro">
+          <div class="tv-intro-texto">
+            <p class="tagline"><span></span>Descubre tu licenciatura ideal</p>
+            <h1>¿Y si la carrera que buscas no es la que tienes en mente?</h1>
+            <div class="tv-richtext"><p>Contesta con sinceridad y te decimos qué áreas y licenciaturas se acercan más a lo que te interesa.</p></div>
+
+            <div class="tv-retomar" data-tv-retomar hidden>
+              <h2>Tienes un test a medias</h2>
+              <p>Guardamos tus respuestas. ¿Sigues donde te quedaste o prefieres empezar de nuevo?</p>
+              <button type="button" class="btn btn-orange" data-tv-continuar>Continuar</button>
+              <button type="button" class="tv-secundario" data-tv-nuevo>Empezar de nuevo</button>
+            </div>
+
+            <div class="tv-intro-acciones">
+              <button type="button" class="btn btn-orange" data-tv-start>Comenzar el test</button>
+              <p class="tv-duracion">Te toma unos 10 minutos</p>
+            </div>
+            <p class="tv-nota">No hay respuestas correctas ni incorrectas: el test no evalúa conocimientos ni aptitudes, sino tus intereses. Su resultado es una guía de exploración, no una decisión definitiva.</p>
+          </div>
+          <div class="tv-intro-imagen">
+            <img src="../theme/images/oferta-academica/formulario/leonel-formulario-1.png" alt="Leonel, mascota Anáhuac" />
+          </div>
+        </div>
+
+        <div class="tv-screen" data-tv-screen="pregunta" hidden></div>
+        <div class="tv-screen" data-tv-screen="eleccion" hidden></div>
+        <div class="tv-screen" data-tv-screen="transicion" hidden></div>
+        <div class="tv-screen" data-tv-screen="resultado" hidden></div>
+
+        <p class="visually-hidden" data-tv-live aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-bottom">
+        <p>© Universidad Anáhuac México — preview del test vocacional</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../theme/js/main.js" defer></script>
+  <script src="../theme/modules/test-vocacional.module/module.js"></script>
+</body>
+</html>

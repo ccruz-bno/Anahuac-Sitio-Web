@@ -1,0 +1,13 @@
+{
+  "label": "Oferta · Descubre tu licenciatura — Anáhuac",
+  "help_text": "Intro centrada + tarjetas de acción (test / asesor) e imagen lateral. Tarjetas editables con estilo naranja o morado.",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}

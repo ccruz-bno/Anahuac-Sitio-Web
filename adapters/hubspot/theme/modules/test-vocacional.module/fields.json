@@ -1,0 +1,342 @@
+[
+  {
+    "type": "group",
+    "name": "intro",
+    "label": "Pantalla de inicio",
+    "children": [
+      {
+        "type": "text",
+        "name": "eyebrow",
+        "label": "Eyebrow (tagline)",
+        "default": "Descubre tu licenciatura ideal"
+      },
+      {
+        "type": "text",
+        "name": "heading",
+        "label": "Título (H1)",
+        "default": "¿Y si la carrera que buscas no es la que tienes en mente?"
+      },
+      {
+        "type": "richtext",
+        "name": "body",
+        "label": "Texto de introducción",
+        "default": "<p>Contesta con sinceridad y te decimos qué áreas y licenciaturas se acercan más a lo que te interesa.</p>"
+      },
+      {
+        "type": "image",
+        "name": "image",
+        "label": "Imagen",
+        "responsive": true,
+        "default": {
+          "src": "",
+          "alt": "Leonel, mascota Anáhuac"
+        }
+      },
+      {
+        "type": "text",
+        "name": "duration",
+        "label": "Duración estimada",
+        "default": "Te toma unos 10 minutos"
+      },
+      {
+        "type": "text",
+        "name": "start_label",
+        "label": "Botón · comenzar",
+        "default": "Comenzar el test"
+      },
+      {
+        "type": "text",
+        "name": "disclaimer",
+        "label": "Encuadre (nota de la autora)",
+        "default": "No hay respuestas correctas ni incorrectas: el test no evalúa conocimientos ni aptitudes, sino tus intereses. Su resultado es una guía de exploración, no una decisión definitiva."
+      },
+      {
+        "type": "text",
+        "name": "resume_heading",
+        "label": "Retomar · título",
+        "default": "Tienes un test a medias"
+      },
+      {
+        "type": "text",
+        "name": "resume_body",
+        "label": "Retomar · texto",
+        "default": "Guardamos tus respuestas. ¿Sigues donde te quedaste o prefieres empezar de nuevo?"
+      },
+      {
+        "type": "text",
+        "name": "resume_continue",
+        "label": "Retomar · botón continuar",
+        "default": "Continuar"
+      },
+      {
+        "type": "text",
+        "name": "resume_restart",
+        "label": "Retomar · botón empezar de nuevo",
+        "default": "Empezar de nuevo"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "preguntas",
+    "label": "Pantallas de preguntas",
+    "children": [
+      {
+        "type": "text",
+        "name": "fase1_label",
+        "label": "Nombre de la fase 1",
+        "default": "Áreas"
+      },
+      {
+        "type": "text",
+        "name": "fase2_label",
+        "label": "Nombre de la fase 2",
+        "default": "Licenciaturas"
+      },
+      {
+        "type": "text",
+        "name": "time_label",
+        "label": "Tiempo restante (usa {n})",
+        "default": "Te faltan unos {n} minutos"
+      },
+      {
+        "type": "text",
+        "name": "time_short",
+        "label": "Tiempo restante · último tramo",
+        "default": "Te falta menos de un minuto"
+      },
+      {
+        "type": "text",
+        "name": "back_label",
+        "label": "Botón · anterior",
+        "default": "Volver a la anterior"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "eleccion",
+    "label": "Pantalla de desempate",
+    "help_text": "Aparece sólo cuando varias áreas quedan empatadas en el corte y el alumno debe elegir.",
+    "children": [
+      {
+        "type": "text",
+        "name": "heading",
+        "label": "Título",
+        "default": "Varias áreas te interesan por igual"
+      },
+      {
+        "type": "text",
+        "name": "body",
+        "label": "Texto (usa {n})",
+        "default": "Quedaron empatadas. Elige {n} para continuar: son las que vamos a explorar a fondo."
+      },
+      {
+        "type": "text",
+        "name": "counter",
+        "label": "Contador (usa {n} y {total})",
+        "default": "{n} de {total} áreas elegidas"
+      },
+      {
+        "type": "text",
+        "name": "continue_label",
+        "label": "Botón · continuar",
+        "default": "Continuar con estas"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "transicion",
+    "label": "Pantalla entre fases",
+    "children": [
+      {
+        "type": "text",
+        "name": "heading",
+        "label": "Título",
+        "default": "Ya sabemos por dónde vas"
+      },
+      {
+        "type": "text",
+        "name": "body",
+        "label": "Texto (usa {tiempo})",
+        "default": "Son las áreas donde tus intereses se concentran. Ahora vamos a las licenciaturas de cada una. {tiempo}."
+      },
+      {
+        "type": "text",
+        "name": "continue_label",
+        "label": "Botón · continuar",
+        "default": "Seguir"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "resultado",
+    "label": "Pantalla de resultado",
+    "children": [
+      {
+        "type": "text",
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "default": "Tu área"
+      },
+      {
+        "type": "text",
+        "name": "heading",
+        "label": "Título de respaldo",
+        "default": "Esto es lo que encontramos"
+      },
+      {
+        "type": "text",
+        "name": "sub",
+        "label": "Bajada",
+        "default": "Es el campo donde tus intereses se concentran. Aquí abajo están las licenciaturas que más se acercan."
+      },
+      {
+        "type": "text",
+        "name": "second_area",
+        "label": "Texto antes de la segunda área",
+        "default": "También te late"
+      },
+      {
+        "type": "text",
+        "name": "carreras_heading",
+        "label": "Subtítulo · licenciaturas",
+        "default": "Las que más se acercan"
+      },
+      {
+        "type": "text",
+        "name": "carreras_resto",
+        "label": "Encabezado del segundo grupo de licenciaturas",
+        "default": "También se acercan"
+      },
+      {
+        "type": "text",
+        "name": "explore_label",
+        "label": "Enlace · explorar licenciatura",
+        "default": "Conocer la licenciatura"
+      },
+      {
+        "type": "text",
+        "name": "restart_label",
+        "label": "Botón · repetir el test",
+        "default": "Volver a empezar"
+      },
+      {
+        "type": "text",
+        "name": "disclaimer",
+        "label": "Nota de cierre",
+        "default": "Este resultado es una guía para explorar, no una decisión definitiva. Lo mejor que puedes hacer con él es contrastarlo con alguien que conozca los planes de estudio."
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "cierre",
+    "label": "Cierre del resultado (conversión)",
+    "children": [
+      {
+        "type": "text",
+        "name": "heading",
+        "label": "Título",
+        "default": "¿Lo platicamos?"
+      },
+      {
+        "type": "text",
+        "name": "body",
+        "label": "Texto",
+        "default": "Un asesor puede ayudarte a entender qué se estudia en cada una, cómo es el plan y qué sigue si te decides."
+      },
+      {
+        "type": "text",
+        "name": "cta_label",
+        "label": "Botón principal",
+        "default": "Habla con un asesor"
+      },
+      {
+        "type": "link",
+        "name": "cta_link",
+        "label": "Botón principal · destino",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#contacto"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "name": "pdf_label",
+        "label": "Botón secundario (PDF)",
+        "default": "Descargar mi resultado"
+      },
+      {
+        "type": "link",
+        "name": "pdf_link",
+        "label": "Botón secundario · destino",
+        "help_text": "Déjalo vacío mientras no exista la descarga: el botón no se muestra.",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": ""
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "reglas",
+    "label": "Reglas de cálculo (provisionales)",
+    "help_text": "Pendientes de validar con la autora del instrumento. Cambiar aquí no requiere tocar código.",
+    "children": [
+      {
+        "type": "number",
+        "name": "areas_que_pasan",
+        "label": "Áreas que pasan a la Fase 2",
+        "default": 2,
+        "min": 1,
+        "max": 4,
+        "step": 1
+      },
+      {
+        "type": "number",
+        "name": "max_carreras",
+        "label": "Máximo de licenciaturas en el resultado",
+        "default": 5,
+        "min": 1,
+        "max": 10,
+        "step": 1
+      },
+      {
+        "type": "number",
+        "name": "puntaje_minimo",
+        "label": "Puntaje mínimo para aparecer (de 2 a 6)",
+        "default": 5,
+        "min": 2,
+        "max": 6,
+        "step": 1
+      },
+      {
+        "type": "boolean",
+        "name": "marcar_provisional",
+        "label": "Mostrar avisos de «dato provisional»",
+        "default": true,
+        "help_text": "Apágalo para presentar el demo sin las marcas internas."
+      },
+      {
+        "type": "text",
+        "name": "aviso",
+        "label": "Aviso · reglas (usa {n})",
+        "default": "Regla provisional: pasan las {n} áreas con mayor puntaje. Si hay empate en el corte, lo decide el alumno. Pendiente de validar con la autora."
+      },
+      {
+        "type": "text",
+        "name": "aviso_resultado",
+        "label": "Aviso · resultado",
+        "default": "Demo con el mapa de áreas provisional y sin los textos de resultado. Faltan las respuestas de la autora y los 55 textos (8 de área y 47 de licenciatura)."
+      }
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "label": "Oferta · Formulario — Anáhuac",
+  "help_text": "Sección \"Actúa\" con mascota e inputs. Textos y mascota editables; reproducción visual (sin envío real).",
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "BODY_CONTENT"
+  ]
+}
