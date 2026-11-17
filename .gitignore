@@ -12,3 +12,17 @@ Thumbs.db
 
 # Node
 node_modules/
+
+# HubSpot CLI — credenciales por persona (NUNCA versionar la key)
+hubspot.config.yml
+**/hubspot.config.yml
+
+# Theme images: copias de assets/ generadas por adapters/hubspot/sync-assets.sh
+adapters/hubspot/theme/images/
+
+# El sitio publicado vive en su propio repo (Black-and-Orange/anahuac-sitio-web)
+# y está clonado aquí dentro. No es contenido de este repo.
+anahuac-sitio-web/
+
+# Archivos de trabajo de la sesión
+scratchpad/
