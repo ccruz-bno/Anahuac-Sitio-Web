@@ -9,7 +9,8 @@ Home  (specs/home.md) — referencia canónica
 ├── Descubre Anáhuac  (specs/descubre-anahuac.md)
 ├── Oferta Académica  (specs/oferta-academica.md)
 │   ├── Área Académica  (specs/area-academica.md) — plantilla dinámica
-│   └── Programa de Licenciatura  (specs/programa-licenciatura.md) — plantilla dinámica
+│   ├── Programa de Licenciatura  (specs/programa-licenciatura.md) — plantilla dinámica
+│   └── Test Vocacional  (specs/test-vocacional.md)
 ├── Admisiones  (specs/admisiones.md)
 │   ├── Admisión General de Licenciatura  (specs/admision-general.md)
 │   ├── Admisión Medicina  (specs/admision-medicina.md)
@@ -35,6 +36,7 @@ Home  (specs/home.md) — referencia canónica
 | Oferta Académica | `/oferta-academica` | Home | `specs/oferta-academica.md` | pendiente |
 | Área Académica | `/oferta-academica/{area}` | Oferta Académica | `specs/area-academica.md` | pendiente |
 | Programa de Licenciatura | `/oferta-academica/{area}/{programa}` | Área Académica | `specs/programa-licenciatura.md` | pendiente |
+| Test Vocacional | `/test-vocacional` | Oferta Académica | `specs/test-vocacional.md` | spec |
 | Admisiones | `/admisiones` | Home | `specs/admisiones.md` | pendiente |
 | Admisión General | `/admisiones/general` | Admisiones | `specs/admision-general.md` | pendiente |
 | Admisión Medicina | `/admisiones/medicina` | Admisiones | `specs/admision-medicina.md` | pendiente |
@@ -54,3 +56,7 @@ Home  (specs/home.md) — referencia canónica
 - **Oferta Académica** tiene sub-páginas dinámicas: una por área académica y una por programa de licenciatura.
 - Las secciones de cada página están documentadas en el wireframe de Relume con componentes sugeridos.
 - Las áreas académicas son 8: Salud, Ingenierías, Negocios, Derecho, Comunicación, Artes, Educación + una más por confirmar.
+- **2026-11-11:** el instrumento del test vocacional usa exactamente esas 8 y nombra la
+  octava como *Turismo, Gastronomía y Hospitalidad*. La página `oferta-academica.html`
+  construida hoy muestra sólo 6 (fusionó Comunicación con Artes y omitió Educación): es
+  build parcial, no un cambio de taxonomía. Ver `specs/test-vocacional.md`.

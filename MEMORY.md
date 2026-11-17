@@ -49,6 +49,21 @@ Antigravity…) lee al empezar y actualiza al avanzar. Versionado en git = memor
 - Se clonó el template `averasteguibno/BnO-website-design-system` en el workspace del proyecto.
 - Se configuró `project.json` con los 3 links de Figma y plataforma HubSpot.
 
+### 2026-11-11 — Test vocacional: módulo construido con datos provisionales
+- Se construyó `test-vocacional.module` (motor de dos fases con ramificación) más las
+  cuatro colecciones de datos en `adapters/hubspot/hubdb/*.csv` y la semilla
+  `theme/js/test-vocacional-data.js`.
+- **Es proyecto aparte del sitio**, todavía sin cotizar ni autorizar. Se adelantó sólo
+  lo que no depende de terceros, para poder enseñarlo al presentar la cotización.
+- Excepción documentada a la convención del theme: este módulo sí trae `module.js`
+  propio (~350 líneas que sólo sirven en una página). El CSS sí vive en `main.css`.
+- Pendientes que bloquean el cierre: 6 decisiones de la autora sobre el mapa de áreas,
+  las reglas de puntaje, los 55 textos de resultado y el plan de HubSpot contratado
+  (HubDB y workflows piden Professional o superior).
+- Corrección aplicada a los reactivos: el 2º de Nutrición es el **64**, no el 70
+  (el 70 ya es de Turismo Internacional y el 64 no aparecía). Marcado y por confirmar.
+- Detalle completo en `adapters/hubspot/theme/modules/test-vocacional.module/README.md`.
+
 ## Aprendizajes / gotchas
 > Qué se intentó, qué falló, qué evitar.
 

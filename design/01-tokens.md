@@ -11,6 +11,7 @@ Dos capas. Los componentes y adapters usan **solo la capa semántica**; nunca pr
 | Token | Valor | Nombre Figma |
 |---|---|---|
 | `--orange` | `#FF5900` | Naranja Anáhuac |
+| `--orange-ink` | `#C34400` → `color-mix(in srgb, var(--orange) 76%, #000)` | — (derivado, no está en Figma) |
 | `--brown` | `#6B3F23` | Café Anáhuac |
 | `--black` | `#000000` | Negro |
 | `--white` | `#FFFFFF` | Blanco |
@@ -42,6 +43,7 @@ Dos capas. Los componentes y adapters usan **solo la capa semántica**; nunca pr
 |---|---|---|
 | `--black-web` | `#0C1115` | Black Web |
 | `--text-gray` | `#788592` | Texto |
+| `--text-gray-ink` | `#626D78` → `color-mix(in srgb, var(--text-gray) 82%, #000)` | — (derivado, no está en Figma) |
 
 ### Tipografía (obligatoria — una sola familia por rol)
 
@@ -125,15 +127,17 @@ Nombrar por **rol**, no por valor (ver `docs/naming.md`).
 
 | Token semántico | → Primitivo | Uso |
 |---|---|---|
-| `--color-brand-primary` | `var(--orange)` | Acentos de marca, CTAs principales, hover |
+| `--color-brand-primary` | `var(--orange)` | Acentos de marca, CTAs principales, hover. Como **texto**, sólo a 24px+ (o 18.66px+ en negrita) |
+| `--color-text-brand` | `var(--orange-ink)` | El naranja de marca cuando tiene que **leerse**: enlaces, antetítulos, etiquetas |
 | `--color-brand-secondary` | `var(--brown)` | Café institucional, acentos secundarios |
 | `--surface` | `var(--white)` | Fondo base de superficies |
 | `--surface-dark` | `var(--black)` | Fondo oscuro (hero, secciones destacadas) |
 | `--surface-accent` | `var(--purple-1)` | Fondo de sección destacada (púrpura) |
 | `--surface-accent-light` | `var(--lilac-2)` | Fondo de sección con acento ligero |
 | `--color-text` | `var(--black)` | Texto principal |
-| `--color-text-secondary` | `var(--text-gray)` | Texto secundario/descriptivo |
+| `--color-text-secondary` | `var(--text-gray-ink)` | Texto secundario/descriptivo. Tinta, no el gris crudo: ése no pasa AA en cuerpos chicos |
 | `--color-text-invert` | `var(--white)` | Texto sobre fondo oscuro/marca |
+| `--color-control-ring` | `color-mix(in srgb, var(--surface-accent) 80%, var(--surface))` | Aro del control sin marcar sobre tarjeta clara de acento |
 | `--cta-bg` | `var(--color-brand-primary)` | Fondo de botón primario |
 | `--cta-text` | `var(--color-text-invert)` | Texto de botón primario |
 | `--cta-bg-dark` | `var(--black)` | Fondo de botón dark |
@@ -157,6 +161,8 @@ Nombrar por **rol**, no por valor (ver `docs/naming.md`).
 
   /* Primarios (institucionales) */
   --orange: #FF5900;
+  --orange-ink: #C34400;  /* respaldo */
+  --orange-ink: color-mix(in srgb, var(--orange) 76%, #000000);
   --brown: #6B3F23;
   --black: #000000;
   --white: #FFFFFF;
@@ -179,6 +185,8 @@ Nombrar por **rol**, no por valor (ver `docs/naming.md`).
   /* Otros */
   --black-web: #0C1115;
   --text-gray: #788592;
+  --text-gray-ink: #626D78;  /* respaldo */
+  --text-gray-ink: color-mix(in srgb, var(--text-gray) 82%, #000000);
 
   /* Tipografía */
   --font-heading: "Zilla Slab", serif;
@@ -217,14 +225,16 @@ Nombrar por **rol**, no por valor (ver `docs/naming.md`).
 
   /* === SEMÁNTICOS (rol → primitivo) === */
   --color-brand-primary: var(--orange);
+  --color-text-brand: var(--orange-ink);
   --color-brand-secondary: var(--brown);
   --surface: var(--white);
   --surface-dark: var(--black);
   --surface-accent: var(--purple-1);
   --surface-accent-light: var(--lilac-2);
   --color-text: var(--black);
-  --color-text-secondary: var(--text-gray);
+  --color-text-secondary: var(--text-gray-ink);
   --color-text-invert: var(--white);
+  --color-control-ring: color-mix(in srgb, var(--surface-accent) 80%, var(--surface));
   --cta-bg: var(--color-brand-primary);
   --cta-text: var(--color-text-invert);
   --cta-bg-dark: var(--black);

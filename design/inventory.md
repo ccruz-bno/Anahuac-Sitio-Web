@@ -4,26 +4,29 @@ Base del análisis de impacto: componente ↔ páginas. **Mantener al día en ca
 
 > Poblado desde el UI Kit de Figma y el Home — ingesta 2026-06-08.
 
+> **Build HubSpot (2026-07-03):** Home materializado en `adapters/hubspot/theme/` — 1 módulo por sección, todo editable, tokens semánticos (cero hardcode). El contrato de fields de cada componente vive en el `fields.json` de su módulo (aún no volcado a `design/components/*.md`).
+
 ## Componentes globales (aparecen en todas las páginas)
 
-| Componente | Spec | Estado | Páginas |
+| Componente | HubSpot module | Estado | Páginas |
 |---|---|---|---|
-| `header` | `design/components/header.md` | pendiente | todas |
-| `footer` | `design/components/footer.md` | pendiente | todas |
+| `header` | `header.module` (global) | construido | todas |
+| `footer` | `footer.module` (global) | construido | todas |
 
 ## Componentes de sección
 
-| Componente | Spec | Estado | Páginas |
+| Componente | HubSpot module | Estado | Páginas |
 |---|---|---|---|
-| `hero` | `design/components/hero.md` | pendiente | Home |
-| `stats-section` | `design/components/stats-section.md` | pendiente | Home, Descubre Anáhuac |
-| `path-card` | `design/components/path-card.md` | pendiente | Home |
-| `area-card` | `design/components/area-card.md` | pendiente | Home, Oferta Académica |
-| `feature-section` | `design/components/feature-section.md` | pendiente | Home, Descubre Anáhuac |
-| `story-card` | `design/components/story-card.md` | pendiente | Home |
-| `step-card` | `design/components/step-card.md` | pendiente | Home, Admisiones |
-| `event-card` | `design/components/event-card.md` | pendiente | Home |
-| `cta-section` | `design/components/cta-section.md` | pendiente | Home |
+| `hero` | `hero.module` | construido | Home |
+| `stats-section` | `prestige.module` | construido | Home, Descubre Anáhuac |
+| `path-card` | `path.module` | construido | Home |
+| `area-card` | `programs.module` | construido | Home, Oferta Académica |
+| `feature-section` | `experience.module` | construido | Home, Descubre Anáhuac |
+| `story-card` | `stories.module` | construido | Home |
+| `step-card` | `next-step.module` | construido | Home, Admisiones |
+| `event-card` | `events.module` | construido | Home |
+| `cta-section` | `questions.module` | construido | Home |
+| `test-vocacional` | `test-vocacional.module` | construido | Test Vocacional (`specs/test-vocacional.md`) — datos provisionales; desempate rehecho 2026-11-12 (registro Product); jerarquía del resultado invertida 2026-11-13; validator con bloqueantes abiertos |
 
 ## Componentes atómicos (UI Kit)
 
@@ -50,6 +53,8 @@ Base del análisis de impacto: componente ↔ páginas. **Mantener al día en ca
 | Dropdown | Negro | Blanco | — | Texto + chevron |
 
 > Todas las variantes usan `borderRadius: 10px` (`--radius-button`).
+> Peso **700** desde 2026-11-12 (antes 600): con 600 el blanco sobre naranja no alcanzaba
+> AA. En móvil el cuerpo mínimo es `--heading-5-size` por la misma razón. Ver CHANGELOG.
 > Los botones grandes tienen padding `15px 40px`, los medianos `12px 40px`.
 
 ## Leyenda de estado
